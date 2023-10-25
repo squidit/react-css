@@ -26,7 +26,7 @@
       "npm run test"
     ]
   },
-  "author": "",
+  "author": "@squidit",
   "license": "MIT",
   "devDependencies": {
     "@squidit/css": "latest",
