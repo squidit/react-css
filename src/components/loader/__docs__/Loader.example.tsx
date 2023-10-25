@@ -1,7 +1,7 @@
 import React from 'react'
-import Loader from '../Loader.component'
+import Loader, { LoaderProps } from '../Loader.component'
 
-export default () => {
+export default ({ ...props }: LoaderProps) => {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ export default () => {
         height: '100%',
       }}
     >
-      <Loader />
+      <Loader {...props} />
     </div>
   )
 }

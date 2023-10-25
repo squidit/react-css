@@ -1,4 +1,4 @@
 // Overwrite default font path
-$fontsFolderPath: '~@squidit/css/dist/fonts';
+$fontsFolderPath: '@squidit/css/dist/fonts';
 // Import all Framework Styles
-@import '~@squidit/css/src/scss/squid.scss';
+@import '@squidit/css/src/scss/squid.scss';

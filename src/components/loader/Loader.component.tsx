@@ -7,17 +7,18 @@ export interface LoaderProps extends React.HTMLAttributes<HTMLDivElement> {
   borderSize?: string
 }
 
-export default ({ color = 'var(--primary_color)', customSize, size = '', borderSize, className = '', style }: LoaderProps) => {
+export default ({ color = 'pink', customSize, size = '', borderSize, className = '', style }: LoaderProps) => {
   return (
     <div
       className={`loader ${size} ${className}`}
       role="status"
       style={{
+        ...style,
         borderWidth: borderSize,
         height: customSize,
         width: customSize,
         borderColor: color,
-        ...style,
+        color,
       }}
     >
       <span className="visually-hidden">Loading</span>
