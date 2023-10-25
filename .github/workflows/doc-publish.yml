@@ -2,7 +2,7 @@ name: Publish Docs in Git Pages
 
 on:
   workflow_run:
-    workflows: ["Publish to NPM"]
+    workflows: ["Publish on Github"]
     types:
       - completed
 
