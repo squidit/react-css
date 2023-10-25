@@ -33,13 +33,13 @@ jobs:
           npm install
           npm run deploy-storybook
           echo "react-css.squidit.com.br" > CNAME
-          cd .storybook-static
+          cd storybook-static
           echo "react-css.squidit.com.br" > CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ".storybook-static/"
+          path: "storybook-static/"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
