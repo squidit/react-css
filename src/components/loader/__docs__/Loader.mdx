@@ -1,0 +1,35 @@
+import { Canvas, Meta } from '@storybook/blocks'
+import * as Loader from './Loader.stories.tsx'
+
+<Meta of={Loader} title="Loader" />
+
+# Loader
+
+Loader component is used to indicate that the page is loading.
+
+#### Example
+
+<Canvas of={Loader.Default} />
+
+## Usage
+
+```jsx
+import { Loader } from '@squidit/react-css';
+
+const Example = () => {
+  return (
+    <Loader
+      size="large"
+      color="primary"
+    />
+  )
+}
+export default Example;
+```
+
+#### Arguments
+
+- **color**: string - Set the class `${color}`, if corresponding with a real class, then aplies. Else set inline-style `background-color`. Accepts CSS variables
+- **customSize**: string - Set `width` and `height`. Combine with `borderSize`
+- **size**: 'small' | 'bigger' | '' - Set the class `${size}`, if corresponding with a real class, then aplies.
+- **borderSize**: string - Set `border-width`. Combine with `customSize`
