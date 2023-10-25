@@ -17,7 +17,9 @@
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pre-deploy": "npm run build-storybook",
+    "deploy-storybook": "npm run pre-deploy && touch ./storybook-static/.nojekyll"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
