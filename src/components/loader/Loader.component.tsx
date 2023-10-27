@@ -7,7 +7,7 @@ export interface LoaderProps extends React.HTMLAttributes<HTMLDivElement> {
   borderSize?: string
 }
 
-export default ({ color = 'pink', customSize, size = '', borderSize, className = '', style }: LoaderProps) => {
+const Loader = ({ color = 'pink', customSize, size = '', borderSize, className = '', style }: LoaderProps) => {
   return (
     <div
       className={`loader ${size} ${className}`}
@@ -25,3 +25,5 @@ export default ({ color = 'pink', customSize, size = '', borderSize, className =
     </div>
   )
 }
+
+export default Loader
