@@ -13,7 +13,7 @@ type Story = StoryObj<typeof LoaderExample>
 
 export const Default: Story = {
   args: {
-    color: '#E94589',
+    color: 'var(--pink)',
     customSize: '50px',
     size: 'small',
     borderSize: '4px',
