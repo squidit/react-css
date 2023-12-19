@@ -1,8 +1,8 @@
-import Collapse from '@components/accordion-collapse/collapse/collapse.component'
+import Collapse from '../collapse/collapse.component'
 import React, { PropsWithChildren, useEffect, useState } from 'react'
 import './accordion.component.scoped.scss'
 
-interface Props extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
+export interface Props extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   onlyOne?: boolean
   openFirst?: boolean
   containerCollapseClass?: string
