@@ -1,0 +1,16 @@
+.without-header {
+    padding: 0 1rem;
+    border: none;
+    justify-content: flex-end;
+    .modal-exit {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .modal-over {
+    padding: 0;
+  }
+  .force-mobile-no-margin {
+    margin: 0 auto !important;
+  }
+  
