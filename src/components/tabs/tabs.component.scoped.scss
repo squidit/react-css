@@ -1,0 +1,38 @@
+.wrapper {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .tabs-header {
+    position: relative;
+    scroll-behavior: smooth;
+    &.line-style {
+      li {
+        &.active {
+          color: var(--primary_color);
+          border-color: var(--primary_color);
+          &::before {
+            background-color: var(--primary_color);
+          }
+        }
+      }
+    }
+    &.select-style {
+      padding: 0;
+      background-color: var(--background);
+      border: solid 1px var(--border_color);
+      li {
+        align-items: center;
+        border-radius: 0;
+        border: none;
+        background-color: var(--background);
+        color: var(--text_color);
+        &.active {
+          color: var(--secondary_color);
+          background-color: var(--primary_color);
+        }
+      }
+    }
+  }
+  
