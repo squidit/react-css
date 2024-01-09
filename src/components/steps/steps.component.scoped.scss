@@ -1,0 +1,52 @@
+.steps {
+    padding: 1rem;
+    background: var(--background);
+    ul {
+      padding: 0;
+      margin: 0;
+      height: 10px;
+      width: 100%;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--border_color);
+      position: relative;
+      padding: 3px;
+      li {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        overflow: hidden;
+        &:first-child {
+          border-bottom-left-radius: 20px;
+          border-top-left-radius: 20px;
+        }
+        &:last-child {
+          border-bottom-right-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        &.active {
+          background: linear-gradient(90deg, var(--pink) 0%, var(--pink) 50%, transparent 51%);
+        }
+        &.old {
+          background: var(--pink);
+        }
+        span {
+          display: block;
+          margin: 0;
+          background: var(--background);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  
