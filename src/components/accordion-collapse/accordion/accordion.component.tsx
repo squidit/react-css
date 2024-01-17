@@ -57,7 +57,7 @@ const Accordion = ({ children, onlyOne = false, containerCollapseClass = '', ope
   useEffect(() => {
     if (openFirst) {
       const newOpen: any = {}
-      handleFindByType(children, Collapse).forEach((child: any, index: number) => {
+      handleFindByType(children, Collapse).forEach((_: any, index: number) => {
         newOpen[index] = index === 0
       })
       setOpenAccordions(newOpen)
