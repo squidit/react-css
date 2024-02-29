@@ -11,6 +11,7 @@
     },
     "esModuleInterop": true,
     "allowJs": true,
+    "typeRoots": ["./src/declarations.d.ts"],
 
     /* Bundler mode */
     "moduleResolution": "Bundler", // Specifies how modules are resolved when bundling.

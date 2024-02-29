@@ -1,22 +1,31 @@
-import type { Preview } from '@storybook/react'
+import type { Parameters } from '@storybook/react'
 import '../src/styles.scss'
 import DocumentationTemplate from './documentation.template.mdx'
+import { NdsStyles } from './decorators'
 
-const preview: Preview = {
-  parameters: {
-    actions: {
-      argTypesRegex: '^on[A-Z].*',
+export const parameters: Parameters = {
+  viewMode: 'docs',
+  previewTabs: {
+    'storybook/docs/panel': { index: -1 },
+  },
+  actions: {
+    argTypesRegex: '^on.*',
+  },
+  controls: {
+    sort: 'requiredFirst',
+    exclude: /children/,
+    matchers: {
+      color: /(background|color)$/i,
     },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-    docs: {
-      page: DocumentationTemplate,
+  },
+  docs: {
+    page: DocumentationTemplate,
+  },
+  options: {
+    storySort: {
+      order: ['Getting Started', 'Components', 'Hooks'],
     },
   },
 }
 
-export default preview
+export const decorators = [NdsStyles]

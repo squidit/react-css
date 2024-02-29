@@ -3,6 +3,13 @@ import ButtonExample from './Button.example'
 
 const meta: Meta<typeof ButtonExample> = {
   title: 'Components/Button',
+  parameters: {
+    docs: {
+      description: {
+        component: 'A simple Button component',
+      },
+    },
+  },
   component: ButtonExample,
   tags: ['autodocs'],
 }
@@ -22,12 +29,10 @@ export const Default: Story = {
     hideChildrenOnLoading: false,
     id: 'random-id',
     width: '',
-    onClick: () => {},
     customPadding: '',
     borderStyle: '',
     borderColor: '',
     textColor: '',
-    onHover: () => {},
   },
   argTypes: {
     color: {
@@ -46,10 +51,6 @@ export const Default: Story = {
     onClick: {
       description: 'Action when the button is clicked',
       action: 'clicked',
-    },
-    onHover: {
-      description: 'Action when the button is hovered',
-      action: 'hovered',
     },
     disabled: {
       description: 'Disable the button',
@@ -114,13 +115,13 @@ export const Default: Story = {
     borderColor: {
       description: 'Border color of the button',
       control: {
-        type: 'text',
+        type: 'color',
       },
     },
     textColor: {
       description: 'Text color of the button',
       control: {
-        type: 'text',
+        type: 'color',
       },
     },
   },
