@@ -1,14 +1,6 @@
 {
   "name": "@squidit/react-css",
-  "version": "0.0.4",
-  "description": "React CSS is an abstraction of the Squid CSS framework",
-  "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
+  "version": "0.0.5",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
@@ -29,7 +21,21 @@
       "npm run test"
     ]
   },
-  "author": "@squidit",
+  "description": "React CSS is an abstraction of the Squid CSS framework",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squidit/react-css.git"
+  },
+  "homepage": "https://squidit.github.io/css",
+  "author": "Squid <developers@squidit.com.br>",
   "license": "MIT",
   "devDependencies": {
     "@squidit/css": "latest",
