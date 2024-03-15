@@ -1,7 +1,7 @@
 name: Deploy Docs
 on:
   workflow_run:
-    workflows: ['Publish on NPM']
+    workflows: ['Publish to NPM']
     types:
       - completed
   workflow_dispatch:
