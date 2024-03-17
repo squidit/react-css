@@ -1,1 +1,1 @@
-export * from './toast.interface'
+export * from './sq-toast.interface'

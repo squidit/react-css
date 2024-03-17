@@ -1,0 +1,12 @@
+.loader-input {
+  position: absolute;
+  right: 1rem;
+  top: 3rem;
+  &.no-label {
+    top: 1rem;
+  }
+}
+
+span.message-error {
+  font-size: 0.9rem;
+}

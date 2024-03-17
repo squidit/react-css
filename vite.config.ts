@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { peerDependencies } from './package.json'
+import path from 'path'
 
 export default defineConfig({
   build: {
@@ -25,7 +26,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      src: '/src',
+      // src: '/src',
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
     },
   },
 })

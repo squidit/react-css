@@ -1,0 +1,19 @@
+.scroll {
+  width: 100%;
+  height: auto;
+}
+.wrapper-scroll {
+  width: 100%;
+}
+.wrapper-loader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem auto;
+}
+.end-message {
+  font-size: 0.9rem;
+  margin: 0.25rem auto;
+  text-align: center;
+}

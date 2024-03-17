@@ -1,9 +1,17 @@
 import type { Parameters } from '@storybook/react'
-import '../src/styles.scss'
 import DocumentationTemplate from './documentation.template.mdx'
 import { NdsStyles } from './decorators'
 
+import '../src/styles.scss'
+
 export const parameters: Parameters = {
+  backgrounds: {
+    default: 'dark',
+    values: [
+      { name: 'light', value: '#f5f5f5' },
+      { name: 'dark', value: '#333333' },
+    ],
+  },
   viewMode: 'docs',
   previewTabs: {
     'storybook/docs/panel': { index: -1 },

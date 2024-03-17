@@ -1,0 +1,48 @@
+.wrapper-all-inside-input {
+  position: relative;
+  .label {
+    display: flex;
+    color: var(--text_color);
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+  .input-file {
+    display: none;
+  }
+  .button {
+    margin: 0;
+  }
+  .children {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.box-validation {
+  min-height: 18px;
+  overflow: hidden;
+  &.visibility-hidden-force {
+    min-height: 0;
+    height: 0;
+  }
+}
+.file-name {
+  width: 100%;
+  margin: 0.5rem 0 0;
+  span {
+    display: block;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  ul {
+    margin: 0 0 0.5rem;
+    padding: 0 0 0 1rem;
+    li {
+      font-size: 0.9rem;
+    }
+  }
+}
+.loading {
+  cursor: wait !important;
+}
