@@ -11,4 +11,8 @@ const meta: Meta<typeof SqInputFileExample> = {
 export default meta
 type Story = StoryObj<typeof SqInputFileExample>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    placeholder: 'Upload a file',
+  },
+}
