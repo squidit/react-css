@@ -1,1 +1,1 @@
-export { default as useSqRect } from './use-rect.hook'
+export { default as useSqRect } from './use-sq-rect.hook'

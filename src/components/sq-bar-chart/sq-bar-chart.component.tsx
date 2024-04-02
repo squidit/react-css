@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
 import SqNumbersHelper from '@/helpers/sq-numbers/sq-numbers.helper'
-import useRect from '@/hooks/use-sq-rect/use-rect.hook'
+import useRect from '@/hooks/use-sq-rect/use-sq-rect.hook'
 
 import './sq-bar-chart.component.scoped.scss'
 

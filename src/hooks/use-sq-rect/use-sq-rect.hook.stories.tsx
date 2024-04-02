@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import useRect from './use-rect.hook'
+import useRect from './use-sq-rect.hook'
 
 export const Overview = () => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -12,4 +12,4 @@ export const Overview = () => {
   )
 }
 
-export default { title: 'Hooks/useRect', tags: ['autodocs'] }
+export default { title: 'Hooks/useSqRect', tags: ['autodocs'] }

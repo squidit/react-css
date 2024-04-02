@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import useRect from './use-rect.hook'
+import useRect from './use-sq-rect.hook'
 import { renderHook } from '@testing-library/react'
 
 describe('useRect hook', () => {
