@@ -1,6 +1,6 @@
 import Loader from '@components/sq-loader/sq-loader.component'
-import ColorsHelper from '@helpers/sq-colors.helper'
-import ObjectHelper from '@helpers/sq-object.helper'
+import ColorsHelper from '@/helpers/sq-colors/sq-colors.helper'
+import ObjectHelper from '@/helpers/sq-object/sq-object.helper'
 import { useEffect, useState } from 'react'
 
 import './sq-input-file.component.scoped.scss'

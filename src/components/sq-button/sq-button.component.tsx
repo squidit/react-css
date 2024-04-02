@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react'
-import SqColorsHelper from '@helpers/sq-colors.helper'
+import SqColorsHelper from '@/helpers/sq-colors/sq-colors.helper'
 import { SqLoader } from '@components/sq-loader'
 
 import './sq-button.component.scoped.scss'

@@ -12,6 +12,7 @@
       "@components/*": ["./src/components/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
     },
     "esModuleInterop": true,
     "allowJs": true,
@@ -32,6 +33,6 @@
     "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
     "declaration": true // Generates declaration files for TypeScript.
   },
-  "include": ["src/**/*"], // Specifies the directory to include when searching for TypeScript files.
+  "include": ["src/**/*", "setupTests.ts"], // Specifies the directory to include when searching for TypeScript files.
   "exclude": ["src/**/__docs__", "src/**/__test__"]
 }
