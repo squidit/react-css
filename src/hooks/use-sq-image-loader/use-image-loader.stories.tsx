@@ -1,6 +1,5 @@
-import React from 'react'
-import useImageLoader from '../use-sq-image-loader.hook'
-import SqLoader from '../../../components/sq-loader/sq-loader.component'
+import useImageLoader from './use-sq-image-loader.hook'
+import SqLoader from '../../components/sq-loader/sq-loader.component'
 
 export const Overview = () => {
   const [ref, loading, onLoad] = useImageLoader()

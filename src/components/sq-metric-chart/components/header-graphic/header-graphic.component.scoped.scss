@@ -1,0 +1,17 @@
+.header-graphic {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .user-metric {
+    font-size: 2rem;
+    color: var(--primary_color);
+    font-weight: 700;
+  }
+
+  .first-place {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+}

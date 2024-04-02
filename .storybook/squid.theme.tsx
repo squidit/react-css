@@ -3,12 +3,8 @@ import { create } from '@storybook/theming/create'
 export default create({
   base: 'light',
 
-  // Typography
-  // fontBase: '"Open Sans", sans-serif',
-  // fontCode: 'monospace',
-
   brandTitle: 'Squid',
-  brandUrl: 'https://css.squidit.com.br/',
+  brandUrl: '/',
   brandImage: 'https://squidit.com.br/wp-content/themes/squid/assets/img/logo.svg',
   brandTarget: '_self',
 

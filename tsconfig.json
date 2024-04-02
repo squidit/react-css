@@ -12,6 +12,7 @@
       "@components/*": ["./src/components/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
     },
     "esModuleInterop": true,
     "allowJs": true,

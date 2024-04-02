@@ -1,0 +1,18 @@
+{
+  "average": "Average - ",
+  "description": "The <strong>influencer #1 with the most {{type}} reached {{firstValue}}.</strong> You got <strong>{{positionFirst}} {{userPercentageDiff}} </strong> of {{type}} campaign and at position #{{userPosition}}.",
+  "aboveAverage": "above average",
+  "belowAverage": "below average",
+  "metrics": {
+    "impressions": "impressions",
+    "reach": "reach",
+    "effectiveReach": "effective reach",
+    "engagementRate": "engagement rate",
+    "engagement": "engagement",
+    "totalClicks": "clicks",
+    "uniqueClicks": "clicks",
+    "ctr": "ctr",
+    "convertions_count": "convertions",
+    "convertions_value": "convertions"
+  }
+}

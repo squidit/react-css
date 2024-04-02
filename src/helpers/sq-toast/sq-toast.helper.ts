@@ -1,4 +1,4 @@
-import toastConfig from '../interfaces/sq-toast.interface'
+import toastConfig from '../../interfaces/sq-toast.interface'
 
 export default class SqToastHelper {
   public toast: any = {

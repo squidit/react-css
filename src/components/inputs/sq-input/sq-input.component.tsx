@@ -1,5 +1,5 @@
 import SqLoader from '@components/sq-loader/sq-loader.component'
-import SqValidatorHelper from '@helpers/sq-validator.helper'
+import SqValidatorHelper from '@/helpers/sq-validator/sq-validator.helper'
 import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 
 import './sq-input.component.scoped.scss'

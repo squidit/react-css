@@ -33,6 +33,7 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@interfaces': path.resolve(__dirname, './src/interfaces'),
     },
   },
 })
