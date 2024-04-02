@@ -1,6 +1,6 @@
-import React from 'react'
-import './user-position.component.scoped.scss'
 import { useSqMetricChartContext } from '@/hooks'
+
+import './user-position.component.scoped.scss'
 
 const UserPosition = () => {
   const { state } = useSqMetricChartContext()
