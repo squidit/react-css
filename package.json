@@ -1,10 +1,10 @@
 {
   "name": "@squidit/react-css",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "test": "vitest run",
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
@@ -34,7 +34,29 @@
     "type": "git",
     "url": "git+https://github.com/squidit/react-css.git"
   },
-  "homepage": "https://squidit.github.io/css",
+  "homepage": "https://react-css.squidit.com.br",
+  "keywords": [
+    "react",
+    "components",
+    "library",
+    "UI",
+    "user interface",
+    "Squid",
+    "design system",
+    "componentization",
+    "frontend",
+    "web",
+    "reusable",
+    "responsive",
+    "customizable",
+    "themes",
+    "modern",
+    "flexible",
+    "UI components",
+    "UI library",
+    "design components",
+    "corporate components"
+  ],
   "author": "Squid <developers@squidit.com.br>",
   "license": "MIT",
   "devDependencies": {
@@ -83,5 +105,12 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "i18next": "^23.11.1",
+    "i18next-browser-languagedetector": "^7.2.1",
+    "i18next-http-backend": "^2.5.0",
+    "react-i18next": "^14.1.0",
+    "rxjs": "^7.8.1"
   }
 }
