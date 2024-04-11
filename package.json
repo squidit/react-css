@@ -35,6 +35,28 @@
     "url": "git+https://github.com/squidit/react-css.git"
   },
   "homepage": "https://react-css.squidit.com.br",
+  "keywords": [
+    "react",
+    "components",
+    "library",
+    "UI",
+    "user interface",
+    "Squid",
+    "design system",
+    "componentization",
+    "frontend",
+    "web",
+    "reusable",
+    "responsive",
+    "customizable",
+    "themes",
+    "modern",
+    "flexible",
+    "UI components",
+    "UI library",
+    "design components",
+    "corporate components"
+  ],
   "author": "Squid <developers@squidit.com.br>",
   "license": "MIT",
   "devDependencies": {
