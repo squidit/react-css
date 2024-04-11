@@ -4,6 +4,7 @@ import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'r
 
 import './sq-input.component.scoped.scss'
 import './sq-input.component.scss'
+import { useTranslation } from 'react-i18next'
 
 const DELAY_TIME_FOR_TYPING_PAUSE = 800
 
@@ -98,6 +99,7 @@ export default ({
     value: value,
     error: '',
   })
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (state.value !== value) {
@@ -126,13 +128,13 @@ export default ({
     if (externalError) {
       state.error = ''
     } else if (!!required && (!state.value || state.value.length < 1) && state.value !== 0) {
-      state.error = 'Required field'
+      state.error = t('required')
     } else if (type === 'email' && !validatorHelper.email(state.value)) {
-      state.error = 'Invalid Email'
+      state.error = t('invalidEmail')
     } else if (type === 'tel' && !validatorHelper.phone(state.value)) {
-      state.error = 'Invalid Phone'
+      state.error = t('invalidPhone')
     } else if (type === 'url' && state.value && state.value.length && !validatorHelper.url(state.value)) {
-      state.error = 'Invalid URL'
+      state.error = t('invalidUrl')
     } else {
       state.error = ''
     }

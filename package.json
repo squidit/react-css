@@ -4,7 +4,7 @@
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "test": "vitest run",
     "test-watch": "vitest",
     "test:ui": "vitest --ui",

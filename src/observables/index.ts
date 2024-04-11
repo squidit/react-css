@@ -1,1 +1,1 @@
-export * from './on-lang-change.observable'
+export { default as onLangChange } from './on-lang-change.observable'
