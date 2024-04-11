@@ -16,13 +16,15 @@
 
 ## Installation
 
-To use this library in your React project, you can install it via npm or yarn:
+1. To use this library in your React project, you can install it via npm or yarn:
 
 ```bash
 npm install @squidit/css @squidit/react-css
 # or
 yarn add @squidit/css @squidit/react-css
 ```
+
+2. Configure css in your project according to the @squidit/css documentation described in the project's [README](https://github.com/squidit/css/blob/master/README.md)
 
 ## How to Use
 

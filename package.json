@@ -34,7 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/squidit/react-css.git"
   },
-  "homepage": "https://squidit.github.io/css",
+  "homepage": "https://react-css.squidit.com.br",
   "author": "Squid <developers@squidit.com.br>",
   "license": "MIT",
   "devDependencies": {
