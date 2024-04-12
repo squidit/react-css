@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
-import SqNumbersHelper from '@/helpers/sq-numbers/sq-numbers.helper'
-import { useSqMetricChartContext } from '@/hooks'
+import i18n from '@src/i18n'
+import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'
+import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'
 
 import './header-graphic.component.scoped.scss'
 
@@ -17,7 +18,10 @@ const HeaderGraphic = () => {
       </span>
       {metric?.first && (
         <span className="first-place">
-          #1 - <strong>{percentage ? formatPercent(metric?.first) : formatCompactNumber({ lang: 'en', number: metric?.first })}</strong>
+          #1 -{' '}
+          <strong>
+            {percentage ? formatPercent(metric?.first) : formatCompactNumber({ lang: i18n?.language, number: metric?.first })}
+          </strong>
         </span>
       )}
     </div>

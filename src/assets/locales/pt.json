@@ -1,3 +1,66 @@
 {
-  "required": "Campo obrigatório"
+  "back": "voltar",
+  "loading": "Carregando",
+  "required": "Campo obrigatório",
+  "emptyField": "Preencha esse campo",
+  "showPassword": "Mostrar senha",
+  "hidenPassword": "Esconder senha",
+  "nameSpecialChars": "Nome não pode conter caracteres especiais",
+  "invalidName": "Nome inválido",
+  "invalidEmail": "E-mail inválido",
+  "invalidPhone": "Telefone inválido",
+  "invalidDate": "Data inválida",
+  "invalidUrl": "URL inválida",
+  "unexpected": "<strong>Todo mundo comete erros <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></strong><br />Desta vez foram nossos servidores, mas já estamos corrigindo! Tente novamente mais tarde.",
+  "selectedFiles": "Arquivo(s) selecionado(s)",
+  "fileSize": "Arquivo muito grande",
+  "resolution": "Tamanho recomendado: {{width}}px por {{height}}px",
+  "mediaLabel": "Adicionar Mídia",
+  "fields": {
+    "password": {
+      "lessThanEight": "Mínimo de 8 caracteres",
+      "noNumber": "Mínimo de 1 número",
+      "noUppercase": "Letra maiúscula",
+      "noLowercase": "Letra minúscula"
+    },
+    "multiSelect": {
+      "maxOptionsSelected_one": "No máximo {{ count }} opção",
+      "maxOptionsSelected_other": "No máximo {{ count }} opções",
+      "qtdTags_one": "{{ count }} opção selecionada",
+      "qtdTags_other": "{{ count }} opções selecionadas"
+    }
+  },
+  "search": "Buscar",
+  "placeholderState": "Preencha com o estado",
+  "endScroll": "Não há mais dados disponíveis",
+  "year_other": "há {{ value }} anos",
+  "year_one": "há {{ value }} ano",
+  "month_other": "há {{ value }} meses",
+  "month_one": "há {{ value }} mês",
+  "day_other": "há {{ value }} dias",
+  "day_one": "há {{ value }} dia",
+  "hour_other": "há {{ value }} horas",
+  "hour_one": "há {{ value }} hora",
+  "today": "Hoje",
+  "biggerThanMaxDate": "Data não pode ser maior que {{ maxDate }}",
+  "errors": {
+    "default": "<p class='text-bold'>Todo mundo erra. Desta vez foram nossos servidores, mas já estamos dando um jeito! Tente novamente mais tarde.</p>",
+    "login": {
+      "contract_refused": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Contrato não aceito <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>Aceite o contrato para poder acessar a plataforma!</span>",
+      "mail_verified": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>E-mail não confirmado</h5> Você ainda não confirmou seu endereço de e-mail, acesse sua caixa de entrada e clique em 'Verificar e-mail'! Se ainda não recebeu a mensagem de confirmação, <a>CLIQUE AQUI</a></span>",
+      "unregistered_user": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuário não encontrado <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Você digitou um e-mail que não foi encontrado na nossa plataforma. Se ainda não tem cadastro, <a>Clique aqui</a> para realizar o cadastro.</span>",
+      "unregistered_user_mq": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuário não encontrado nesta plataforma <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Você digitou um e-mail que não está vinculado a esta plataforma. Se ainda não tem cadastro, <a>Clique aqui</a> para realizar o cadastro.</span>",
+      "too_many_attempts": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Detectamos atividade suspeita!</h5> Esta conta está bloqueada devido ao numero de tentativas. Tente novamente mais tarde.</span>",
+      "access_denied": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Senha inválida <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Você digitou a senha incorreta, tente novamente ou em 'Esqueci minha senha' para redefinir a sua senha.</span>",
+      "unexpected": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Todo mundo erra <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>Desta vez foram nossos servidores, mas já estamos dando um jeito! Tente novamente mais tarde.</span>",
+      "unauthorized": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuário não autorizado</h5>Seu usuário não está autorizado a logar na plataforma, contate o suporte.</span>",
+      "not_allowed": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuário não autorizado</h5>Você não tem permissão para acessar a plataforma.</span>",
+      "resendEmail": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>E-mail de confirmação enviado!</h5>Agora acesse a caixa de entrada do seu e-mail e clique em 'Verificar E-mail' para poder navegar em nosso portal!</span>"
+    },
+    "payments": {
+      "bankDocumentNotEqual": "Os documentos CPF do titular deve ser igual ao do cadastro.",
+      "bankSaveError": "Ocorreu um problema ao salvar seus dados. Tente novamente mais tarde!",
+      "blockedFields": "Temporariamente esses dados não podem ser editados."
+    }
+  }
 }

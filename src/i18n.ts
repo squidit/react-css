@@ -22,13 +22,25 @@ interface AllComponentsTranslations {
 import ptGlobals from '@assets/locales/pt.json'
 import enGlobals from '@assets/locales/en.json'
 import esGlobals from '@assets/locales/es.json'
+import ptSqMetricChart from '@components/sq-metric-chart/locales/pt.json'
+import enSqMetricChart from '@components/sq-metric-chart/locales/en.json'
+import esSqMetricChart from '@components/sq-metric-chart/locales/es.json'
 
 const componentsThatUseGlobals = ['sqInput']
 
 const getResources = () => ({
-  en: { globals: enGlobals },
-  pt: { globals: ptGlobals },
-  es: { globals: esGlobals },
+  en: {
+    globals: enGlobals,
+    sqMetricChart: enSqMetricChart,
+  },
+  pt: {
+    globals: ptGlobals,
+    sqMetricChart: ptSqMetricChart,
+  },
+  es: {
+    globals: esGlobals,
+    sqMetricChart: esSqMetricChart,
+  },
 })
 
 export const defaultNS = 'globals'
@@ -64,7 +76,7 @@ i18n
   .use(initReactI18next)
   .init({
     defaultNS,
-    ns: ['globals'],
+    ns: ['globals', 'sqMetricChart'],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
     debug: false,

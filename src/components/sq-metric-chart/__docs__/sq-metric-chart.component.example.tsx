@@ -1,8 +1,8 @@
 import React from 'react'
-import SqMetricChartExample, { Props } from '../sq-metric-chart.component'
+import SqMetricChartExample from '../sq-metric-chart.component'
 import { MetricChartProvider } from '../../../hooks/use-sq-metric-chart-context/use-metric-chart-context.hook'
 
-const SqMetricChart = ({ ...props }: Props) => {
+const SqMetricChart = ({ ...props }) => {
   return (
     <MetricChartProvider
       value={{

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import useThrottle from './use-sq-throttle.hook'
-import { SqButton } from '@/components'
+import { SqButton } from '@components/sq-button'
 
 export const Overview = () => {
   const [count, setCount] = useState(0)

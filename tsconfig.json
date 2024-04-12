@@ -7,12 +7,13 @@
     "skipLibCheck": true, // Skips type checking of declaration files.
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
+      "@src/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
+      "@interfaces/*": ["./src/interfaces/*"]
     },
     "esModuleInterop": true,
     "allowJs": true,
