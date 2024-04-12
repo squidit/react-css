@@ -15,27 +15,38 @@ interface Translations {
   }
 }
 
+interface AllComponentsTranslations {
+  [key: string]: Translations
+}
+
 import ptGlobals from '@assets/locales/pt.json'
 import enGlobals from '@assets/locales/en.json'
 import esGlobals from '@assets/locales/es.json'
 
+const componentsThatUseGlobals = ['sqInput']
+
 const getResources = () => ({
-  en: {
-    globals: enGlobals,
-  },
-  pt: {
-    globals: ptGlobals,
-  },
-  es: {
-    globals: esGlobals,
-  },
+  en: { globals: enGlobals },
+  pt: { globals: ptGlobals },
+  es: { globals: esGlobals },
 })
 
 export const defaultNS = 'globals'
 export let resources: Translations = getResources()
 
+export const setAllComponentsTranslations = (allComponentsTranslations: AllComponentsTranslations[]) => {
+  if (allComponentsTranslations?.length) {
+    allComponentsTranslations.forEach((componentTranslations) => {
+      Object.keys(componentTranslations).forEach((componentName) => {
+        setComponentTranslations(componentName, componentTranslations[componentName])
+      })
+    })
+  } else {
+    resources = getResources()
+  }
+}
+
 export const setComponentTranslations = (componentName: string, translations?: Translations) => {
-  const componentsThatUseGlobals = ['sqInput']
   componentName?.[0]?.toLocaleLowerCase()
 
   if (translations) {
