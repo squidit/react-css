@@ -6,7 +6,7 @@ export * from './helpers'
 export * from './hooks'
 export * from './interfaces'
 export * from './observables'
-export { setComponentTranslations } from './i18n'
+export { setComponentTranslations, setAllComponentsTranslations } from './i18n'
 
 onLangChange.subscribe((lang) => {
   i18n.changeLanguage(lang)

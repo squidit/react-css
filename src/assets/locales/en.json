@@ -1,3 +1,67 @@
 {
-  "required": "Required field"
+  "back": "back",
+  "loading": "Loading",
+  "required": "Required field",
+  "emptyField": "Fill this field",
+  "showPassword": "Show password",
+  "hidenPassword": "Hide password",
+  "nameSpecialChars": "Name cannot contain special characters",
+  "invalidName": "Invalid name",
+  "invalidEmail": "Invalid Email",
+  "invalidPhone": "Invalid Phone",
+  "invalidDate": "Invalid Date",
+  "invalidUrl": "Invalid URL",
+  "unexpected": "<strong>Everyone makes mistakes <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></strong><br />This time it was our servers, but we're already fixing it! Try again later.",
+  "selectedFiles": "Selected Files",
+  "fileSize": "File too large",
+  "resolution": "Recommended size: {{width}}px by {{height}}px",
+  "mediaLabel": "Add Media",
+  "fields": {
+    "password": {
+      "isEmpty": "Required field",
+      "lessThanEight": "Minimum 8 characters",
+      "noNumber": "Minimum 1 number",
+      "noUppercase": "Uppercase",
+      "noLowercase": "Lowercase"
+    },
+    "multiSelect": {
+      "maxOptionsSelected_one": "Maximum {{ count }} option",
+      "maxOptionsSelected_other": "Maximum {{ count }} options",
+      "qtdTags_one": "{{ count }} selected option",
+      "qtdTags_other": "{{ count }} selected options"
+    }
+  },
+  "search": "Search",
+  "placeholderState": "Fill in with state",
+  "endScroll": "No more data available",
+  "year_other": "{{ value }} years ago",
+  "year_one": "{{ value }} year ago",
+  "month_other": "{{ value }} months ago",
+  "month_one": "{{ value }} month ago",
+  "day_other": "{{ value }} days ago",
+  "day_one": "{{ value }} day ago",
+  "hour_other": "{{ value }} hours ago",
+  "hour_one": "{{ value }} hour ago",
+  "today": "Today",
+  "biggerThanMaxDate": "Date cannot be greater than {{ maxDate }}",
+  "errors": {
+    "default": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Everybody gets it wrong <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>This time it was our servers, but we're already fixing it! Please try again later.</span>",
+    "login": {
+      "contract_refused": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Contract not accepted <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>Accept the contract to access the platform !</span>",
+      "mail_verified": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Unverified email</h5> You have not yet confirmed your email address , go to your inbox and click 'Verify email'! If you have not yet received the confirmation message, <a>CLICK HERE</a></span>",
+      "unregistered_user": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>User not found <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> You entered an email that could not be found on our platform. If you have not yet registered, <a>Click here</a> to register.</span>",
+      "unregistered_user_mq": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>User not found on this platform <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> You entered an email that is not is linked to this platform. If you have not yet registered, <a>Click here</a> to register.</span>",
+      "too_many_attempts": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>We detected suspicious activity!</h5> This account is blocked due to the number of attempts. Try it again later.</span>",
+      "access_denied": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Invalid password <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> You entered the wrong password, please try again or in ' I forgot my password' to reset your password.</span>",
+      "unexpected": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Everyone makes mistakes <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>This time it was our servers, but we are already giving a way! Please try again later.</span>",
+      "unauthorized": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Unauthorized User</h5>Your user is not authorized to login to the platform, contact the support.</span>",
+      "not_allowed": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Unauthorized User</h5>You do not have permission to access the platform.</span>",
+      "resendEmail": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Confirmation email sent!</h5>Now access your e-mail and click on 'Verify E-mail' to be able to browse our portal!</span>"
+    },
+    "payments": {
+      "bankDocumentNotEqual": "The documents must be the same as the registration.",
+      "bankSaveError": "There was a problem saving your data. Try again later",
+      "blockedFields": "Temporarily this data cannot be edited."
+    }
+  }
 }

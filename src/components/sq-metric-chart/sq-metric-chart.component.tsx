@@ -1,16 +1,14 @@
 import MetricChartHeader from './components/header-graphic/header-graphic.component'
 import SqBarChart from '../sq-bar-chart/sq-bar-chart.component'
-import { useSqMetricChartContext } from '@/hooks'
+import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'
 
 import './sq-metric-chart.component.scoped.scss'
+import { useTranslation } from 'react-i18next'
 
-export interface Props {
-  labelPin?: string
-}
-
-const MetricChart = ({ labelPin }: Props) => {
+const MetricChart = () => {
   const { state } = useSqMetricChartContext()
   const { metric } = state
+  const { t } = useTranslation('metricChart')
   return (
     <div className="metric-chart">
       <MetricChartHeader />
@@ -19,7 +17,7 @@ const MetricChart = ({ labelPin }: Props) => {
         pinValue={metric?.influencersAverage}
         percentage={state?.percentage ?? false}
         total={metric?.first}
-        labelPin={labelPin}
+        labelPin={t('average')}
       />
     </div>
   )

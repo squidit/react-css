@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { MetricsDetails } from '@/interfaces'
+import { MetricsDetails } from '@interfaces/sq-metrics.interface'
 
 export interface MetricChartProps {
   metric: MetricsDetails

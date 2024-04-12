@@ -1,10 +1,10 @@
 import SqLoader from '@components/sq-loader/sq-loader.component'
-import SqValidatorHelper from '@/helpers/sq-validator/sq-validator.helper'
+import SqValidatorHelper from '@helpers/sq-validator/sq-validator.helper'
 import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './sq-input.component.scoped.scss'
 import './sq-input.component.scss'
-import { useTranslation } from 'react-i18next'
 
 const DELAY_TIME_FOR_TYPING_PAUSE = 800
 

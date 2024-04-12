@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import Banner from '@/components/sq-banner/banner.component'
+import Banner from '@components/sq-banner/banner.component'
 
 describe('Banner Component', () => {
   const bannerComponent = (

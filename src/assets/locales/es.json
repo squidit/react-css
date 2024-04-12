@@ -1,3 +1,67 @@
 {
-  "required": "Campo requerido"
+  "back": "devolver",
+  "loading": "Cargando",
+  "required": "Campo requerido",
+  "emptyField": "Rellena este campo",
+  "showPassword": "Mostrar contraseña",
+  "hidenPassword": "Ocultar contraseña",
+  "nameSpecialChars": "El nombre no puede contener caracteres especiales",
+  "invalidName": "Nombre inválido",
+  "invalidEmail": "Correo electrónico no válido",
+  "invalidPhone": "Teléfono inválido",
+  "invalidDate": "Fecha Invalida",
+  "invalidUrl": "URL no válida",
+  "unexpected": "<strong>Todo el mundo comete errores <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></strong><br />Esta vez fueron nuestros servidores, ¡pero ya lo estamos arreglando! Vuelve a intentarlo más tarde.",
+  "selectedFiles": "Archivos seleccionados",
+  "fileSize": "Archivo demasiado grande",
+  "resolution": "Tamaño recomendado: {{width}}px por {{height}}px",
+  "mediaLabel": "Agregar medios",
+  "fields": {
+    "password": {
+      "isEmpty": "Campo obligatorio",
+      "lessThanEight": "Mínimo 8 caracteres",
+      "noNumber": "Mínimo 1 número",
+      "noUppercase": "Mayúsculas",
+      "noLowercase": "En minúsculas"
+    },
+    "multiSelect": {
+      "maxOptionsSelected_one": "Opción {{ count }} máxima",
+      "maxOptionsSelected_other": "{{ count }} opciones máximas",
+      "qtdTags_one": "{{ count }} opción seleccionada",
+      "qtdTags_other": "{{ count }} opciones seleccionadas"
+    }
+  },
+  "search": "Búsqueda",
+  "placeholderState": "Rellenar con el estado",
+  "endScroll": "No hay más datos disponibles",
+  "year_other": "hace {{ value }} años",
+  "year_one": "hace {{ value }} años",
+  "month_other": "hace {{ value }} meses",
+  "month_one": "hace {{ value }} meses",
+  "day_other": "hace {{ value }} días",
+  "day_one": "hace {{ value }} días",
+  "hour_other": "hace {{ value }} horas",
+  "hour_one": "hace {{ value }} horas",
+  "today": "Este Dia",
+  "biggerThanMaxDate": "La fecha no puede ser mayor que {{ maxDate }}",
+  "errors": {
+    "default": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Todos cometemos errores <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>Esta vez fueron nuestros servidores, pero nosotros ya está dando un paso! Vuelva a intentarlo más tarde.</span>",
+    "login": {
+      "contract_refused": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Contrato no aceptado <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>¡Acepta el contrato para acceder a la plataforma!</span>",
+      "mail_verified": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Correo electrónico no verificado</h5> Aún no ha confirmado su dirección de correo electrónico, vaya a su bandeja de entrada y haga clic en 'Verificar correo electrónico'. Si aún no ha recibido el mensaje de confirmación, <a>HAGA CLIC AQUÍ</a></span>",
+      "unregistered_user": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuario no encontrado <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Ingresó un correo electrónico que no se pudo encontrar en nuestra plataforma. Si aún no se ha registrado, <a>Haga clic aquí</a> para registrarse.</span>",
+      "unregistered_user_mq": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuario no encontrado en esta plataforma <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Ingresó un correo electrónico que no es está vinculado a esta plataforma. Si aún no se ha registrado, <a>Haga clic aquí</a> para registrarse.</span>",
+      "too_many_attempts": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>¡Detectamos actividad sospechosa!</h5> Esta cuenta está bloqueada debido a la cantidad de intentos . Vuelve a intentarlo más tarde.</span>",
+      "access_denied": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Contraseña no válida <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5> Ingresó una contraseña incorrecta, intente nuevamente o en 'Olvidé mi contraseña' para restablecer tu contraseña.</span>",
+      "unexpected": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Todos cometemos errores <span style='font-size: 1.5rem; vertical-align: middle'>☹</span></h5>Esta vez fueron nuestros servidores, pero nosotros ya está dando un paso! Vuelva a intentarlo más tarde.</span>",
+      "unauthorized": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuario no autorizado</h5>Su usuario no está autorizado para iniciar sesión en la plataforma, comuníquese con el apoyo.</span>",
+      "not_allowed": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>Usuario no autorizado</h5>No tienes permiso para acceder a la plataforma.</span>",
+      "resendEmail": "<span class='text-medium'><h5 class='mb-1 text-black display-block'>¡Correo electrónico de confirmación enviado!</h5>Ahora acceda a su correo electrónico y haga clic en 'Verificar E-mail' para poder navegar por nuestro portal!</span>"
+    },
+    "payments": {
+      "bankDocumentNotEqual": "Los documentos deben ser los mismos que el registro.",
+      "bankSaveError": "Hubo un problema al guardar tus datos. Vuelve a intentarlo más tarde!",
+      "blockedFields": "Temporalmente estos datos no se pueden editar."
+    }
+  }
 }

@@ -1,7 +1,8 @@
 import Loader from '@components/sq-loader/sq-loader.component'
-import ColorsHelper from '@/helpers/sq-colors/sq-colors.helper'
-import ObjectHelper from '@/helpers/sq-object/sq-object.helper'
+import ColorsHelper from '@helpers/sq-colors/sq-colors.helper'
+import ObjectHelper from '@helpers/sq-object/sq-object.helper'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './sq-input-file.component.scoped.scss'
 
@@ -77,6 +78,7 @@ export default ({
     error: '',
   })
   const [buttonHover, setButtonHover] = useState<boolean>(false)
+  const { t } = useTranslation()
 
   const getHover = (color: string) => {
     return colorsHelper?.lightenDarkenColor(colorsHelper?.getCssVariableValue(color), -50)
@@ -189,7 +191,7 @@ export default ({
           {requiredOnLoad && !state.value && !state.error && !externalError ? (
             <div>
               <i className="fa-solid-fa-diamond-exclamation gold"></i>
-              Fill this field
+              {t('emptyField')}
             </div>
           ) : null}
           {state.error || externalError ? errorIcon || <i className="fa-regular fa-exclamation-triangle"></i> : null}
@@ -201,7 +203,7 @@ export default ({
         <div className="file-name">
           {state?.value?.length > 0 ? (
             <>
-              <span>Selected Files:</span>
+              <span>{t('selectedFiles')}:</span>
               <ul>{Array.from(state?.value)?.map((file: any, index) => <li key={index}>{file?.name}</li>)}</ul>
             </>
           ) : null}

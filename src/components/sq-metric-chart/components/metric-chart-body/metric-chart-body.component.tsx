@@ -1,14 +1,12 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
-import SqNumbersHelper from '@/helpers/sq-numbers/sq-numbers.helper'
-import { useSqMetricChartContext, useSqRect } from '@/hooks'
-
-interface Props {
-  labelAverage: string
-}
+import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'
+import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'
+import { useSqRect } from '@hooks/use-sq-rect'
 
 import './metric-chart-body.component.scss'
+import { useTranslation } from 'react-i18next'
 
-const MetricChartBody = ({ labelAverage }: Props) => {
+const MetricChartBody = () => {
   const numbersHelper = useMemo(() => new SqNumbersHelper(), [])
   const { formatCompactNumber, formatPercent } = numbersHelper
   const refDescription = useRef<HTMLDivElement>(null)
@@ -18,6 +16,8 @@ const MetricChartBody = ({ labelAverage }: Props) => {
 
   const contentRectDescription = useSqRect(refDescription)
   const contentRectMetricChartBody = useSqRect(refMetricChartBody)
+
+  const [t] = useTranslation('metricChart')
 
   const definePercentage = (value: number, maxValue: number): string => {
     return ((value * 100) / maxValue).toFixed(0)
@@ -44,7 +44,7 @@ const MetricChartBody = ({ labelAverage }: Props) => {
           <div className="pin-container">
             <div className="pin">
               <div className="description-average" ref={refDescription}>
-                {labelAverage}{' '}
+                {t('average')}{' '}
                 <span className="text-bold">
                   {percentage
                     ? formatPercent(metric.influencersAverage)
