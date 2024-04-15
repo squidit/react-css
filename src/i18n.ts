@@ -80,6 +80,7 @@ i18n
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
     debug: false,
+    lng: navigator.language?.split('-')[0] || 'en',
     cache: { enable: false },
     interpolation: { escapeValue: false },
     fallbackLng: 'en',

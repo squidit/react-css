@@ -1,9 +1,14 @@
 import { useRef } from 'react'
 import useRect from './use-sq-rect.hook'
+import { Meta, StoryObj } from '@storybook/react'
 
-export const Overview = () => {
+interface Props {
+  refContainer: React.RefObject<HTMLDivElement>
+}
+
+const Overview = ({ refContainer }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const dimensions = useRect(containerRef)
+  const dimensions = useRect(refContainer)
 
   return (
     <div ref={containerRef} style={{ width: '300px', height: '300px' }}>
@@ -12,4 +17,19 @@ export const Overview = () => {
   )
 }
 
-export default { title: 'Hooks/useSqRect', tags: ['autodocs'] }
+const meta: Meta = {
+  title: 'Hooks/useSqRect',
+  component: Overview,
+  parameters: {
+    controls: { expanded: true },
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof Overview>
+
+export const Default: Story = {
+  args: {
+    refContainer: { current: null },
+  },
+}

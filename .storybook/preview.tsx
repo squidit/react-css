@@ -1,10 +1,29 @@
 import type { Parameters } from '@storybook/react'
 import DocumentationTemplate from './documentation.template.mdx'
 import { NdsStyles } from './decorators'
+import i18n from '../src/i18n'
 
 import '../src/styles.scss'
 
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'pt', title: 'Português' },
+        { value: 'es', title: 'Español' },
+      ],
+      showName: true,
+    },
+  },
+  theme: 'light',
+}
+
 export const parameters: Parameters = {
+  i18n,
   backgrounds: {
     default: 'dark',
     values: [

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 const MetricChart = () => {
   const { state } = useSqMetricChartContext()
   const { metric } = state
-  const { t } = useTranslation('metricChart')
+  const { t } = useTranslation('sqMetricChart')
   return (
     <div className="metric-chart">
       <MetricChartHeader />
