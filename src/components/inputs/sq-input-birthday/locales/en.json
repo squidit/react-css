@@ -1,0 +1,5 @@
+{
+  "label": "Date of Birth",
+  "ageUnder18": "Must be 18 or older",
+  "overThan100": "Maximum age allowed is 100 years old"
+}

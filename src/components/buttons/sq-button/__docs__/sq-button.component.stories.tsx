@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import SqButtonExample from './sq-button.component.example'
 
 const meta: Meta<typeof SqButtonExample> = {
-  title: 'Components/SqButton',
+  title: 'Components/Buttons/SqButton',
   parameters: {
     docs: {
       description: {
@@ -17,4 +17,9 @@ const meta: Meta<typeof SqButtonExample> = {
 export default meta
 type Story = StoryObj<typeof SqButtonExample>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    children: 'Click me',
+    color: 'primary',
+  },
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 interface ThemeContextProps {
   theme: string
@@ -16,3 +16,5 @@ export const ThemeProvider = ({ children }) => {
 
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
+
+export const useTheme = () => useContext(ThemeContext)

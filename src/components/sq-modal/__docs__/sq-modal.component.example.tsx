@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 import ModalExample, { Props } from '../sq-modal.component'
-import SqButtonComponent from '../../sq-button/sq-button.component'
+import SqButtonComponent from '../../buttons/sq-button/sq-button.component'
 
-const Modal = ({ ...props }: Props) => {
+const Modal = ({ children, header, ...props }: Props) => {
   const [open, setOpen] = useState(false)
-
-  const header = (
-    <header>
-      <h5>Title</h5>
-    </header>
-  )
 
   const footer = (
     <footer className="display-flex justify-content-space-between" style={{ width: '100%' }}>
       <SqButtonComponent
-        color="var(--gray)"
+        color="neutral"
+        inverted
         onClick={() => {
           setOpen(false)
         }}
@@ -22,7 +17,6 @@ const Modal = ({ ...props }: Props) => {
         Cancel
       </SqButtonComponent>
       <SqButtonComponent
-        color="var(--pink)"
         onClick={() => {
           setOpen(false)
         }}
@@ -32,7 +26,7 @@ const Modal = ({ ...props }: Props) => {
     </footer>
   )
 
-  const body = <main className="p-3">Content Modal</main>
+  const body = <main className="p-3">{children}</main>
 
   return (
     <div
@@ -44,10 +38,8 @@ const Modal = ({ ...props }: Props) => {
         minHeight: '300px',
       }}
     >
-      <SqButtonComponent onClick={() => setOpen(true)} color="var(--pink)" borderColor="transparent">
-        Open Modal
-      </SqButtonComponent>
-      <ModalExample {...props} open={open} header={header} footer={footer} backdrop="cliclable" onCloseChange={() => setOpen(false)}>
+      <SqButtonComponent onClick={() => setOpen(true)}>Open Modal</SqButtonComponent>
+      <ModalExample open={open} footer={footer} header={header} onCloseChange={() => setOpen(false)} {...props}>
         {body}
       </ModalExample>
     </div>

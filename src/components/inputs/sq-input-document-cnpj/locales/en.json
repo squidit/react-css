@@ -1,0 +1,5 @@
+{
+  "required": "Required field",
+  "emptyField": "Fill this field",
+  "invalidCnpj": "Invalid CNPJ"
+}

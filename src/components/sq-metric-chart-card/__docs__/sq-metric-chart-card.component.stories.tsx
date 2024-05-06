@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import SqMetricChartCardExample from './sq-metric-chart-card.component.example'
 
 const meta: Meta<typeof SqMetricChartCardExample> = {
-  title: 'Components/MetricChartCard',
+  title: 'Components/SqMetricChartCard',
   parameters: {
     docs: {
       description: {

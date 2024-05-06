@@ -12,4 +12,12 @@ const meta: Meta<typeof SqCollapseExample> = {
 export default meta
 type Story = StoryObj<typeof SqCollapseExample>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    title: 'Title',
+    backgroundColor: 'var(--primary_color)',
+    colorIcons: 'var(--neutral_primary)',
+    children: 'Content',
+    open: true,
+  },
+}

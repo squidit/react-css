@@ -1,24 +1,36 @@
 import React, { Suspense, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../src/i18n'
+import onThemeChange from './theme-observable'
 
 export const NdsStyles = (Story, { globals }) => {
   const { locale } = globals
-  const { theme } = globals || {}
 
   useEffect(() => {
     i18n.changeLanguage(locale)
   }, [locale])
 
+  const setThemeForComponents = (theme = 'dark') => {
+    const html = document.getElementsByTagName('html')[0]
+    html.classList.remove('light', 'dark')
+    html.classList.add(theme)
+
+    const docsStoryElements = document.querySelectorAll('.docs-story')
+    if (docsStoryElements?.length) {
+      docsStoryElements.forEach((docsStoryElement) => {
+        docsStoryElement.setAttribute('style', `background-color: var(--background_secondary) !important`)
+      })
+    }
+  }
+
   useEffect(() => {
-    document.body.classList.remove('light', 'dark')
-    document.body.classList.add(theme || 'light')
-  }, [theme])
+    setThemeForComponents(globals?.themeForComponents)
+  }, [globals?.themeForComponents])
 
   return (
     <Suspense fallback={<div>loading translations...</div>}>
       <I18nextProvider i18n={i18n}>
-        <div style={{ margin: '3em' }} className={`${globals.theme}`}>
+        <div>
           <style>
             {`
           :root {

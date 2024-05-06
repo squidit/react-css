@@ -1,0 +1,5 @@
+{
+  "required": "Campo requerido",
+  "emptyField": "Rellena este campo",
+  "invalidCnpj": "CNPJ inválido"
+}

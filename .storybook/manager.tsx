@@ -3,5 +3,5 @@ import { themes } from '@storybook/theming'
 import squidThemeDark from './themes/squid-theme-dark'
 
 addons.setConfig({
-  theme: { ...themes.dark, ...squidThemeDark },
+  theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? { ...themes.dark, ...squidThemeDark } : { ...themes.light },
 })

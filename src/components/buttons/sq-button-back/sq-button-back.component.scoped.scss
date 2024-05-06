@@ -1,0 +1,50 @@
+.button-back {
+  flex-shrink: 0;
+  padding: 0.25rem;
+  font-size: 16px;
+  z-index: 1;
+  line-height: 1;
+  width: 21px;
+  height: 21px;
+  color: var(--gray);
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: var(--gray_light);
+  }
+  &.loading {
+    &:hover {
+      background-color: initial;
+    }
+  }
+  &.text-layout {
+    width: 70px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 0.5rem 0.25rem;
+    background: var(--background);
+    color: var(--text_color);
+    font-size: 0.9rem;
+    font-weight: 900;
+  }
+  &.circle-layout {
+    background-color: var(--background_secondary);
+    color: var(--text_color);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: var(--box_shadow);
+  }
+}
+.loading {
+  cursor: wait !important;
+}

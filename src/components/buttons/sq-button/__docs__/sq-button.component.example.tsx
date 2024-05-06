@@ -1,7 +1,7 @@
 import React from 'react'
 import SqButtonExample, { Props } from '../sq-button.component'
 
-const SqButton = ({ ...props }: Props) => {
+const SqButton = ({ children, ...props }: Props) => {
   return (
     <div
       style={{
@@ -11,9 +11,7 @@ const SqButton = ({ ...props }: Props) => {
         height: '100%',
       }}
     >
-      <SqButtonExample {...props} color="var(--primary_color)">
-        Click me!
-      </SqButtonExample>
+      <SqButtonExample {...props}>{children}</SqButtonExample>
     </div>
   )
 }
