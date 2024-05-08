@@ -1,0 +1,10 @@
+{
+  "required": "Campo obrigatório",
+  "invalidCPF": "CPF inválido",
+  "invalidRUT": "RUT inválido",
+  "emptyField": "Preencha esse campo",
+  "repeatCPF": "Ops! Esse CPF já está sendo utilizado com outro email. Por favor entre em contato com o suporte clicando <a href='{{url}}' target='_blank' rel='noopener noreferrer'>aqui</a>",
+  "repeatRUT": "Ops! Esse RUT já está sendo utilizado com outro email. Por favor entre em contato com o suporte clicando <a href='{{url}}' target='_blank' rel='noopener noreferrer'>aqui</a>",
+  "repeatID": "Ops! Esse ID já está sendo utilizado com outro email. Por favor entre em contato com o suporte clicando <a href='{{url}}' target='_blank' rel='noopener noreferrer'>aqui</a>",
+  "unauthorized": "Documento não autorizado para cadastro!"
+}

@@ -1,0 +1,5 @@
+{
+  "required": "Campo obrigatório",
+  "nameSpecialChars": "Nome não pode conter caracteres especiais",
+  "fullNameRequired": "Digite seu nome completo"
+}

@@ -1,23 +1,47 @@
 import type { Parameters } from '@storybook/react'
 import DocumentationTemplate from './documentation.template.mdx'
 import { NdsStyles } from './decorators'
+import i18n from '../src/i18n'
+import { themes } from '@storybook/theming'
 
 import '../src/styles.scss'
 
-export const parameters: Parameters = {
-  backgrounds: {
-    default: 'dark',
-    values: [
-      { name: 'light', value: '#f5f5f5' },
-      { name: 'dark', value: '#333333' },
-    ],
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'pt', title: 'Português' },
+        { value: 'es', title: 'Español' },
+      ],
+      showName: true,
+    },
   },
+  themeForComponents: {
+    name: 'Theme',
+    description: 'Theme for components',
+    defaultValue: window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'light', title: 'Light' },
+        { value: 'dark', title: 'Dark' },
+      ],
+    },
+  },
+}
+
+export const parameters: Parameters = {
+  i18n,
   viewMode: 'docs',
   previewTabs: {
     'storybook/docs/panel': { index: -1 },
   },
   actions: {
-    argTypesRegex: '^on.*',
+    // argTypesRegex: '^on.*',
   },
   controls: {
     sort: 'requiredFirst',
@@ -28,6 +52,7 @@ export const parameters: Parameters = {
   },
   docs: {
     page: DocumentationTemplate,
+    theme: window?.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
   },
   options: {
     storySort: {

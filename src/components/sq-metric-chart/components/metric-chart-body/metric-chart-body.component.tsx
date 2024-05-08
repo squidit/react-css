@@ -17,7 +17,7 @@ const MetricChartBody = () => {
   const contentRectDescription = useSqRect(refDescription)
   const contentRectMetricChartBody = useSqRect(refMetricChartBody)
 
-  const [t] = useTranslation('metricChart')
+  const [t] = useTranslation('sqMetricChart')
 
   const definePercentage = (value: number, maxValue: number): string => {
     return ((value * 100) / maxValue).toFixed(0)

@@ -1,22 +1,31 @@
 <p align="center">
-    <img
-    src="https://github.com/squidit/react-css/assets/56000334/88ce8652-37b0-4e34-af91-2f82a996fdae"
-    width="256px" align="center" alt="logo" />
-    <h1 align="center">@squidit/react-css</h1>
-    <p align="center">This repository contains a React component library developed to facilitate the creation of consistent and elegant interfaces, following a custom style guide. The included components are highly customizable and designed to be reusable across a variety of React projects.</p>
+  <img src="https://github.com/squidit/react-css/assets/56000334/88ce8652-37b0-4e34-af91-2f82a996fdae" width="256px" align="center" alt="logo" />
+
+  <h1 align="center">@squidit/react-css</h1>
+  <p align="center">This repository contains a React component library developed to facilitate the creation of consistent and elegant interfaces, following a custom style guide. The included components are highly customizable and designed to be reusable across a variety of React projects.</p>
 </p>
 
-## Table of contents
+## Welcome to Squid Design System
 
-- [Installation](#installation)
-- [How to Use](#how-to-use)
-- [Customization](#customization)
-- [License](#license)
+⚡ Get the experience by browsing one of [our platforms](https://app.squidit.com.br)!
 
+This framework provides low level utilities and UI components for building
+custom experiences.
+
+<hr style={{ borderWidth: "0", margin: "2rem 0" }} />
+
+## Style
+
+Our Design System can be seen [here](https://css.squidit.com.br/styleguide)
+
+## Components
+
+UI Components are currently offered as React (Web) components.
 
 ## Installation
 
-1. To use this library in your React project, you can install it via npm or yarn:
+1. Node version >= 18
+2. To use this library in your React project, you can install it via npm or yarn:
 
 ```bash
 npm install @squidit/css @squidit/react-css
@@ -24,7 +33,7 @@ npm install @squidit/css @squidit/react-css
 yarn add @squidit/css @squidit/react-css
 ```
 
-2. Configure css in your project according to the @squidit/css documentation described in the project's [README](https://github.com/squidit/css/blob/master/README.md)
+3. Configure css in your project according to the @squidit/css documentation described in the project's [README](https://github.com/squidit/css/blob/master/README.md)
 
 ## How to Use
 

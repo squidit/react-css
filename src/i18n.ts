@@ -25,6 +25,30 @@ import esGlobals from '@assets/locales/es.json'
 import ptSqMetricChart from '@components/sq-metric-chart/locales/pt.json'
 import enSqMetricChart from '@components/sq-metric-chart/locales/en.json'
 import esSqMetricChart from '@components/sq-metric-chart/locales/es.json'
+import ptSqButtonCopyText from '@components/buttons/sq-button-copy-text/locales/pt.json'
+import enSqButtonCopyText from '@components/buttons/sq-button-copy-text/locales/en.json'
+import esSqButtonCopyText from '@components/buttons/sq-button-copy-text/locales/es.json'
+import ptSqInputBirthday from '@components/inputs/sq-input-birthday/locales/pt.json'
+import enSqInputBirthday from '@components/inputs/sq-input-birthday/locales/en.json'
+import esSqInputBirthday from '@components/inputs/sq-input-birthday/locales/es.json'
+import ptSqInputDigits from '@components/inputs/sq-input-digits/locales/pt.json'
+import enSqInputDigits from '@components/inputs/sq-input-digits/locales/en.json'
+import esSqInputDigits from '@components/inputs/sq-input-digits/locales/es.json'
+import ptSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/pt.json'
+import enSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/en.json'
+import esSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/es.json'
+import ptSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/pt.json'
+import enSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/en.json'
+import esSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/es.json'
+import ptSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/pt.json'
+import enSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/en.json'
+import esSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/es.json'
+import ptSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/pt.json'
+import enSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/en.json'
+import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/es.json'
+import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
+import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
+import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
 
 const componentsThatUseGlobals = ['sqInput']
 
@@ -32,14 +56,38 @@ const getResources = () => ({
   en: {
     globals: enGlobals,
     sqMetricChart: enSqMetricChart,
+    sqButtonCopyText: enSqButtonCopyText,
+    sqInputBirthday: enSqInputBirthday,
+    sqInputDigits: enSqInputDigits,
+    sqInputDocumentCnpj: enSqInputDocumentCnpj,
+    sqInputDocumentCpf: enSqInputDocumentCpf,
+    sqInputDocumentInternational: enSqInputDocumentInternational,
+    sqInputDocumentRut: enSqInputDocumentRut,
+    sqInputName: enSqInputName,
   },
   pt: {
     globals: ptGlobals,
     sqMetricChart: ptSqMetricChart,
+    sqButtonCopyText: ptSqButtonCopyText,
+    sqInputBirthday: ptSqInputBirthday,
+    sqInputDigits: ptSqInputDigits,
+    sqInputDocumentCnpj: ptSqInputDocumentCnpj,
+    sqInputDocumentCpf: ptSqInputDocumentCpf,
+    sqInputDocumentInternational: ptSqInputDocumentInternational,
+    sqInputDocumentRut: ptSqInputDocumentRut,
+    sqInputName: ptSqInputName,
   },
   es: {
     globals: esGlobals,
     sqMetricChart: esSqMetricChart,
+    sqButtonCopyText: esSqButtonCopyText,
+    sqInputBirthday: esSqInputBirthday,
+    sqInputDigits: esSqInputDigits,
+    sqInputDocumentCnpj: esSqInputDocumentCnpj,
+    sqInputDocumentCpf: esSqInputDocumentCpf,
+    sqInputDocumentInternational: esSqInputDocumentInternational,
+    sqInputDocumentRut: esSqInputDocumentRut,
+    sqInputName: esSqInputName,
   },
 })
 
@@ -76,10 +124,22 @@ i18n
   .use(initReactI18next)
   .init({
     defaultNS,
-    ns: ['globals', 'sqMetricChart'],
+    ns: [
+      'globals',
+      'sqMetricChart',
+      'sqButtonCopyText',
+      'sqInputBirthday',
+      'sqInputDigits',
+      'sqInputDocumentCnpj',
+      'sqInputDocumentCpf',
+      'sqInputDocumentInternational',
+      'sqInputDocumentRut',
+      'sqInputName',
+    ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
     debug: false,
+    lng: navigator.language?.split('-')[0] || 'en',
     cache: { enable: false },
     interpolation: { escapeValue: false },
     fallbackLng: 'en',

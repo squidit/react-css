@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import SqMetricsDetails from '@interfaces/sq-metrics.interface'
+import { MetricsDetails } from '@interfaces/sq-metrics.interface'
 
 export interface MetricChartProps {
-  metric: SqMetricsDetails
+  metric: MetricsDetails
   percentage?: boolean
 }
 

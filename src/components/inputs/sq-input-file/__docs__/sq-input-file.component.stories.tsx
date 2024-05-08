@@ -13,5 +13,6 @@ type Story = StoryObj<typeof SqInputFileExample>
 export const Default: Story = {
   args: {
     placeholder: 'Upload a file',
+    className: 'primary',
   },
 }

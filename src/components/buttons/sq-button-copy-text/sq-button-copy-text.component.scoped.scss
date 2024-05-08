@@ -1,0 +1,52 @@
+.button-copy-text {
+  border-top: 0.1px solid var(--border_color);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  padding: 0.5rem;
+  background-color: var(--background);
+  .tip-button-copy {
+    margin: auto;
+  }
+  .button-copy {
+    width: 100%;
+    padding-left: 1rem;
+    color: var(--text_color);
+    border-style: none;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: var(--background);
+    font-size: 1rem;
+    text-align: start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto;
+  }
+  button {
+    width: 50px;
+    padding-right: 1rem;
+    text-align: end;
+    border-style: none;
+  }
+  .icon-copy {
+    border-style: none;
+  }
+  .icon-card {
+    background-color: var(--background);
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      border-color: var(--border_color);
+    }
+  }
+}

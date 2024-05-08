@@ -1,0 +1,161 @@
+@use 'sass:math';
+
+$medium: 90px;
+$big: 125px;
+$small: 40px;
+
+@mixin size($size: 90px) {
+  width: $size;
+  height: $size;
+  .circle {
+    .mask,
+    .fill {
+      width: $size;
+      height: $size;
+    }
+    .mask,
+    .full {
+      clip: rect(0px, $size, $size, math.div($size, 2));
+      .fill {
+        clip: rect(0px, (math.div($size, 2)), $size, 0px);
+      }
+    }
+    .fill-0 {
+      background-color: transparent !important;
+    }
+  }
+  .content {
+    width: $size * 0.8667;
+    height: $size * 0.8667;
+    line-height: $size * 0.8667;
+    margin-top: math.div(($size * 0.1333), 2);
+    margin-left: math.div(($size * 0.1333), 2);
+    font-size: $size * 0.25;
+    .number {
+      padding-bottom: math.div(($size * 0.1333), 4);
+    }
+  }
+  .check {
+    width: $size * 0.3;
+    height: $size * 0.3;
+    line-height: $size * 0.3;
+    font-size: $size * 0.156;
+    right: $size * 0.056;
+  }
+}
+
+.circle-wrap {
+  margin: 0 auto;
+  background: var(--background);
+  border-radius: 50%;
+  box-shadow: var(--box_shadow);
+  @include size($medium);
+  position: relative;
+  &.medium {
+    @include size($medium);
+  }
+  &.big {
+    @include size($big);
+  }
+  &.small {
+    @include size($small);
+  }
+  .circle {
+    width: 100%;
+    height: 100%;
+    transform: rotate(150deg);
+    .mask,
+    .fill {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .mask {
+      .fill {
+        background-color: var(--gold);
+        &.fill-100 {
+          background-color: var(--green);
+        }
+      }
+    }
+    .mask.full,
+    .fill {
+      animation: fill ease-in-out 3s;
+      transform: rotate(0);
+    }
+    @for $i from 0 through 100 {
+      .mask.full.full-#{$i},
+      .fill-#{$i} {
+        animation: fill-#{$i} ease-in-out 3s;
+        transform: rotate(#{$i * 1.8}deg);
+      }
+      @keyframes fill-#{$i} {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(#{$i * 1.8}deg);
+        }
+      }
+    }
+    .full-100 {
+      background-color: var(--green);
+    }
+    .full-0 {
+      background-color: transparent;
+    }
+  }
+  .content {
+    transform: rotate(-150deg);
+    border-radius: 50%;
+    background: var(--background);
+    text-align: center;
+    color: var(--text_color);
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--background_secondary);
+    font-weight: 900;
+    figure {
+      display: none;
+      width: inherit;
+      height: inherit;
+      align-items: center;
+      justify-content: center;
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: inherit;
+      height: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+    &.image {
+      figure {
+        display: flex;
+      }
+      .number {
+        display: none;
+      }
+    }
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text_color);
+    background: var(--background);
+    border: 2px solid var(--background_secondary);
+    font-weight: 900;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    &.done {
+      background-color: var(--green);
+      color: var(--background);
+    }
+  }
+}

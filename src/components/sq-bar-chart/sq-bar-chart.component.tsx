@@ -1,6 +1,7 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
 import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'
 import useRect from '@hooks/use-sq-rect/use-sq-rect.hook'
+import i18n from '@src/i18n'
 
 import './sq-bar-chart.component.scoped.scss'
 
@@ -50,7 +51,7 @@ const BarChart = ({ value, pinValue = value, total, percentage = false, labelPin
               <div className="description-pin" ref={refLabelPin}>
                 {labelPin}
                 <span className="text-bold">
-                  {percentage ? formatPercent(pinValue) : formatCompactNumber({ lang: 'en', number: pinValue })}
+                  {percentage ? formatPercent(pinValue) : formatCompactNumber({ lang: i18n?.language, number: pinValue })}
                 </span>
               </div>
             </div>

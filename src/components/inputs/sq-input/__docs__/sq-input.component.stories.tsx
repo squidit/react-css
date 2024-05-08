@@ -10,4 +10,10 @@ const meta: Meta<typeof SqInputExample> = {
 export default meta
 type Story = StoryObj<typeof SqInputExample>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    label: 'E-mail',
+    type: 'email',
+    placeholder: 'Your email',
+  },
+}

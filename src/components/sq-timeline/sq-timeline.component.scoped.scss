@@ -1,0 +1,42 @@
+.timeline {
+  padding-left: 1rem;
+  border-left: 1px solid var(--gray);
+  margin-left: 0.5rem;
+  min-height: -webkit-fill-available;
+
+  .item {
+    list-style: none;
+
+    position: relative;
+    left: -8px;
+    padding-left: 1rem;
+    top: -1rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .container-item {
+      position: relative;
+
+      .content-item {
+        * {
+          width: 100%;
+        }
+
+        position: relative;
+      }
+    }
+
+    .marker {
+      width: 10px;
+      height: 10px;
+      background-color: var(--gray);
+      position: absolute;
+      border-radius: 50%;
+      left: -11px;
+      top: 7px;
+    }
+  }
+}
