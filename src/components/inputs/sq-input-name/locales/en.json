@@ -1,0 +1,5 @@
+{
+  "required": "Required field",
+  "nameSpecialChars": "Name cannot contain special characters",
+  "fullNameRequired": "Enter your full name"
+}

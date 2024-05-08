@@ -1,0 +1,8 @@
+.tip-class {
+  max-width: 500px;
+  opacity: 1 !important;
+
+  @media (max-width: 500px) {
+    max-width: 300px;
+  }
+}

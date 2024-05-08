@@ -1,0 +1,28 @@
+@import url('react-phone-input-2/lib/high-res.css');
+
+.form-control {
+  input {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 4px;
+    color: var(--text_color);
+    &:hover,
+    &:focus {
+      outline-width: thin;
+    }
+    &.has-icon-external {
+      padding-right: 3rem;
+    }
+    &.error {
+      border-width: 1px;
+      border-color: var(--red);
+      &:focus {
+        box-shadow: 0px 0px 0px 1px var(--red);
+      }
+    }
+  }
+}
+
+span.message-error {
+  font-size: 0.9rem;
+}

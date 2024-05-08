@@ -1,0 +1,11 @@
+{
+  "required": "Required field",
+  "invalidCPF": "Invalid CPF",
+  "invalidRUT": "Invalid RUT",
+  "invalidID": "Invalid ID",
+  "emptyField": "Fill this field",
+  "repeatCPF": "Oops! This CPF is already being used with another email. Please contact support by clicking <a href='{{url}}' target='_blank' rel='noopener noreferrer'>here</a>",
+  "repeatRUT": "Oops! This RUT is already being used with another email. Please contact support by clicking <a href='{{url}}' target='_blank' rel='noopener noreferrer'>here</a>",
+  "repeatID": "Oops! This ID is already being used with another email. Please contact support by clicking <a href='{{url}}' target='_blank' rel='noopener noreferrer'>here</a>",
+  "unauthorized": "Document not authorized for registration!"
+}

@@ -1,0 +1,16 @@
+.without-header {
+  padding: 0 1rem;
+  border: none;
+  justify-content: flex-end;
+  .modal-exit {
+    margin: 0;
+    padding: 0;
+  }
+}
+.modal-exit {
+  line-height: 20px;
+  transition: all 0.3s ease;
+}
+.modal-over {
+  padding: 0;
+}

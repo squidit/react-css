@@ -37,6 +37,18 @@ import esSqInputDigits from '@components/inputs/sq-input-digits/locales/es.json'
 import ptSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/pt.json'
 import enSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/en.json'
 import esSqInputDocumentCnpj from '@components/inputs/sq-input-document-cnpj/locales/es.json'
+import ptSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/pt.json'
+import enSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/en.json'
+import esSqInputDocumentCpf from '@components/inputs/sq-input-document-cpf/locales/es.json'
+import ptSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/pt.json'
+import enSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/en.json'
+import esSqInputDocumentInternational from '@components/inputs/sq-input-document-international/locales/es.json'
+import ptSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/pt.json'
+import enSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/en.json'
+import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/locales/es.json'
+import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
+import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
+import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
 
 const componentsThatUseGlobals = ['sqInput']
 
@@ -48,6 +60,10 @@ const getResources = () => ({
     sqInputBirthday: enSqInputBirthday,
     sqInputDigits: enSqInputDigits,
     sqInputDocumentCnpj: enSqInputDocumentCnpj,
+    sqInputDocumentCpf: enSqInputDocumentCpf,
+    sqInputDocumentInternational: enSqInputDocumentInternational,
+    sqInputDocumentRut: enSqInputDocumentRut,
+    sqInputName: enSqInputName,
   },
   pt: {
     globals: ptGlobals,
@@ -56,6 +72,10 @@ const getResources = () => ({
     sqInputBirthday: ptSqInputBirthday,
     sqInputDigits: ptSqInputDigits,
     sqInputDocumentCnpj: ptSqInputDocumentCnpj,
+    sqInputDocumentCpf: ptSqInputDocumentCpf,
+    sqInputDocumentInternational: ptSqInputDocumentInternational,
+    sqInputDocumentRut: ptSqInputDocumentRut,
+    sqInputName: ptSqInputName,
   },
   es: {
     globals: esGlobals,
@@ -64,6 +84,10 @@ const getResources = () => ({
     sqInputBirthday: esSqInputBirthday,
     sqInputDigits: esSqInputDigits,
     sqInputDocumentCnpj: esSqInputDocumentCnpj,
+    sqInputDocumentCpf: esSqInputDocumentCpf,
+    sqInputDocumentInternational: esSqInputDocumentInternational,
+    sqInputDocumentRut: esSqInputDocumentRut,
+    sqInputName: esSqInputName,
   },
 })
 
@@ -100,7 +124,18 @@ i18n
   .use(initReactI18next)
   .init({
     defaultNS,
-    ns: ['globals', 'sqMetricChart', 'sqButtonCopyText', 'sqInputBirthday', 'sqInputDigits', 'sqInputDocumentCnpj'],
+    ns: [
+      'globals',
+      'sqMetricChart',
+      'sqButtonCopyText',
+      'sqInputBirthday',
+      'sqInputDigits',
+      'sqInputDocumentCnpj',
+      'sqInputDocumentCpf',
+      'sqInputDocumentInternational',
+      'sqInputDocumentRut',
+      'sqInputName',
+    ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
     debug: false,

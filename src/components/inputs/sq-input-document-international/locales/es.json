@@ -1,0 +1,11 @@
+{
+  "required": "Campo requerido",
+  "invalidCPF": "CPF inválido",
+  "invalidRUT": "RUT inválido",
+  "invalidID": "Documento inválido",
+  "emptyField": "Rellena este campo",
+  "repeatCPF": "¡UPS! Este CPF ya se está utilizando con otro correo electrónico. Póngase en contacto con el servicio de asistencia haciendo clic <a href='{{url}}' target='_blank' rel='noopener noreferrer'> aquí </a>",
+  "repeatRUT": "¡UPS! Este RUT ya se está utilizando con otro correo electrónico. Póngase en contacto con el servicio de asistencia haciendo clic <a href='{{url}}' target='_blank' rel='noopener noreferrer'> aquí </a>",
+  "repeatID": "¡UPS! Este documento ya se está utilizando con otro correo electrónico. Póngase en contacto con el servicio de asistencia haciendo clic <a href='{{url}}' target='_blank' rel='noopener noreferrer'> aquí </a>",
+  "unauthorized": "¡Documento no autorizado para registro!"
+}
