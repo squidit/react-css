@@ -7,15 +7,23 @@
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "plugins": ["react-hooks", "@typescript-eslint"],
+  "plugins": [
+    "react-hooks",
+    "@typescript-eslint"
+  ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
   },
   "parser": "@typescript-eslint/parser",
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
         "no-throw-literal": "off",
         "no-unsafe-optional-chaining": "off",
@@ -24,8 +32,14 @@
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/ban-ts-comment": "off",
-        "semi": [2, "never"],
-        "quotes": [2, "single"]
+        "semi": [
+          2,
+          "never"
+        ],
+        "quotes": [
+          2,
+          "single"
+        ]
       }
     }
   ]

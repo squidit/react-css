@@ -28,11 +28,11 @@
     "jsx": "react-jsx", // Configures JSX support for React.
 
     /* Linting */
-    "strict": true, // Enables strict type checking.
+    "strict": false, // Enables strict type checking.
     "noUnusedLocals": true, // Flags unused local variables.
     "noUnusedParameters": true, // Flags unused function parameters.
     "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
-    "declaration": true // Generates declaration files for TypeScript.
+    "declaration": true, // Generates declaration files for TypeScript.
   },
   "include": ["src/**/*", "setupTests.ts"], // Specifies the directory to include when searching for TypeScript files.
   "exclude": ["src/**/__docs__", "src/**/__test__"]

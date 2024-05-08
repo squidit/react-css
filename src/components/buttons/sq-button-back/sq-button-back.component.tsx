@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useState } from 'react'
+import { SqLoader } from '../../sq-loader'
 import { useTranslation } from 'react-i18next'
 
 import './sq-button-back.component.scoped.scss'
-import { SqLoader } from '../../sq-loader'
 
 export interface Props extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   disabled?: boolean
