@@ -1,6 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import SqCarouselExample from './sq-carousel.component.example'
+import { fn } from '@storybook/test'
 
 const meta: Meta<typeof SqCarouselExample> = {
   title: 'Components/SqCarousel',
@@ -27,5 +28,8 @@ export const Default: Story = {
         </div>
       )
     }),
+    onSwiper: fn(),
+    showArrows: true,
+    showPagination: true,
   },
 }

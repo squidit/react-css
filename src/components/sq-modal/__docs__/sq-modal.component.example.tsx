@@ -39,7 +39,14 @@ const Modal = ({ children, header, ...props }: Props) => {
       }}
     >
       <SqButtonComponent onClick={() => setOpen(true)}>Open Modal</SqButtonComponent>
-      <ModalExample open={open} footer={footer} header={header} onCloseChange={() => setOpen(false)} {...props}>
+      <ModalExample
+        {...props}
+        open={open}
+        footer={footer}
+        header={header}
+        onCloseChange={() => setOpen(!open)}
+        onOpenChange={(open) => setOpen(open)}
+      >
         {body}
       </ModalExample>
     </div>

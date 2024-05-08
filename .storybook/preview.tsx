@@ -41,7 +41,7 @@ export const parameters: Parameters = {
     'storybook/docs/panel': { index: -1 },
   },
   actions: {
-    argTypesRegex: '^on.*',
+    // argTypesRegex: '^on.*',
   },
   controls: {
     sort: 'requiredFirst',

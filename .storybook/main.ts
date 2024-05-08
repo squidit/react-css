@@ -21,6 +21,8 @@ const config: StorybookConfig = {
         backgrounds: false,
       },
     },
+    '@storybook/addon-mdx-gfm',
+    '@chromatic-com/storybook'
   ],
   framework: {
     name: '@storybook/react-vite',

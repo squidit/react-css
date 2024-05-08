@@ -16,13 +16,28 @@ type Story = StoryObj<typeof SqAccordionExample>
 export const Default: Story = {
   args: {
     children: [
-      <SqCollapse open={false} title="Title 1" backgroundColor="var(--primary_color)">
+      <SqCollapse
+        open={false}
+        title={<span style={{ color: 'var(--background)' }}>Title 1</span>}
+        backgroundColor="var(--primary_color)"
+        colorIcons="var(--background)"
+      >
         <div>Content HTML</div>
       </SqCollapse>,
-      <SqCollapse open={false} title={<span>Title 2</span>} backgroundColor="var(--lilac)">
+      <SqCollapse
+        open={false}
+        title={<span style={{ color: 'var(--background)' }}>Title 2</span>}
+        backgroundColor="var(--lilac)"
+        colorIcons="var(--background)"
+      >
         <div>Content HTML</div>
       </SqCollapse>,
-      <SqCollapse open={false} title="Title 3" backgroundColor="var(--aqua)">
+      <SqCollapse
+        open={false}
+        title={<span style={{ color: 'var(--background)' }}>Title 3</span>}
+        backgroundColor="var(--aqua)"
+        colorIcons="var(--background)"
+      >
         <div>Content HTML</div>
       </SqCollapse>,
     ],

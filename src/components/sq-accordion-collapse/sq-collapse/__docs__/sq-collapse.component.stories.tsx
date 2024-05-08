@@ -14,9 +14,9 @@ type Story = StoryObj<typeof SqCollapseExample>
 
 export const Default: Story = {
   args: {
-    title: 'Title',
+    title: <span style={{ color: 'var(--background)' }}>Title</span>,
     backgroundColor: 'var(--primary_color)',
-    colorIcons: 'var(--neutral_primary)',
+    colorIcons: 'var(--background)',
     children: 'Content',
     open: true,
   },
