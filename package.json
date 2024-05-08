@@ -1,10 +1,10 @@
 {
   "name": "@squidit/react-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
-    "build": "rm -rf dist && tsc && vite build",
+    "build": "rm -rf dist && vite build",
     "test": "vitest run",
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
