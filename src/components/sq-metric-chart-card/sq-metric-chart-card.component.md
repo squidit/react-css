@@ -10,6 +10,7 @@
 ### 2. percentage
 
 - description: Information that says if the values are in percentage or not
++ description: Information that indicates whether the values are in percentage
 - type: `boolean`
 
 ### Example
