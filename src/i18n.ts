@@ -112,9 +112,12 @@ export const setComponentTranslations = (componentName: ComponentName, translati
   componentName?.[0]?.toLocaleLowerCase()
 
   if (translations) {
-    resources.en[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName] = translations.en
-    resources.pt[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName] = translations.pt
-    resources.es[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName] = translations.es
+    const enResources = resources.en[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName]
+    const ptResources = resources.pt[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName]
+    const esResources = resources.es[componentsThatUseGlobals?.includes(componentName) ? 'globals' : componentName]
+    Object.assign(enResources, translations.en)
+    Object.assign(ptResources, translations.pt)
+    Object.assign(esResources, translations.es)
   } else {
     resources = getResources()
   }
