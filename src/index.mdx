@@ -48,7 +48,15 @@ npm install @squidit/css @squidit/react-css
 yarn add @squidit/css @squidit/react-css
 ```
 
-3. Configure css in your project according to the @squidit/css documentation described in the project's [README](https://github.com/squidit/css/blob/master/README.md)
+3. Add to your style.scss main file
+
+Example: 
+
+```css
+$fontsFolderPath: "@squidit/css/dist/fonts";
+@import "@squidit/css/src/scss/squid.scss";
+@import "@squidit/react-css/dist/style.css";
+```
 
 ## How to Use
 
