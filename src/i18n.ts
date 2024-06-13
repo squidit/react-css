@@ -3,20 +3,12 @@ import Backend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-interface Translations {
-  en: {
-    [key: string]: any
-  }
-  pt: {
-    [key: string]: any
-  }
-  es: {
-    [key: string]: any
-  }
-}
+type DefaultKey = { [key: string]: any }
 
-interface AllComponentsTranslations {
-  [key: string]: Translations
+type Translations = {
+  en: DefaultKey
+  pt: DefaultKey
+  es: DefaultKey
 }
 
 import ptGlobals from '@assets/locales/pt.json'
@@ -49,8 +41,6 @@ import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/local
 import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
 import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
 import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
-
-const componentsThatUseGlobals = ['sqInput']
 
 const getResources = () => ({
   en: {
@@ -94,6 +84,18 @@ const getResources = () => ({
 export const defaultNS = 'globals'
 export let resources: Translations = getResources()
 
+type LanguageResources = typeof resources
+type Language = keyof LanguageResources
+type ComponentName = keyof LanguageResources[Language]
+type ComponentTranslations = {
+  [L in Language]: Translations[L]
+}
+
+type AllComponentsTranslations = {
+  [C in ComponentName]: ComponentTranslations
+}
+
+const componentsThatUseGlobals: ComponentName[] = ['sqInput']
 export const setAllComponentsTranslations = (allComponentsTranslations: AllComponentsTranslations[]) => {
   if (allComponentsTranslations?.length) {
     allComponentsTranslations.forEach((componentTranslations) => {
@@ -106,7 +108,7 @@ export const setAllComponentsTranslations = (allComponentsTranslations: AllCompo
   }
 }
 
-export const setComponentTranslations = (componentName: string, translations?: Translations) => {
+export const setComponentTranslations = (componentName: ComponentName, translations?: Translations) => {
   componentName?.[0]?.toLocaleLowerCase()
 
   if (translations) {
