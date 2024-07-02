@@ -11,7 +11,7 @@ interface CustomArrayBuffer extends ArrayBuffer {
  * const codecName = await videoHelper.getCodecName(file)
  * @returns Promise<string>
  */
-export default class VideoHelper {
+export default class SqVideoHelper {
   /**
    *
    * Get codec name from video file
