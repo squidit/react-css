@@ -117,6 +117,7 @@
     "i18next": "^23.11.1",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-http-backend": "^2.5.0",
+    "mp4box": "^0.5.2",
     "react-i18next": "^14.1.0",
     "react-phone-input-2": "^2.15.1",
     "react-tooltip": "^5.26.4",
