@@ -9,7 +9,7 @@ interface Props {
 }
 
 const MetricChartDescription = ({ title, type }: Props) => {
-  const { t, i18n } = useTranslation('metricChart')
+  const { t, i18n } = useTranslation('sqMetricChart')
   const numbersHelper = useMemo(() => new SqNumbersHelper(), [])
   const { formatCompactNumber, formatPercent, percentageDifference } = numbersHelper
   const { state } = useSqMetricChartContext()
