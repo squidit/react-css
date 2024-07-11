@@ -5,11 +5,11 @@ export default create({
 
   brandTitle: 'Squid',
   brandUrl: '/',
-  brandImage: 'https://squidit.com.br/wp-content/themes/squid/assets/img/logo.svg',
+  brandImage: 'https://github.com/user-attachments/assets/cbcdd227-7e27-4948-8693-4f0aae155a69',
   brandTarget: '_self',
 
   colorPrimary: '#ffffff',
-  colorSecondary: '#b61658',
+  colorSecondary: '#cb05fa',
 
   // UI
   appBg: '#282828',
