@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import SqValidatorHelper from '@/src/helpers/sq-validator/sq-validator.helper'

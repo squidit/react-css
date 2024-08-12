@@ -1,3 +1,5 @@
+'use client'
+
 import MetricChartHeader from './components/header-graphic/header-graphic.component'
 import SqBarChart from '../sq-bar-chart/sq-bar-chart.component'
 import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'

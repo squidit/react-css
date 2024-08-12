@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tooltip } from 'react-tooltip'
+
 import './sq-tip.component.scoped.scss'
 import './sq-tip.component.scss'
 

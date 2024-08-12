@@ -1,3 +1,5 @@
+'use client'
+
 import Loader from '@components/sq-loader/sq-loader.component'
 import ColorsHelper from '@helpers/sq-colors/sq-colors.helper'
 import ObjectHelper from '@helpers/sq-object/sq-object.helper'

@@ -1,3 +1,5 @@
+'use client'
+
 import { PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react'
 import { SqLoader } from '@components/sq-loader'
 import { useSqUseThrottle } from '@hooks/use-sq-throttle'

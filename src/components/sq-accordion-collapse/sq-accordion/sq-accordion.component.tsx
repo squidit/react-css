@@ -1,3 +1,5 @@
+'use client'
+
 import SqCollapse from '../sq-collapse/sq-collapse.component'
 import React, { PropsWithChildren, useEffect, useState } from 'react'
 

@@ -1,13 +1,15 @@
+'use client'
+
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Input from '../sq-input/sq-input.component'
 import SelectorComponent from '../sq-selector/sq-selector.component'
-
-import './sq-multi-select.component.scoped.scss'
-import './sq-multi-select.component.scss'
 import SqObjectHelper from '@/src/helpers/sq-object/sq-object.helper'
 import { SqButton } from '../../buttons/sq-button'
 import { SqLoader } from '../../sq-loader'
+
+import './sq-multi-select.component.scoped.scss'
+import './sq-multi-select.component.scss'
 
 export interface Option {
   id: number | string

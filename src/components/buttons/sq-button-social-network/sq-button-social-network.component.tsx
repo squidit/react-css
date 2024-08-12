@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import SqColorIconHelper from '@/src/helpers/sq-color-icon/sq-color-icon.helper'
 import { SqButton } from '../sq-button'

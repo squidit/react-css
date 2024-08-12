@@ -1,8 +1,11 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { SqLoader } from '../../sq-loader'
+
 import './sq-select.component.scoped.scss'
 import './sq-select.component.scss'
-import { SqLoader } from '../../sq-loader'
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   label?: any

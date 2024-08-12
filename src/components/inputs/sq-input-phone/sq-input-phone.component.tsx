@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ReactPhoneInput from 'react-phone-input-2'
 import es from 'react-phone-input-2/lang/es.json'

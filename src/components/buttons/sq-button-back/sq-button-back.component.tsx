@@ -1,3 +1,5 @@
+'use client'
+
 import React, { PropsWithChildren, useState } from 'react'
 import { SqLoader } from '../../sq-loader'
 import { useTranslation } from 'react-i18next'

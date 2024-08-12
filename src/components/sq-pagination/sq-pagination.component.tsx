@@ -1,5 +1,8 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+
 import './sq-pagination.component.scoped.scss'
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {

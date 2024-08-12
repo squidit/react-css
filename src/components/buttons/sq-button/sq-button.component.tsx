@@ -1,3 +1,5 @@
+'use client'
+
 import React, { PropsWithChildren, useState } from 'react'
 import SqColorsHelper from '@helpers/sq-colors/sq-colors.helper'
 import { SqLoader } from '@components/sq-loader'

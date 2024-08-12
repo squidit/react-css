@@ -1,3 +1,5 @@
+'use client'
+
 // @ts-ignore
 import defaultUser from '@assets/img/jpg/avatar.jpg'
 import React, { useEffect, useRef } from 'react'

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { PropsWithChildren, useCallback, useEffect, useState } from 'react'
 import { SqLoader } from '../../sq-loader'
 
