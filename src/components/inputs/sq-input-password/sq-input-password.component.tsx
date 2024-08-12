@@ -1,3 +1,5 @@
+'use client'
+
 import { Props, State } from '@components/inputs/sq-input/sq-input.component'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'

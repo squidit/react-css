@@ -1,9 +1,9 @@
-import { HTMLAttributes, createContext, useEffect, useRef, useState } from 'react'
-import { Subscription } from 'rxjs'
+'use client'
+
+import { HTMLAttributes, createContext, useEffect, useState } from 'react'
+import i18n from '@/src/i18n'
 
 import './sq-tiny-calendar.component.scoped.scss'
-import { onLangChange } from '@/src/observables'
-import i18n from '@/src/i18n'
 
 export interface Props extends React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   dateString: string

@@ -1,3 +1,5 @@
+'use client'
+
 import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'
 
 import './user-position.component.scoped.scss'

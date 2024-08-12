@@ -1,11 +1,12 @@
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { A11y, Navigation, Pagination, Scrollbar, Virtual } from 'swiper/modules'
+
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import './sq-carousel.component.scoped.scss'
 import './sq-carousel.component.scss'
-import { A11y, Navigation, Pagination, Scrollbar, Virtual } from 'swiper/modules'
 
 export interface Props extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   slides?: Array<any>

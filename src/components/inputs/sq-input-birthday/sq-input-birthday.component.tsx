@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import InputDate from '../sq-input-date/sq-input-date.component'
 import { State, Props } from '../sq-input/sq-input.component'

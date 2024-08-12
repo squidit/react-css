@@ -1,3 +1,5 @@
+'use client'
+
 import { useMemo } from 'react'
 import i18n from '@src/i18n'
 import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'

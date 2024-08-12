@@ -1,3 +1,5 @@
+'use client'
+
 import React, { CSSProperties, PropsWithChildren, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './sq-button-copy-text.component.scoped.scss'

@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+'use client'
+
+import React, { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Subscription } from 'rxjs'
 
 import './sq-input-document-cpf.component.scoped.scss'
 import './sq-input-document-cpf.component.scss'

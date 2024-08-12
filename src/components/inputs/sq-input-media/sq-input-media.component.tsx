@@ -1,3 +1,5 @@
+'use client'
+
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './sq-input-media.component.scoped.scss'

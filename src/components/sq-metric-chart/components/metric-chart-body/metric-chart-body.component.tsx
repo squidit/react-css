@@ -1,3 +1,5 @@
+'use client'
+
 import { useLayoutEffect, useMemo, useRef } from 'react'
 import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'
 import { useSqMetricChartContext } from '@hooks/use-sq-metric-chart-context'

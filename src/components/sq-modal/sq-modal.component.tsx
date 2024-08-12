@@ -1,3 +1,5 @@
+'use client'
+
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import './sq-modal.component.scss'
 

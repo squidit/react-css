@@ -1,3 +1,5 @@
+'use client'
+
 import MetricChartCardHeader from './components/metric-chart-card-header/metric-chart-card-header.component'
 import MetricChartDescription from './components/metric-chart-description/metric-chart-description.component'
 import { MetricsDetails } from '@interfaces/sq-metrics.interface'
