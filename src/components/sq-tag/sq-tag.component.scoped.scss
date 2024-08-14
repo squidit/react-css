@@ -1,0 +1,36 @@
+.tag {
+  border: 1px solid var(--border_color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  width: inherit;
+  // white-space: nowrap;
+  // Removido porque no mobile quando uma tag tinha o texto muito grande acaba escondendo o texto
+  // Sem essa regra a linha quebra e o texto fica visível
+  // Imagino que o Wan colocou essa regra para evitar quebrar a linha nas tags do iPhone, mas ai perdemos na leitura do conteudo
+  * {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+.sub-tag {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--border_color);
+  width: 100%;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1;
+  * {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.label-text:has(.not-shrink) {
+  display: flex;
+  flex-shrink: 0;
+}
