@@ -8,7 +8,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   separator?: boolean
   title?: string
   subtag?: any
-  wrapperStyle?: any
+  wrapperStyle?: React.CSSProperties
 }
 
 export default ({ icon, labels, separator = false, className = '', style, title = '', subtag, wrapperStyle }: Props) => {
@@ -16,12 +16,12 @@ export default ({ icon, labels, separator = false, className = '', style, title 
   if (labels) {
     labelsBlock = Array.isArray(labels) ? (
       labels?.map((label, index) => (
-        <>
+        <React.Fragment key={`label-${index}`}>
           <div key={`${label?.toString()}-${index}`} className="label-text">
             <span>{label}</span>
           </div>
           {separator && index !== labels.length - 1 ? <span>-</span> : null}
-        </>
+        </React.Fragment>
       ))
     ) : (
       <span>{labels}</span>

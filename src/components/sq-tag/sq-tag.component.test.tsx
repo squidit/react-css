@@ -4,7 +4,17 @@ import { describe, expect, it } from 'vitest'
 
 describe('Tag Component', () => {
   const tagComponent = (
-    <Tag icon="fa-regular fa-camera-retro" labels={['test 1', <span className="text-bold">test 2</span>, 'test 3']} separator />
+    <Tag
+      icon="fa-regular fa-camera-retro"
+      labels={[
+        'test 1',
+        <span key={'test-2'} className="text-bold">
+          test 2
+        </span>,
+        'test 3',
+      ]}
+      separator
+    />
   )
 
   it('should render without errors', () => {
