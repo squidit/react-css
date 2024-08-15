@@ -8,9 +8,19 @@ export interface Props extends React.PropsWithChildren<React.HTMLAttributes<HTML
   placement?: 'left' | 'right'
   icon?: string
   menuArray?: { label: string; icon?: string; iconText?: string; action: () => void }[]
+  styleButton?: React.CSSProperties
+  classButton?: string
 }
 
-export default ({ className = '', children, placement = 'left', menuArray = [], icon = 'ellipsis-vertical' }: Props) => {
+export default ({
+  className = '',
+  children,
+  placement = 'left',
+  menuArray = [],
+  icon = 'ellipsis-vertical',
+  styleButton,
+  classButton = '',
+}: Props) => {
   const [open, setOpen] = useState(false)
   const menuButtonRef = useRef<any>(null)
   const menuRef = useRef(null)
@@ -61,7 +71,13 @@ export default ({ className = '', children, placement = 'left', menuArray = [], 
 
   return (
     <div className={`wrapper-menu ${className}`}>
-      <button onClick={() => setOpen(!open)} className="button-to-open" type="button" ref={menuButtonRef}>
+      <button
+        onClick={() => setOpen(!open)}
+        className={`button-to-open ${classButton}`}
+        type="button"
+        ref={menuButtonRef}
+        style={styleButton}
+      >
         <i className={`fa-regular fa-${icon}`}></i>
       </button>
       <div className={`menu-box box ${placement} ${open ? 'open' : null} scrollbar`} ref={menuRef}>
