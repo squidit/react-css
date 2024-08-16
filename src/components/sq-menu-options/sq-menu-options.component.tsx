@@ -56,10 +56,10 @@ export default ({
           <li key={label}>
             <button type="button" onClick={(e) => handleClick(e, action)}>
               <span className="text" dangerouslySetInnerHTML={{ __html: label }} />
-              {iconText ? <span className="icon" dangerouslySetInnerHTML={{ __html: icon || '' }} /> : null}
+              {iconText ? <span className="icon-option" dangerouslySetInnerHTML={{ __html: iconText || '' }} /> : null}
               {icon ? (
-                <span className="icon">
-                  <i className={`fa-regular fa-${icon}`}></i>
+                <span className="icon-option">
+                  <i className={`${icon}`}></i>
                 </span>
               ) : null}
             </button>
