@@ -19,7 +19,7 @@ const BarChartPercent = ({ value, total, percentage = false, label = '', colorBa
   const { formatPercent } = numbersHelper
 
   const definePercentage = (value: number, maxValue: number): string => {
-    return ((value * 100) / maxValue).toFixed(0)
+    return `${((value * 100) / maxValue).toFixed(0)}%`
   }
 
   const maxNumber = totalBar
@@ -32,7 +32,7 @@ const BarChartPercent = ({ value, total, percentage = false, label = '', colorBa
         <div className="text-bold">{percentage ? formatPercent(value / 100) : value}</div>
       </div>
       <div className="bar-chart">
-        <div className="value-bar" style={{ width: `${parseInt(widthUserBar)}%`, backgroundColor: colorBar }}></div>
+        <div className="value-bar" style={{ width: widthUserBar, backgroundColor: colorBar }}></div>
       </div>
     </div>
   )
