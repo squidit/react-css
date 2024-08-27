@@ -114,6 +114,7 @@
   },
   "dependencies": {
     "@storybook/test": "^8.0.10",
+    "chart.js": "^4.4.4",
     "i18next": "^23.11.1",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-http-backend": "^2.5.0",
