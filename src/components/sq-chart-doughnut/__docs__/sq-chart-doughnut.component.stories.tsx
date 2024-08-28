@@ -43,6 +43,8 @@ export const Default: Story = {
           },
         },
       },
+
+      responsive: true,
     },
   },
 }

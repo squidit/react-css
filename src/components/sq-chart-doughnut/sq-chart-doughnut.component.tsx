@@ -24,6 +24,10 @@ export default ({ className = '', style = {}, id = '', data, options, center }: 
         chart.destroy()
       }
       const ctx = chartRef.current.getContext('2d')
+      const chartDoughnut = Chart.getChart(chartRef.current)
+      if (chartDoughnut) {
+        chartDoughnut.destroy()
+      }
       if (ctx) {
         setChart(
           new Chart(ctx, {
@@ -52,13 +56,27 @@ export default ({ className = '', style = {}, id = '', data, options, center }: 
     const updateWidth = () => {
       setWidth(window?.innerWidth)
     }
+    const beforePrintHandler = () => {
+      for (const id in Chart.instances) {
+        Chart.instances[id].resize(600, 600)
+      }
+    }
+    const afterPrintHandler = () => {
+      for (const id in Chart.instances) {
+        Chart.instances[id].resize()
+      }
+    }
     window.addEventListener('resize', updateHeight)
     window.addEventListener('resize', updateWidth)
+    window.addEventListener('beforeprint', beforePrintHandler)
+    window.addEventListener('afterprint', afterPrintHandler)
     return () => {
       window.removeEventListener('resize', updateHeight)
       window.removeEventListener('resize', updateWidth)
+      window.removeEventListener('beforeprint', beforePrintHandler)
+      window.removeEventListener('afterprint', afterPrintHandler)
     }
-  }, [])
+  })
 
   return (
     <div className={`chart-doughnut ${className}`} style={style} id={id}>
