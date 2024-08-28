@@ -41,18 +41,8 @@ export const Default: Story = {
             usePointStyle: true,
             pointStyle: 'rectRounded',
           },
-
-          title: {
-            display: true,
-
-            padding: {
-              left: 1200,
-            },
-          },
         },
       },
-
-      scales: {},
     },
   },
 }

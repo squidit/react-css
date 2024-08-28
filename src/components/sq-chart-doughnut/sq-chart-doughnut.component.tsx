@@ -1,12 +1,12 @@
-import { ArcElement, BubbleController, Chart, ChartData, DoughnutController, Legend, PointElement, Tooltip } from 'chart.js'
+import { ArcElement, BubbleController, Chart, ChartData, DoughnutController, Legend, PointElement, Tooltip, ChartOptions } from 'chart.js'
 import { useEffect, useRef, useState } from 'react'
 
 import './sq-chart-doughnut.component.scss'
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   data: ChartData
-  options?: any
-  center?: any
+  options?: ChartOptions
+  center?: React.ReactNode
 }
 
 Chart.register(ArcElement, DoughnutController, Legend, Tooltip, PointElement, BubbleController)
@@ -33,15 +33,6 @@ export default ({ className = '', style = {}, id = '', data, options, center }: 
               responsive: true,
               ...options,
             },
-            // plugins: [
-            //   {
-            //     id: 'legendOffset',
-            //     afterUpdate(chart) {
-            //       const legend = chart.legend
-            //       legend.left += 33
-            //     },
-            //   },
-            // ],
           }),
         )
       }
