@@ -1,1 +1,1 @@
-export { default as SqToast } from './sq-toast.helper'
+export { default as SqToastHelper } from './sq-toast.helper'
