@@ -10,9 +10,14 @@ export interface InfluencerChartMetric {
   star?: number
 }
 
+interface Value {
+  value: number
+  label: string
+}
+
 interface Data {
   label: string
-  value: { value: number; label: string }[]
+  value: Value[]
   total?: number
   star?: number
 }
@@ -37,7 +42,7 @@ export default ({
   const sqNumbersHelper = useMemo(() => new SqNumbersHelper(), [])
 
   const [data, setData] = useState<Data[]>([])
-  const [average, setAverage] = useState<{ value: number; label: string }[]>([])
+  const [average, setAverage] = useState<Value[]>([])
 
   const verifyIfHexBackgroundColor = useCallback((color: string) => {
     return color?.includes('#') ? color : null
@@ -89,6 +94,17 @@ export default ({
     setData(data)
   }
 
+  const mountTooltip = useCallback(
+    (items: Value[]) => {
+      let tip
+      for (const item of items) {
+        tip += `<p><strong>${item?.label}:</strong> ${sqNumbersHelper?.formatPercent(item?.value)}</p>`
+      }
+      return tip
+    },
+    [sqNumbersHelper],
+  )
+
   useEffect(() => {
     initGraph()
 
@@ -114,9 +130,8 @@ export default ({
         {data?.slice(0, dataLength)?.map((item, index) => (
           <div className="chart" key={index}>
             <div className="chart-wrapper">
-              {/* aqui vem um tooltip? */}
               <div className="chart-content">
-                <div className="chart-bar">
+                <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
                   {item?.value?.map((obj, i) => (
                     <div
                       className={`chart-bar-line background-${colors?.[index]}`}
@@ -128,7 +143,6 @@ export default ({
               </div>
               <p>
                 <strong>{item?.label}</strong>
-                {/* tooltip */}
               </p>
             </div>
           </div>

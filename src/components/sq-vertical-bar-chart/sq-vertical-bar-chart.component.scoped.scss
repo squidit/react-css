@@ -53,7 +53,7 @@
     height: 120px;
 
     &:hover {
-      background-color: var(--white);
+      background-color: var(--background_third);
 
       p {
         font-weight: 500;
@@ -86,6 +86,7 @@
         border-radius: 4px;
         background: var(--gold_light);
         margin: 0 0.18rem;
+        pointer-events: none;
 
         &:first-child {
           background: var(--primary_color);
