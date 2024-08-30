@@ -1,5 +1,5 @@
 import React from 'react'
-import SqVerticalBarChart, { Props } from '../sq-vertical-bar-chart.component'
+import SqVerticalBarChart, { Props } from '../sq-group-vertical-bar-chart.component'
 
 const SqVerticalBarChartExample = (props: Props) => {
   return (

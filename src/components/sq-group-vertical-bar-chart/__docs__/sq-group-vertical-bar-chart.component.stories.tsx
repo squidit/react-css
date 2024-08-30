@@ -1,21 +1,21 @@
 import { Meta, StoryObj } from '@storybook/react'
-import SqVerticalBarChartExample from './sq-vertical-bar-chart.component.example'
+import SqGroupVerticalBarChartExample from './sq-group-vertical-bar-chart.component.example'
 
-const meta: Meta<typeof SqVerticalBarChartExample> = {
-  title: 'Components/SqVerticalBarChart',
+const meta: Meta<typeof SqGroupVerticalBarChartExample> = {
+  title: 'Components/SqGroupVerticalBarChart',
   parameters: {
     docs: {
       description: {
-        component: 'A simple VerticalBarChart component',
+        component: 'A simple GroupVerticalBarChart component',
       },
     },
   },
-  component: SqVerticalBarChartExample,
+  component: SqGroupVerticalBarChartExample,
   tags: ['autodocs'],
 }
 
 export default meta
-type Story = StoryObj<typeof SqVerticalBarChartExample>
+type Story = StoryObj<typeof SqGroupVerticalBarChartExample>
 
 export const Default: Story = {
   args: {

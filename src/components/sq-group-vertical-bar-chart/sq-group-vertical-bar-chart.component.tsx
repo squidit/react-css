@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { SqNumbersHelper } from '@/src/helpers'
 
-import './sq-vertical-bar-chart.component.scoped.scss'
+import './sq-group-vertical-bar-chart.component.scoped.scss'
 
 export interface InfluencerChartMetric {
   label: string
