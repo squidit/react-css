@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { SqNumbersHelper } from '@/src/helpers'
+import SqVerticalBarChart from '../sq-vertical-bar-chart/sq-vertical-bar-chart.component'
 
 import './sq-group-vertical-bar-chart.component.scoped.scss'
 
@@ -133,11 +134,7 @@ export default ({
               <div className="chart-content">
                 <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
                   {item?.value?.map((obj, i) => (
-                    <div
-                      className={`chart-bar-line background-${colors?.[index]}`}
-                      key={i}
-                      style={{ height: calcHeight(obj?.value), backgroundColor: verifyIfHexBackgroundColor(colors[i]) }}
-                    ></div>
+                    <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={verifyIfHexBackgroundColor(colors?.[i])} />
                   ))}
                 </div>
               </div>
