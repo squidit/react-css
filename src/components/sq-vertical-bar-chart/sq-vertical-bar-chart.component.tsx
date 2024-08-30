@@ -2,7 +2,7 @@ import React from 'react'
 
 import './sq-vertical-bar-chart.component.scoped.scss'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   height: string
   backgroundColor: string
   label?: string

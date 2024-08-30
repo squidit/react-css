@@ -80,18 +80,6 @@
       display: flex;
       justify-content: center;
       align-items: baseline;
-
-      &-line {
-        width: 8px;
-        border-radius: 4px;
-        background: var(--gold_light);
-        margin: 0 0.18rem;
-        pointer-events: none;
-
-        &:first-child {
-          background: var(--primary_color);
-        }
-      }
     }
 
     p {
