@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { SqNumbersHelper } from '@/src/helpers'
 import SqVerticalBarChart from '../sq-vertical-bar-chart/sq-vertical-bar-chart.component'
@@ -37,13 +39,11 @@ export default ({
   legends = ['female', 'male', 'unisex'],
   dataLength = 8,
   colors = ['lilac', 'gold-light', 'purple-light'],
-  starTip,
   showLabel = true,
 }: Props) => {
   const sqNumbersHelper = useMemo(() => new SqNumbersHelper(), [])
 
   const [data, setData] = useState<Data[]>([])
-  const [average, setAverage] = useState<Value[]>([])
 
   const verifyIfHexBackgroundColor = useCallback((color: string) => {
     return color?.includes('#') ? color : null
@@ -77,8 +77,6 @@ export default ({
         label: legends[index],
       }))
 
-    setAverage(average)
-
     const data = dataSet.reduce((acc, actual) => {
       acc.push({
         label: actual.label,
@@ -97,7 +95,7 @@ export default ({
 
   const mountTooltip = useCallback(
     (items: Value[]) => {
-      let tip
+      let tip = ''
       for (const item of items) {
         tip += `<p><strong>${item?.label}:</strong> ${sqNumbersHelper?.formatPercent(item?.value)}</p>`
       }

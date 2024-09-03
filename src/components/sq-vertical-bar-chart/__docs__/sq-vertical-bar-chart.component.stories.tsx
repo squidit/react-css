@@ -23,5 +23,6 @@ export const Default: Story = {
     backgroundColor: 'blue',
     label: '1',
     tooltip: 'Tooltip',
+    size: 'lg',
   },
 }
