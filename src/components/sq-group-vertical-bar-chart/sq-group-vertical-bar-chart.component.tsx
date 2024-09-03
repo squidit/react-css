@@ -70,13 +70,6 @@ export default ({
   )
 
   const initGraph = () => {
-    const average = getDataValues()
-      .reduce((acc, actual) => Array.from(actual)?.map((value: number, index: number) => (acc[index] || 0) + (value || 0)), [])
-      .map((value, index) => ({
-        value,
-        label: legends[index],
-      }))
-
     const data = dataSet.reduce((acc, actual) => {
       acc.push({
         label: actual.label,
