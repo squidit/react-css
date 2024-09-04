@@ -1,0 +1,27 @@
+.vertical-bar-chart {
+  flex-direction: column;
+  .chart-bar-line {
+    width: 8px;
+    border-radius: 4px;
+    background: var(--gold_light);
+    margin: 0 0.18rem;
+    pointer-events: none;
+
+    &:first-child {
+      background: var(--primary_color);
+    }
+  }
+
+  .sm {
+    width: 4px;
+  }
+
+  .md {
+    width: 8px;
+  }
+
+  .lg {
+    width: 12px;
+    border-radius: 6px;
+  }
+}
