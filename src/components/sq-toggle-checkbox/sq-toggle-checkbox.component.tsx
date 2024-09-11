@@ -19,6 +19,9 @@ export interface ToggleCheckboxProps {
   onChange?: (value: boolean) => void
 }
 
+const colorBackgroundDefault = 'var(--white-html)'
+const colorTextDefault = 'var(--color_text)'
+
 const ToggleCheckbox = ({
   type = 'checkbox',
   id,
@@ -41,11 +44,8 @@ const ToggleCheckbox = ({
       onChange(event)
     }
   }
-  const colorBackgroundDefault = 'var(--white-html)'
-  const colorTextDefault = 'var(--color_text)'
   const timeStamp = useMemo(() => `random-id-${(1 + Date.now() + Math.random()).toString().replace('.', '')}`, [])
 
-  useEffect(() => {}, [checked])
   return (
     <div
       className={`wrapper-selectors ${checked ? 'checked' : ''} ${block ? 'display-block' : ''} ${toggle ?? ''} ${
