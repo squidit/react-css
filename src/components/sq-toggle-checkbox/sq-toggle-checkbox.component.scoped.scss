@@ -1,0 +1,21 @@
+.wrapper-selectors input:checked + label.checkbox {
+  background-color: var(--primary_color) !important;
+}
+
+.toggle-switch {
+  overflow: hidden;
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem;
+
+  :host {
+    display: block;
+  }
+  label {
+    text-align: center;
+  }
+}
