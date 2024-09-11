@@ -39,7 +39,7 @@
     value: 'posts',
     label: 'Posts',
   }
-  }]}
+  ]}
   name={'toggle-checkbox-group'}
   colorSelector="var(--aqua-40)"
   onChange={() => {}}
