@@ -21,7 +21,7 @@
 ### 4. name
 
 - description: Input name
-- type: `boolean`
+- type: `string`
 
 ### 4. onChange
 
