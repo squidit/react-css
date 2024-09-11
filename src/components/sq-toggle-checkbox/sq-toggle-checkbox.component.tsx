@@ -57,8 +57,8 @@ const ToggleCheckbox = ({
       }}
     >
       <input
-        id={`${id ?? timeStamp}`}
-        name={`${name || timeStamp}`}
+        id={id}
+        name={name}
         type={type}
         onChange={(event) => handleChange(event.target.checked)}
         disabled={disabled}
@@ -67,17 +67,19 @@ const ToggleCheckbox = ({
         checked={checked}
         className={`${toggleSwitch ? 'toggle-switch-checkbox' : ''} ${direction === 'right' ? 'direction-right' : 'direction-left'}`}
       />
-      <label htmlFor={`${id ?? timeStamp}`} className={`${disabled ?? ''} ${hideInput ? 'display-none' : ''} checkbox`}>
+      <label htmlFor={id} className={`${disabled ? 'disabled' : ''} ${hideInput ? 'display-none' : ''} checkbox`}>
         {label}
       </label>
-      <label
-        htmlFor={`${id ?? timeStamp}`}
-        style={{
-          color: checked ? 'var(--white-html)' : colorTextDefault,
-        }}
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          htmlFor={id}
+          style={{
+            color: checked ? 'var(--white-html)' : colorTextDefault,
+          }}
+        >
+          {label}
+        </label>
+      )}
     </div>
   )
 }
