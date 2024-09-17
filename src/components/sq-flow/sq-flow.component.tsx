@@ -1,14 +1,16 @@
 import React from 'react'
 
+interface Steps {
+  status: string
+}
+
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   activeColor?: string
   active?: number
-  steps?: Array<{
-    status: string
-  }>
+  steps?: Array<Steps>
 }
 
-export default ({ className = '', activeColor = 'var(--primary_color)', steps, active, children, ...rest }: Props) => {
+export default ({ className = '', activeColor = 'var(--primary_color)', steps, active, ...rest }: Props) => {
   return (
     <div className={`flow ${className}`} {...rest} style={{}}>
       <ul>
