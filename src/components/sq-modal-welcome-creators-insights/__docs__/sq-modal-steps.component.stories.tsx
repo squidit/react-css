@@ -13,16 +13,5 @@ export default meta
 type Story = StoryObj<typeof SqModalExample>
 
 export const Default: Story = {
-  args: {
-    // onOpenChange: fn(),
-    // buttonClose: false,
-    // pages: [
-    //   <div key="1">
-    //     <button>prev</button>
-    //     <button>next</button>
-    //   </div>,
-    //   <div key="2">Page 2</div>,
-    //   <div key="3">Page 3</div>,
-    // ],
-  },
+  args: {},
 }
