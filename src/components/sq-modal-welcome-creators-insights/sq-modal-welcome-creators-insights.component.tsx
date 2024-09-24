@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import SqModalComponent, { Props as ModalProps } from '../sq-modal/sq-modal.component'
 import FirstImage from '../../assets/img/svg/welcome-creators-insights-1.svg'
 import SecondImage from '../../assets/img/svg/welcome-creators-insights-2.svg'
@@ -18,6 +18,8 @@ export interface Props extends ModalProps {
 }
 
 export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, ...props }: Props) => {
+  const moved = useRef(false)
+
   const [t] = useTranslation('sqModalWelcomeCreatorsInsights')
 
   const [activePage, setActivePage] = useState(0)
@@ -43,6 +45,14 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
     }
   }, [activePage, onConfirm, handleOpenChange])
 
+  const handlePrev = useCallback(() => {
+    if (activePage > 0) {
+      setActivePage(activePage - 1)
+    } else {
+      onOpenChange(false)
+    }
+  }, [activePage, onOpenChange])
+
   const factoryContent = [
     {
       title: t('firstPage.title'),
@@ -60,6 +70,48 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
       image: ThirdImage,
     },
   ]
+
+  useEffect(() => {
+    let startX: number | null = null
+    const handleTouchMove = (event: TouchEvent) => {
+      if (moved?.current) {
+        return
+      }
+
+      if (!startX) {
+        startX = event.touches[0].clientX
+      }
+
+      const currentX = event.touches[0].clientX
+      const diffX = startX - currentX
+
+      if (diffX > 50) {
+        handleNext()
+        moved.current = true
+      }
+
+      if (diffX < -50) {
+        handlePrev()
+        moved.current = true
+      }
+    }
+
+    window.addEventListener('touchstart', (event) => {
+      startX = event.touches[0].clientX
+    })
+    window.addEventListener('touchmove', handleTouchMove)
+    window.addEventListener('touchend', () => {
+      startX = null
+      moved.current = false
+    })
+
+    return () => {
+      window.removeEventListener('touchstart', () => {
+        startX = null
+      })
+      window.removeEventListener('touchmove', handleTouchMove)
+    }
+  }, [handleNext, handlePrev])
 
   return (
     <SqModalComponent
