@@ -41,6 +41,9 @@ import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/local
 import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
 import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
 import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
+import ptSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/pt.json'
+import enSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/en.json'
+import esSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/es.json'
 
 const getResources = () => ({
   en: {
@@ -54,6 +57,7 @@ const getResources = () => ({
     sqInputDocumentInternational: enSqInputDocumentInternational,
     sqInputDocumentRut: enSqInputDocumentRut,
     sqInputName: enSqInputName,
+    sqModalWelcomeCreatorsInsights: enSqModalWelcomeCreatorsInsights,
   },
   pt: {
     globals: ptGlobals,
@@ -66,6 +70,7 @@ const getResources = () => ({
     sqInputDocumentInternational: ptSqInputDocumentInternational,
     sqInputDocumentRut: ptSqInputDocumentRut,
     sqInputName: ptSqInputName,
+    sqModalWelcomeCreatorsInsights: ptSqModalWelcomeCreatorsInsights,
   },
   es: {
     globals: esGlobals,
@@ -78,6 +83,7 @@ const getResources = () => ({
     sqInputDocumentInternational: esSqInputDocumentInternational,
     sqInputDocumentRut: esSqInputDocumentRut,
     sqInputName: esSqInputName,
+    sqModalWelcomeCreatorsInsights: esSqModalWelcomeCreatorsInsights,
   },
 })
 
@@ -140,6 +146,7 @@ i18n
       'sqInputDocumentInternational',
       'sqInputDocumentRut',
       'sqInputName',
+      'sqModalWelcomeCreatorsInsights',
     ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
