@@ -15,7 +15,6 @@ const QTD_PAGES = 3
 
 export interface Props extends ModalProps {
   onConfirm?: () => void
-  open?: boolean
 }
 
 export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, ...props }: Props) => {
