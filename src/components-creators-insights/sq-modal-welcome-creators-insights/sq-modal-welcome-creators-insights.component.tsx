@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import SqModalComponent, { Props as ModalProps } from '../sq-modal/sq-modal.component'
+import SqModalComponent, { Props as ModalProps } from '../../components/sq-modal/sq-modal.component'
 import FirstImage from '../../assets/img/svg/welcome-creators-insights-1.svg'
 import SecondImage from '../../assets/img/svg/welcome-creators-insights-2.svg'
 import ThirdImage from '../../assets/img/svg/welcome-creators-insights-3.svg'
-import { SqButton } from '../buttons/sq-button'
-import SqFlowComponent from '../sq-flow/sq-flow.component'
+import { SqButton } from '../../components/buttons/sq-button'
+import SqFlowComponent from '../../components/sq-flow/sq-flow.component'
 import { useTranslation } from 'react-i18next'
 
 import './sq-modal-welcome-creators-insights.component.scoped.scss'

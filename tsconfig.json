@@ -11,6 +11,7 @@
       "@src/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
+      "@components-creators-insights/*": ["./src/components-creators-insights/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@interfaces/*": ["./src/interfaces/*"]

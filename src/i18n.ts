@@ -41,9 +41,9 @@ import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/local
 import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
 import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
 import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
-import ptSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/pt.json'
-import enSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/en.json'
-import esSqModalWelcomeCreatorsInsights from '@components/sq-modal-welcome-creators-insights/locales/es.json'
+import ptSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/pt.json'
+import enSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/en.json'
+import esSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/es.json'
 
 const getResources = () => ({
   en: {
