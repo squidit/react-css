@@ -56,7 +56,7 @@ export const parameters: Parameters = {
   },
   options: {
     storySort: {
-      order: ['Getting Started', 'Components', 'Hooks'],
+      order: ['Getting Started', 'Components', 'Creators Insights/Components', 'Hooks'],
     },
   },
 }
