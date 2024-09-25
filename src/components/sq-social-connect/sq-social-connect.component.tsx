@@ -6,7 +6,7 @@ export type SocialMediaIcon = {
   bgColor: string
   image: string
   name: string
-  id?: string
+  id: string
 }
 
 const SqSocialConnect = ({ profiles }) => {
