@@ -6,7 +6,7 @@ const exampleProfiles = [
     image: 'https://randomuser.me/api/portraits/women/3.jpg',
     id: '1',
     socialNetwork: 'Instagram',
-    icon: <i className="fa-brands fa-instagram"></i>,
+    icon: <i className="fa-brands fa-instagram gray-light"></i>,
     bgColor: '#E1306C',
   },
   {
@@ -14,7 +14,7 @@ const exampleProfiles = [
     image: 'https://via.placeholder.com/50x50?text=JS',
     id: '1',
     socialNetwork: 'Instagram',
-    icon: <i className="fa-brands fa-instagram"></i>,
+    icon: <i className="fa-brands fa-instagram gray-light"></i>,
     bgColor: '#E1306C',
   },
 ]

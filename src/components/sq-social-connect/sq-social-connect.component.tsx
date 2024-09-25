@@ -20,7 +20,7 @@ const SqSocialConnect: React.FC<Props> = ({ profiles = [] }) => {
           <div className="profile-wrapper">
             <img src={profile.image} alt={`${profile.name} profile`} className="profile-image" />
             <div className="icon-container" style={{ backgroundColor: profile.bgColor }}>
-              <i className="fa-brands fa-instagram gray-light"></i>
+              {profile.icon}
             </div>
           </div>
         </div>
