@@ -8,11 +8,14 @@ export type SocialMediaIcon = {
   name: string
   id: string
 }
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  profiles?: SocialMediaIcon[]
+}
 
-const SqSocialConnect = ({ profiles }) => {
+const SqSocialConnect: React.FC<Props> = ({ profiles = [] }) => {
   return (
     <div className="social-connect">
-      {profiles.map((profile, index) => (
+      {profiles?.map((profile, index) => (
         <div key={profile.id || index} className="profile-container">
           <div className="profile-wrapper" style={{ backgroundColor: profile.bgColor }}>
             <img src={profile.image} alt={`${profile.name} profile`} className="profile-image" />

@@ -1,1 +1,1 @@
-export { default as SocialConnect } from './sq-social-connect.component'
+export { default as SqSocialConnect } from './sq-social-connect.component'
