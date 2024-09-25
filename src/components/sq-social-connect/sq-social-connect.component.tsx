@@ -6,16 +6,19 @@ export type SocialMediaIcon = {
   image: string
   name: string
   id: string
+  socialNetwork: SocialNetwork
 }
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   profiles?: SocialMediaIcon[]
 }
 
+type SocialNetwork = 'instagram' | 'tiktok' | 'twitter' | 'youtube'
+
 const SqSocialConnect: React.FC<Props> = ({ profiles = [] }) => {
   return (
     <div className="social-connect">
       {profiles?.map((profile, index) => (
-        <div key={profile.id || index} className="profile-container">
+        <div key={profile.id || index} className={`profile-container ${profile.socialNetwork}`}>
           <div className="profile-wrapper">
             <img src={profile.image} alt={`${profile.name} profile`} className="profile-image" />
             <div className="icon-container" style={{ backgroundColor: profile.bgColor }}>

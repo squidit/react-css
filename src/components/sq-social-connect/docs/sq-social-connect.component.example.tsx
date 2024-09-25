@@ -1,12 +1,13 @@
-import SqSocialConnect from '../sq-social-connect.component'
+import SqSocialConnect, { SocialMediaIcon } from '../sq-social-connect.component'
 
-const exampleProfiles = [
+const exampleProfiles: SocialMediaIcon[] = [
   {
     name: 'Jane Doe',
     image: 'https://randomuser.me/api/portraits/women/3.jpg',
     id: '1',
     icon: <i className="fa-brands fa-instagram gray-light"></i>,
     bgColor: '#E1306C',
+    socialNetwork: 'instagram',
   },
   {
     name: 'John Smith',
@@ -14,6 +15,7 @@ const exampleProfiles = [
     id: '1',
     icon: <i className="fa-brands fa-instagram gray-light"></i>,
     bgColor: '#E1306C',
+    socialNetwork: 'instagram',
   },
 ]
 
