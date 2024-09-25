@@ -1,8 +1,6 @@
 .vertical-chart {
   display: flex;
   flex-direction: column;
-  min-height: 175px;
-  max-height: 225px;
   max-width: 550px;
   width: 100%;
   margin: 0 auto;
@@ -43,8 +41,10 @@
   &-container {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     position: relative;
+    gap: 1rem;
     top: 20px;
     margin-bottom: 1.4rem;
   }
@@ -73,7 +73,6 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      align-self: flex-end;
     }
 
     &-bar {
