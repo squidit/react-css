@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import SqSocialConnectExample from './sq-social-connect.component.example'
 
 const meta: Meta<typeof SqSocialConnectExample> = {
-  title: 'Components/SqSocialConnect',
+  title: 'Creators Insights/Components/SqSocialConnect',
   component: SqSocialConnectExample,
   tags: ['autodocs'],
 }
