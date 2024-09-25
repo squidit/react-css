@@ -1,7 +1,6 @@
 import './sq-social-connect.component.scoped.scss'
 
 export type SocialMediaIcon = {
-  socialNetwork: string
   icon: React.ReactElement
   bgColor: string
   image: string
