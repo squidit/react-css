@@ -1,0 +1,45 @@
+.social-connect {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.profile-container {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+}
+
+.profile-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+}
+
+.icon-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--white); 
+}
+
+.icon-container i {
+  font-size: 0.9rem;
+}

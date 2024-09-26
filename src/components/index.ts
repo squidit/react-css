@@ -49,4 +49,3 @@ export * from './sq-tip'
 export * from './sq-toggle-checkbox'
 export * from './sq-toggle-checkbox-group'
 export * from './sq-vertical-bar-chart'
-

@@ -32,6 +32,7 @@ export default defineConfig({
       '@src': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@components-creators-insights': path.resolve(__dirname, './src/components-creators-insights'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@interfaces': path.resolve(__dirname, './src/interfaces'),
