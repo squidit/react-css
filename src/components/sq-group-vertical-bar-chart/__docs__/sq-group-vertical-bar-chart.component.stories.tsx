@@ -35,6 +35,21 @@ export const Default: Story = {
         value: [0.1, 0.2, 0.3],
         total: 2,
       },
+      {
+        label: '35-44',
+        value: [0.1, 0.2, 0.3],
+        total: 4,
+      },
+      {
+        label: '45-54',
+        value: [0.1, 0.2, 0.3],
+        total: 5,
+      },
+      {
+        label: '55-64',
+        value: [0.1, 0.2, 0.3],
+        total: 6,
+      },
     ],
 
     showLabel: false,
