@@ -1,0 +1,15 @@
+{
+  "next": "Next",
+  "firstPage": {
+    "title": "Welcome to Creators Insights",
+    "description": "Explore relevant metrics and detailed insights to improve and grow your presence."
+  },
+  "secondPage": {
+    "title": "Intelligence on Your Side",
+    "description": "Find personalized insights based on your post data to increase your engagement."
+  },
+  "thirdPage": {
+    "title": "See Your Top Results",
+    "description": "Identify the most impactful posts and track their metrics"
+  }
+}
