@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import SqModalWelcomeCreatorsInsights, { Props } from '../sq-modal-welcome-creators-insights.component'
 import SqButtonComponent from '../../../components/buttons/sq-button/sq-button.component'
