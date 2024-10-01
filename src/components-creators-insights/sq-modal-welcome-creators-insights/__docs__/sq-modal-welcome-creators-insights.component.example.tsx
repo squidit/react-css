@@ -26,7 +26,6 @@ const SqModalWelcomeCreatorsInsightsExample = ({ children, ...props }: Props) =>
         onCloseChange={() => handleClose()}
         onOpenChange={(open) => setOpen(open)}
         buttonClose={false}
-        forceMobileNoMargin
       />
     </div>
   )
