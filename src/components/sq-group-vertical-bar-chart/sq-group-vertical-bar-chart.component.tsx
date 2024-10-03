@@ -45,10 +45,6 @@ export default ({
 
   const [data, setData] = useState<Data[]>([])
 
-  const verifyIfHexBackgroundColor = useCallback((color: string) => {
-    return color?.includes('#') ? color : null
-  }, [])
-
   const getDataValues = useCallback(() => {
     return dataSet.map((data) => data.value)
   }, [dataSet])
@@ -125,7 +121,7 @@ export default ({
               <div className="chart-content">
                 <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
                   {item?.value?.map((obj, i) => (
-                    <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={verifyIfHexBackgroundColor(colors?.[i])} />
+                    <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={colors?.[i]} />
                   ))}
                 </div>
               </div>

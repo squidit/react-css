@@ -54,7 +54,7 @@ export const Default: Story = {
 
     showLabel: false,
     colors: [
-      window.getComputedStyle(document.documentElement).getPropertyValue('--purple-70'),
+      window.getComputedStyle(document.documentElement).getPropertyValue('--lilac-70'),
       window.getComputedStyle(document.documentElement).getPropertyValue('--blue-60'),
       window.getComputedStyle(document.documentElement).getPropertyValue('--cian'),
     ],
