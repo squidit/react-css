@@ -45,9 +45,15 @@ export default ({
 
   const [data, setData] = useState<Data[]>([])
 
-  const verifyIfHexBackgroundColor = useCallback((color: string) => {
-    return color?.includes('#') ? color : null
+  const groupsIntoTrio = useCallback((list) => {
+    const trio = []
+    for (let i = 0; i < list.length; i += 3) {
+      trio.push(list.slice(i, i + 3))
+    }
+    return trio
   }, [])
+
+  const dataInTrio = useMemo(() => groupsIntoTrio(data), [data, groupsIntoTrio])
 
   const getDataValues = useCallback(() => {
     return dataSet.map((data) => data.value)
@@ -118,21 +124,25 @@ export default ({
           ))}
         </div>
       )}
-      <div className="vertical-chart-container">
-        {data?.slice(0, dataLength)?.map((item, index) => (
-          <div className="chart" key={index}>
-            <div className="chart-wrapper">
-              <div className="chart-content">
-                <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
-                  {item?.value?.map((obj, i) => (
-                    <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={verifyIfHexBackgroundColor(colors?.[i])} />
-                  ))}
+      <div className="vertical-chart-container justify-content-center">
+        {dataInTrio?.map((group, index) => (
+          <div className="chart-group display-flex justify-content-space-around" key={index}>
+            {group?.map((item, i) => (
+              <div className="chart" key={i}>
+                <div className="chart-wrapper">
+                  <div className="chart-content">
+                    <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
+                      {item?.value?.map((obj, i) => (
+                        <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={colors?.[i]} />
+                      ))}
+                    </div>
+                  </div>
+                  <p>
+                    <strong>{item?.label}</strong>
+                  </p>
                 </div>
               </div>
-              <p>
-                <strong>{item?.label}</strong>
-              </p>
-            </div>
+            ))}
           </div>
         ))}
       </div>
