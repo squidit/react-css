@@ -42,11 +42,14 @@
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     position: relative;
-    gap: 1rem;
     top: 20px;
     margin-bottom: 1.4rem;
+    gap: 3rem;
+
+    .chart-group {
+      gap: 3rem;
+    }
   }
 
   .chart {

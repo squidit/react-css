@@ -9,7 +9,7 @@ const SqVerticalBarChartExample = (props: Props) => {
         gap: '20px',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '300px',
+        width: '100%',
         margin: '0 auto',
         height: '100%',
       }}

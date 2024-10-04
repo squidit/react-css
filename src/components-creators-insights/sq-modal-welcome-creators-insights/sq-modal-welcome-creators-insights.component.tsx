@@ -147,9 +147,9 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
             <i className="fa-solid fa-x small" />
           </span>
         </SqButton>
-        <div className="content position-relative display-flex align-items-end mt-5">
+        <div className="main-content position-relative display-flex align-items-end mt-5">
           <h3 className="title text-center">{factoryContent?.[activePage]?.title}</h3>
-          <img className="position-absolute" src={factoryContent?.[activePage]?.image} alt="Background" />
+          <img className="" src={factoryContent?.[activePage]?.image} alt="Background" />
         </div>
         <div className="footer position-relative p-3 display-flex">
           <p className="description text-center m-4">{factoryContent?.[activePage]?.description}</p>
