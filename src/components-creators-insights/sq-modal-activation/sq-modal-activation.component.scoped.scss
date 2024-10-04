@@ -1,0 +1,47 @@
+.modal-creators-insights {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .header h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .box-insights {
+    display: flex;
+    padding: 1.25rem;
+    background-color: var(--blue-90);
+    color: var(--blue-25);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    margin-top: 2.25rem;
+  }
+
+  .box-insights p {
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+
+  .profile-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    margin: 1.875rem 0 1.875rem 0;
+  }
+
+  .profiles-list {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .profile-item span {
+    margin-left: 0.625rem;
+  }
+}
+
+.wrapper-selectors.toggle {
+  margin-left: auto;
+}

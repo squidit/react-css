@@ -44,6 +44,9 @@ import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
 import ptSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/pt.json'
 import enSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/en.json'
 import esSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/es.json'
+import ptSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/pt.json'
+import enSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/en.json'
+import esSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/es.json'
 
 const getResources = () => ({
   en: {
@@ -58,6 +61,7 @@ const getResources = () => ({
     sqInputDocumentRut: enSqInputDocumentRut,
     sqInputName: enSqInputName,
     sqModalWelcomeCreatorsInsights: enSqModalWelcomeCreatorsInsights,
+    sqModalActivation: enSqModalActivation,
   },
   pt: {
     globals: ptGlobals,
@@ -71,6 +75,7 @@ const getResources = () => ({
     sqInputDocumentRut: ptSqInputDocumentRut,
     sqInputName: ptSqInputName,
     sqModalWelcomeCreatorsInsights: ptSqModalWelcomeCreatorsInsights,
+    sqModalActivation: ptSqModalActivation,
   },
   es: {
     globals: esGlobals,
@@ -84,6 +89,7 @@ const getResources = () => ({
     sqInputDocumentRut: esSqInputDocumentRut,
     sqInputName: esSqInputName,
     sqModalWelcomeCreatorsInsights: esSqModalWelcomeCreatorsInsights,
+    sqModalActivation: esSqModalActivation,
   },
 })
 
