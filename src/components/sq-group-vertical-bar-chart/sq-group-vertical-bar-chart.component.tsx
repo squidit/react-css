@@ -126,11 +126,7 @@ export default ({
       )}
       <div className="vertical-chart-container justify-content-center">
         {dataInTrio?.map((group, index) => (
-          <div
-            className="chart-group display-flex justify-content-space-around"
-            key={index}
-            // style={{ flex: `0 0 ${(dataInTrio?.length / 10) * 100}%` }}
-          >
+          <div className="chart-group display-flex justify-content-space-around" key={index}>
             {group?.map((item, i) => (
               <div className="chart" key={i}>
                 <div className="chart-wrapper">
