@@ -149,22 +149,6 @@ export default ({
             ))}
           </div>
         ))}
-        {/* {data?.slice(0, dataLength)?.map((item, index) => (
-          <div className="chart" key={index}>
-            <div className="chart-wrapper">
-              <div className="chart-content">
-                <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
-                  {item?.value?.map((obj, i) => (
-                    <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={colors?.[i]} />
-                  ))}
-                </div>
-              </div>
-              <p>
-                <strong>{item?.label}</strong>
-              </p>
-            </div>
-          </div>
-        ))} */}
       </div>
     </div>
   )
