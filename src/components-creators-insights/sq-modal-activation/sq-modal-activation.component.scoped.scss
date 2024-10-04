@@ -45,3 +45,7 @@
 .wrapper-selectors.toggle {
   margin-left: auto;
 }
+
+.wrapper-selectors.toggle input:checked + .checkbox {
+  background-color: var(--purple-30); 
+}
