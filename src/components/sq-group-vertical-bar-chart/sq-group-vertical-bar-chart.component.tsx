@@ -45,6 +45,16 @@ export default ({
 
   const [data, setData] = useState<Data[]>([])
 
+  const groupsIntoTrio = useCallback((list) => {
+    const trio = []
+    for (let i = 0; i < list.length; i += 3) {
+      trio.push(list.slice(i, i + 3))
+    }
+    return trio
+  }, [])
+
+  const dataInTrio = useMemo(() => groupsIntoTrio(data), [data, groupsIntoTrio])
+
   const getDataValues = useCallback(() => {
     return dataSet.map((data) => data.value)
   }, [dataSet])
@@ -114,8 +124,32 @@ export default ({
           ))}
         </div>
       )}
-      <div className="vertical-chart-container">
-        {data?.slice(0, dataLength)?.map((item, index) => (
+      <div className="vertical-chart-container justify-content-center">
+        {dataInTrio?.map((group, index) => (
+          <div
+            className="chart-group display-flex justify-content-space-around"
+            key={index}
+            // style={{ flex: `0 0 ${(dataInTrio?.length / 10) * 100}%` }}
+          >
+            {group?.map((item, i) => (
+              <div className="chart" key={i}>
+                <div className="chart-wrapper">
+                  <div className="chart-content">
+                    <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
+                      {item?.value?.map((obj, i) => (
+                        <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={colors?.[i]} />
+                      ))}
+                    </div>
+                  </div>
+                  <p>
+                    <strong>{item?.label}</strong>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+        {/* {data?.slice(0, dataLength)?.map((item, index) => (
           <div className="chart" key={index}>
             <div className="chart-wrapper">
               <div className="chart-content">
@@ -130,7 +164,7 @@ export default ({
               </p>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   )
