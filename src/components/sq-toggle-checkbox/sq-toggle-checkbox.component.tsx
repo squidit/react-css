@@ -1,4 +1,3 @@
-import { useEffect, useMemo } from 'react'
 import './sq-toggle-checkbox.component.scoped.scss'
 
 export interface ToggleCheckboxProps {
@@ -19,8 +18,8 @@ export interface ToggleCheckboxProps {
   onChange?: (value: boolean) => void
 }
 
-const colorBackgroundDefault = 'var(--white-html)'
-const colorTextDefault = 'var(--color_text)'
+const colorBackgroundDefault = 'var(--background)'
+const colorTextDefault = 'var(--title_color)'
 
 const ToggleCheckbox = ({
   type = 'checkbox',
@@ -44,7 +43,6 @@ const ToggleCheckbox = ({
       onChange(event)
     }
   }
-  const timeStamp = useMemo(() => `random-id-${(1 + Date.now() + Math.random()).toString().replace('.', '')}`, [])
 
   return (
     <div
