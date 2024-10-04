@@ -1,10 +1,10 @@
 .toggle-switch-group {
-  border: 1px solid var(--gray_light);
+  border: 1px solid var(--border_color);
   border-radius: 0.5rem;
   display: flex;
   overflow: hidden;
 
   & :not(:last-child) {
-    border-right: 1px solid var(--gray_light);
+    border-right: 1px solid var(--border_color);
   }
 }
