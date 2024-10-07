@@ -6,9 +6,22 @@ import SqButtonComponent from '../../../components/buttons/sq-button/sq-button.c
 
 const SqModalWelcomeCreatorsInsightsExample = ({ children, ...props }: Props) => {
   const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handleConfirm = async () => {
+    setLoading(true)
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      setOpen(false)
+    } catch (error) {
+      console.error('Erro durante a confirmação:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -28,6 +41,8 @@ const SqModalWelcomeCreatorsInsightsExample = ({ children, ...props }: Props) =>
         onCloseChange={() => handleClose()}
         onOpenChange={(open) => setOpen(open)}
         buttonClose={false}
+        onConfirm={handleConfirm}
+        loading={loading}
       />
     </div>
   )

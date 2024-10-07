@@ -10,14 +10,16 @@ import SqFlowComponent from '../../components/sq-flow/sq-flow.component'
 import { useTranslation } from 'react-i18next'
 
 import './sq-modal-welcome-creators-insights.component.scoped.scss'
+import { SqLoader } from '@/src/components/sq-loader'
 
 const QTD_PAGES = 3
 
 export interface Props extends ModalProps {
   onConfirm?: () => void
+  loading?: boolean
 }
 
-export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, ...props }: Props) => {
+export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, loading, ...props }: Props) => {
   const moved = useRef(false)
 
   const [t] = useTranslation('sqModalWelcomeCreatorsInsights')
@@ -154,7 +156,7 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
           <div className="actions display-flex justify-content-space-between mt-3">
             <SqFlowComponent steps={Array(QTD_PAGES)} active={activePage} color="var(--primary_color)" style={{ width: '100px' }} />
             <SqButton size="sm" onClick={() => handleNext()}>
-              {t('next')}
+              {loading && activePage === QTD_PAGES - 1 ? <SqLoader size="small" color="var(--purple-40)" /> : t('next')}
             </SqButton>
           </div>
         </div>

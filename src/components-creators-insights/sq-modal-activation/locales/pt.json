@@ -1,0 +1,5 @@
+{
+  "activationQuestion": "Quais das redes sociais você quer ativar para o Creator Insights?",
+  "insightsText": "No momento, nossos insights e métricas estão disponíveis apenas para o <i class='fa-brands fa-{{socialNetwork}}' style='display: inline-block; vertical-align: middle; margin: 0 2px; font-size: 1.2rem;'></i> Instagram",
+  "buttonDone": "Feito!"
+}
