@@ -71,7 +71,9 @@ const ToggleCheckbox = ({
       {label && (
         <label
           htmlFor={id}
+          className="text-center"
           style={{
+            width: '100%',
             color: checked ? 'var(--white-html)' : colorTextDefault,
           }}
         >
