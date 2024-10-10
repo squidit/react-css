@@ -1,2 +1,3 @@
 import { BehaviorSubject } from 'rxjs'
-export default new BehaviorSubject<'pt' | 'en' | 'es'>('en')
+export type Language = 'pt' | 'en' | 'es'
+export default new BehaviorSubject<Language>('en')

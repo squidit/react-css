@@ -23,7 +23,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 
 Chart.register(ArcElement, LineController, Legend, Tooltip, PointElement, BubbleController, CategoryScale, LinearScale, LineElement)
 
-export default function SqChartLine({ className = '', style = {}, id = '', data, options }: Props) {
+export default function SqChartLine({ className = '', style = {}, id = '', data, options, lang = 'en' }: Props) {
   const chartRef = useRef<HTMLCanvasElement>(null)
   const [chart, setChart] = useState<Chart | null>(null)
   const [width, setWidth] = useState(window.innerWidth)
@@ -40,6 +40,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       const adjustRadiusBasedOnData = (ctx) => {
         const v = ctx.parsed.y
         return v === Math.max(...ctx.chart.data.datasets[0].data) ? 5 : 0
+        // return 5
       }
       if (chart) {
         chart.destroy()
@@ -70,11 +71,14 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
                   },
                 },
                 y: {
+                  // @ts-ignore
+                  max: Math.max(...data.datasets[0].data) + 0.2,
+                  // @ts-ignore
+                  min: Math.min(...data.datasets[0].data) - 0.2,
                   display: false,
                   grid: {
                     display: false,
                   },
-                  beginAtZero: true,
                 },
               },
               elements: {
