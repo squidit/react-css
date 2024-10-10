@@ -3,6 +3,7 @@
   border-radius: 0.5rem;
   display: flex;
   overflow: hidden;
+  width: 100%;
 
   & :not(:last-child) {
     border-right: 1px solid var(--border_color);
