@@ -68,6 +68,7 @@ const SqModalActivationExample: React.FC = () => {
           onToggle={handleToggle}
           onConfirm={handleDone}
           onOpenChange={handleOpenChange}
+          requireActiveProfile={true}
         />
       )}
     </div>

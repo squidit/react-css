@@ -45,9 +45,8 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
       if (onConfirm && typeof onConfirm === 'function') {
         onConfirm()
       }
-      handleOpenChange(false)
     }
-  }, [activePage, onConfirm, handleOpenChange])
+  }, [activePage, onConfirm])
 
   const handlePrev = useCallback(() => {
     if (activePage > 0) {
