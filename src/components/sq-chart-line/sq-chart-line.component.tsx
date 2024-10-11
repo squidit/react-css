@@ -31,6 +31,8 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
 
   useEffect(() => {
     if (chartRef.current) {
+      const maxDataValue = Math.max(...(data.datasets[0].data as number[]))
+      const minDataValue = Math.min(...(data.datasets[0].data as number[]))
       const addGradient = (ctx) => {
         const gradient = ctx.createLinearGradient(0, 0, 0, 220)
         gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
@@ -39,7 +41,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       }
       const adjustRadiusBasedOnData = (ctx) => {
         const v = ctx.parsed.y
-        return v === Math.max(...ctx.chart.data.datasets[0].data) ? 5 : width < 991 ? 0 : 2
+        return v === maxDataValue ? 5 : width < 991 ? 0 : 2
       }
       if (chart) {
         chart.destroy()
@@ -86,8 +88,8 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
                   },
                 },
                 y: {
-                  max: Math.max(...(data.datasets[0].data as number[])) + Math.max(...(data.datasets[0].data as number[])) * 0.1,
-                  min: Math.min(...(data.datasets[0].data as number[])) - Math.min(...(data.datasets[0].data as number[])) * 0.2,
+                  max: maxDataValue + maxDataValue * 0.1,
+                  min: minDataValue - minDataValue * 0.2,
                   display: false,
                   grid: {
                     display: false,
@@ -116,7 +118,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, width, height])
+  }, [data, width, height, options])
 
   useEffect(() => {
     const updateHeight = () => {
@@ -126,14 +128,10 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       setWidth(window?.innerWidth)
     }
     const beforePrintHandler = () => {
-      for (const id in Chart.instances) {
-        Chart.instances[id].resize(600, 600)
-      }
+      chart?.resize(600, 600)
     }
     const afterPrintHandler = () => {
-      for (const id in Chart.instances) {
-        Chart.instances[id].resize()
-      }
+      chart?.resize()
     }
     window.addEventListener('resize', updateHeight)
     window.addEventListener('resize', updateWidth)
@@ -145,7 +143,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       window.removeEventListener('beforeprint', beforePrintHandler)
       window.removeEventListener('afterprint', afterPrintHandler)
     }
-  })
+  }, [])
 
   return (
     <div className={`chart-line ${className}`} style={style} id={id}>
