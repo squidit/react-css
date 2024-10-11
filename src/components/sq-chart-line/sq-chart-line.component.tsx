@@ -1,17 +1,17 @@
+'use client'
+
 import React, { HTMLAttributes, useEffect, useRef, useState } from 'react'
 import {
-  ArcElement,
-  BubbleController,
   CategoryScale,
   Chart,
   ChartData,
   ChartOptions,
-  Legend,
   LinearScale,
   LineController,
   LineElement,
   PointElement,
   Tooltip,
+  Filler,
 } from 'chart.js'
 
 import './sq-chart-line.component.scoped.scss'
@@ -21,9 +21,9 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   options?: ChartOptions
 }
 
-Chart.register(ArcElement, LineController, Legend, Tooltip, PointElement, BubbleController, CategoryScale, LinearScale, LineElement)
+Chart.register(LineController, Tooltip, PointElement, CategoryScale, LinearScale, LineElement, Filler)
 
-export default function SqChartLine({ className = '', style = {}, id = '', data, options, lang = 'en' }: Props) {
+export default function SqChartLine({ className = '', style = {}, id = '', data, options }: Readonly<Props>) {
   const chartRef = useRef<HTMLCanvasElement>(null)
   const [chart, setChart] = useState<Chart | null>(null)
   const [width, setWidth] = useState(window.innerWidth)
@@ -33,14 +33,13 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
     if (chartRef.current) {
       const addGradient = (ctx) => {
         const gradient = ctx.createLinearGradient(0, 0, 0, 220)
-        gradient.addColorStop(0, 'rgba(54, 162, 235)')
-        gradient.addColorStop(1, 'rgba(54, 162, 235, 0)')
+        gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
+        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue('--color_bg_box_neutral_primary'))
         return gradient
       }
       const adjustRadiusBasedOnData = (ctx) => {
         const v = ctx.parsed.y
-        return v === Math.max(...ctx.chart.data.datasets[0].data) ? 5 : 0
-        // return 5
+        return v === Math.max(...ctx.chart.data.datasets[0].data) ? 5 : width < 991 ? 0 : 2
       }
       if (chart) {
         chart.destroy()
@@ -54,11 +53,27 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
         setChart(
           new Chart(ctx, {
             type: 'line',
-            data,
+            data: {
+              ...data,
+              datasets: [
+                ...data.datasets.map((dataset) => ({
+                  ...dataset,
+                  fill: true,
+                  backgroundColor: addGradient(ctx),
+                  borderColor: getComputedStyle(document.documentElement).getPropertyValue('--blue-55'),
+                  tension: 0.4,
+                  borderWidth: 2,
+                  pointBackgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--background_secondary'),
+                })),
+              ],
+            },
             options: {
               plugins: {
                 legend: {
                   display: false,
+                },
+                filler: {
+                  propagate: false,
                 },
               },
               scales: {
@@ -71,30 +86,21 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
                   },
                 },
                 y: {
-                  // @ts-ignore
-                  max: Math.max(...data.datasets[0].data) + 0.2,
-                  // @ts-ignore
-                  min: Math.min(...data.datasets[0].data) - 0.2,
+                  max: Math.max(...(data.datasets[0].data as number[])) + Math.max(...(data.datasets[0].data as number[])) * 0.1,
+                  min: Math.min(...(data.datasets[0].data as number[])) - Math.min(...(data.datasets[0].data as number[])) * 0.2,
                   display: false,
                   grid: {
                     display: false,
                   },
+                  beginAtZero: true,
                 },
               },
               elements: {
-                line: {
-                  tension: 0.4,
-                  borderColor: 'rgba(54, 162, 235)',
-                  fill: true,
-                  backgroundColor: addGradient(ctx),
-                },
                 point: {
                   radius: adjustRadiusBasedOnData,
                   hoverRadius: 10,
                   hoverBorderWidth: 2,
                   borderWidth: 3,
-                  backgroundColor: 'white',
-                  borderColor: 'rgba(54, 162, 235)',
                 },
               },
               responsive: true,
