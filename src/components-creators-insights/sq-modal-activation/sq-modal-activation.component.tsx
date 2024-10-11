@@ -23,8 +23,10 @@ export interface Props extends ModalProps {
   onConfirm?: () => void
   onToggle?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
   profiles: Profile[]
+  requireActiveProfile?: boolean
 }
-export default ({ profiles, onToggle, onConfirm, onOpenChange, open }: Props) => {
+
+export default ({ profiles, onToggle, onConfirm, onOpenChange, open, requireActiveProfile = false }: Props) => {
   const [width, setWidth] = useState<number>(window.innerWidth)
   const [height, setHeight] = useState<number>(window.innerHeight)
   const { t } = useTranslation('sqModalActivation')
@@ -91,9 +93,19 @@ export default ({ profiles, onToggle, onConfirm, onOpenChange, open }: Props) =>
     </div>
   )
 
+  const isAnyProfileActive = profiles.some((profile) => profile.hasCreatorsInsights)
+
   const footer = (
     <footer className="footer" style={{ width: '100%' }}>
-      <SqButton color="var(--purple-30)" size="lg" borderStyle="none" type="button" width={'100%'} onClick={onConfirm}>
+      <SqButton
+        color="var(--purple-30)"
+        size="lg"
+        borderStyle="none"
+        type="button"
+        width={'100%'}
+        onClick={onConfirm}
+        disabled={requireActiveProfile && !isAnyProfileActive}
+      >
         {t('buttonDone')}
       </SqButton>
     </footer>

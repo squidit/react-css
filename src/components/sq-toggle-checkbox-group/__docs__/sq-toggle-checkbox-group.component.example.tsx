@@ -8,7 +8,9 @@ const SqToggleCheckboxGroupExample = (props: ToggleCheckboxGroupProps) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        width: '300px',
         height: '100%',
+        margin: '0 auto',
       }}
     >
       <SqToggleCheckboxGroup {...props} />
