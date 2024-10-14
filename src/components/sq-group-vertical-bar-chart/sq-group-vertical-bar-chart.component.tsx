@@ -132,8 +132,13 @@ export default ({
         {dataInTrio?.map((group, index) => (
           <div className="chart-group display-flex justify-content-space-around" key={index}>
             {group?.map((item, i) => (
-              <div className="chart" key={i}>
-                <div className="chart-wrapper" data-tooltip={mountTooltip(item?.value)}>
+              <div className="chart position-relative" key={i}>
+                <div
+                  className="to-show-tooltip position-absolute"
+                  data-tooltip={mountTooltip(item?.value)}
+                  data-tooltip-id={`group-vertical-bar-chart-${i}`}
+                ></div>
+                <div className="chart-wrapper">
                   <div className="chart-content">
                     <div className="chart-bar">
                       {item?.value?.map((obj, i) => (
