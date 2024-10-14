@@ -5,6 +5,7 @@ import { SqNumbersHelper } from '@/src/helpers'
 import SqVerticalBarChart from '../sq-vertical-bar-chart/sq-vertical-bar-chart.component'
 
 import './sq-group-vertical-bar-chart.component.scoped.scss'
+import { useTranslation } from 'react-i18next'
 
 export interface InfluencerChartMetric {
   label: string
@@ -42,6 +43,7 @@ export default ({
   showLabel = true,
 }: Props) => {
   const sqNumbersHelper = useMemo(() => new SqNumbersHelper(), [])
+  const { t } = useTranslation('sqGroupVerticalBarChart')
 
   const [data, setData] = useState<Data[]>([])
 
@@ -53,7 +55,9 @@ export default ({
     return trio
   }, [])
 
-  const dataInTrio = useMemo(() => groupsIntoTrio(data), [data, groupsIntoTrio])
+  const dataInTrio = useMemo(() => {
+    return groupsIntoTrio(data)
+  }, [data, groupsIntoTrio])
 
   const getDataValues = useCallback(() => {
     return dataSet.map((data) => data.value)
@@ -96,11 +100,11 @@ export default ({
     (items: Value[]) => {
       let tip = ''
       for (const item of items) {
-        tip += `<p><strong>${item?.label}:</strong> ${sqNumbersHelper?.formatPercent(item?.value)}</p>`
+        tip += `<p><strong>${t(item?.label)}:</strong> ${sqNumbersHelper?.formatPercent(item?.value)}</p>`
       }
       return tip
     },
-    [sqNumbersHelper],
+    [sqNumbersHelper, t],
   )
 
   useEffect(() => {
@@ -129,9 +133,9 @@ export default ({
           <div className="chart-group display-flex justify-content-space-around" key={index}>
             {group?.map((item, i) => (
               <div className="chart" key={i}>
-                <div className="chart-wrapper">
+                <div className="chart-wrapper" data-tooltip={mountTooltip(item?.value)}>
                   <div className="chart-content">
-                    <div className="chart-bar" data-tooltip={mountTooltip(item?.value)}>
+                    <div className="chart-bar">
                       {item?.value?.map((obj, i) => (
                         <SqVerticalBarChart key={i} height={calcHeight(obj?.value)} backgroundColor={colors?.[i]} />
                       ))}
