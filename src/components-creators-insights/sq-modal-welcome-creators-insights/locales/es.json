@@ -1,0 +1,15 @@
+{
+  "next": "Siguiente",
+  "firstPage": {
+    "title": "Bienvenido a Creators Insights",
+    "description": "Explore métricas relevantes e información detallada para mejorar y ampliar su presencia"
+  },
+  "secondPage": {
+    "title": "Inteligencia para ti",
+    "description": "Encuentre información personalizada basada en los datos de sus publicaciones para aumentar su participación"
+  },
+  "thirdPage": {
+    "title": "Vea sus mejores resultados",
+    "description": "Identifica las publicaciones con mayor impacto y realiza un seguimiento de sus métricas"
+  }
+}

@@ -41,6 +41,15 @@ import esSqInputDocumentRut from '@components/inputs/sq-input-document-rut/local
 import ptSqInputName from '@components/inputs/sq-input-name/locales/pt.json'
 import enSqInputName from '@components/inputs/sq-input-name/locales/en.json'
 import esSqInputName from '@components/inputs/sq-input-name/locales/es.json'
+import ptSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/pt.json'
+import enSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/en.json'
+import esSqModalWelcomeCreatorsInsights from '@components-creators-insights/sq-modal-welcome-creators-insights/locales/es.json'
+import ptSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/pt.json'
+import enSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/en.json'
+import esSqModalActivation from '@components-creators-insights/sq-modal-activation/locales/es.json'
+import enSqGroupVerticalBarChart from '@components/sq-group-vertical-bar-chart/locales/en.json'
+import ptSqGroupVerticalBarChart from '@components/sq-group-vertical-bar-chart/locales/pt.json'
+import esSqGroupVerticalBarChart from '@components/sq-group-vertical-bar-chart/locales/es.json'
 
 const getResources = () => ({
   en: {
@@ -54,6 +63,9 @@ const getResources = () => ({
     sqInputDocumentInternational: enSqInputDocumentInternational,
     sqInputDocumentRut: enSqInputDocumentRut,
     sqInputName: enSqInputName,
+    sqModalWelcomeCreatorsInsights: enSqModalWelcomeCreatorsInsights,
+    sqModalActivation: enSqModalActivation,
+    sqGroupVerticalBarChart: enSqGroupVerticalBarChart,
   },
   pt: {
     globals: ptGlobals,
@@ -66,6 +78,9 @@ const getResources = () => ({
     sqInputDocumentInternational: ptSqInputDocumentInternational,
     sqInputDocumentRut: ptSqInputDocumentRut,
     sqInputName: ptSqInputName,
+    sqModalWelcomeCreatorsInsights: ptSqModalWelcomeCreatorsInsights,
+    sqModalActivation: ptSqModalActivation,
+    sqGroupVerticalBarChart: ptSqGroupVerticalBarChart,
   },
   es: {
     globals: esGlobals,
@@ -78,6 +93,9 @@ const getResources = () => ({
     sqInputDocumentInternational: esSqInputDocumentInternational,
     sqInputDocumentRut: esSqInputDocumentRut,
     sqInputName: esSqInputName,
+    sqModalWelcomeCreatorsInsights: esSqModalWelcomeCreatorsInsights,
+    sqModalActivation: esSqModalActivation,
+    sqGroupVerticalBarChart: esSqGroupVerticalBarChart,
   },
 })
 
@@ -140,6 +158,8 @@ i18n
       'sqInputDocumentInternational',
       'sqInputDocumentRut',
       'sqInputName',
+      'sqModalWelcomeCreatorsInsights',
+      'sqGroupVerticalBarChart',
     ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import SqBarChartExample from './sq-bar-chart-percent.component.example'
+import SqBarChartPercentExample from './sq-bar-chart-percent.component.example'
 
-const meta: Meta<typeof SqBarChartExample> = {
+const meta: Meta<typeof SqBarChartPercentExample> = {
   title: 'Components/SqBarChartPercent',
   parameters: {
     docs: {
@@ -10,12 +10,12 @@ const meta: Meta<typeof SqBarChartExample> = {
       },
     },
   },
-  component: SqBarChartExample,
+  component: SqBarChartPercentExample,
   tags: ['autodocs'],
 }
 
 export default meta
-type Story = StoryObj<typeof SqBarChartExample>
+type Story = StoryObj<typeof SqBarChartPercentExample>
 
 export const Default: Story = {
   args: {
