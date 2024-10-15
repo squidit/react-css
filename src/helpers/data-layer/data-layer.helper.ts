@@ -1,7 +1,7 @@
 import { WindowWithDataLayer } from '@interfaces/sq-data-layer.interface'
 
 export default class DataLayerHelper {
-  window: WindowWithDataLayer = window
+  private readonly window: WindowWithDataLayer = window
 
   public sendToDataLayer(payload) {
     const fullPayload = {
