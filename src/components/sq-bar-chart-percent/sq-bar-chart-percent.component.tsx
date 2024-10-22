@@ -11,9 +11,10 @@ export interface Props {
   percentage: boolean
   colorBar?: string
   label?: string
+  emoji?: string
 }
 
-const BarChartPercent = ({ value, total, percentage = false, label = '', colorBar = 'var(--primary_color)' }: Props) => {
+const BarChartPercent = ({ value, total, percentage = false, label = '', colorBar = 'var(--primary_color)', emoji = '' }: Props) => {
   const totalBar = useMemo(() => total || (percentage ? 1 : 100), [percentage, total])
   const numbersHelper = useMemo(() => new SqNumbersHelper(), [])
   const { formatPercent } = numbersHelper
@@ -28,7 +29,10 @@ const BarChartPercent = ({ value, total, percentage = false, label = '', colorBa
   return (
     <div>
       <div className="display-flex justify-content-space-between my-2">
-        <div className="text-bold">{label}</div>
+        <div className="display-flex align-items-center">
+          {emoji && <span className="category-emoji mr-3">{emoji}</span>}
+          <div className="text-bold">{label}</div>
+        </div>
         <div className="text-bold">{percentage ? formatPercent(value / 100) : value}</div>
       </div>
       <div className="bar-chart">
