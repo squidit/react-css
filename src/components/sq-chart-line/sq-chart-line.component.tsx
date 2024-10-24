@@ -36,7 +36,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       const addGradient = (ctx) => {
         const gradient = ctx.createLinearGradient(0, 0, 0, 220)
         gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
-        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue('--color_bg_box_neutral_primary'))
+        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue('--blue-90'))
         return gradient
       }
       const adjustRadiusBasedOnData = (ctx) => {
