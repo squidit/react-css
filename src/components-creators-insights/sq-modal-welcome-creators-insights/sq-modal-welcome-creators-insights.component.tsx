@@ -139,7 +139,7 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
     >
       <div
         className="content position-relative display-flex pb-0 pt-3 px-3"
-        style={{ backgroundColor: 'var(--purple-90)', height: width < 991 ? `${height}px` : 'auto' }}
+        style={{ backgroundColor: 'var(--purple-90)', height: width < 991 ? `${height}px` : '500px' }}
       >
         <SqButton className="button-close position-absolute" color="var(--purple-95)" onClick={() => handleOpenChange(false)}>
           <span className="display-flex justify-content-center align-items-center">
@@ -148,7 +148,7 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
         </SqButton>
         <div className="main-content position-relative display-flex align-items-end mt-5">
           <h3 className="title text-center">{factoryContent?.[activePage]?.title}</h3>
-          <img className="" src={factoryContent?.[activePage]?.image} alt="Background" />
+          <img className="position-absolute" src={factoryContent?.[activePage]?.image} alt="Background" />
         </div>
         <div className="footer position-relative p-3 display-flex">
           <p className="description text-center m-4">{factoryContent?.[activePage]?.description}</p>
