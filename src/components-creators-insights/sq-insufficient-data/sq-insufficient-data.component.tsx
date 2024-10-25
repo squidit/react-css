@@ -8,8 +8,8 @@ export default function SqInsufficientData() {
 
   return (
     <div className="text-center">
-      <i className="fa-regular fa-circle-exclamation"></i>
-      <h3 className="mt-5">{t('insufficientData')}</h3>
+      <i className="icon-exclamation fa-regular fa-circle-exclamation mt-5"></i>
+      <h4 className="mt-5">{t('insufficientData')}</h4>
     </div>
   )
 }
