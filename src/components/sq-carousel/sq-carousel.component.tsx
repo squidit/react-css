@@ -14,6 +14,7 @@ export interface Props extends PropsWithChildren<HTMLAttributes<HTMLDivElement>>
   spaceBetween?: number
   onSwiper?: () => any
   onSlideChange?: () => any
+  centeredSlides?: boolean
   showArrows?: boolean
   showPagination?: boolean
   effect?: 'creative' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'slide' | 'cards'
@@ -25,6 +26,7 @@ export default ({
   spaceBetween = 0,
   onSwiper,
   onSlideChange,
+  centeredSlides = false,
   showArrows = false,
   showPagination = false,
   effect = 'slide',
@@ -42,6 +44,7 @@ export default ({
       effect={effect}
       virtual
       autoHeight={false}
+      centeredSlides={centeredSlides}
     >
       {slides?.map((slide, index) => (
         <SwiperSlide key={slide} virtualIndex={index}>

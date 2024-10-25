@@ -1,9 +1,11 @@
 'use client'
 
 import SqNumbersHelper from '@helpers/sq-numbers/sq-numbers.helper'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import './sq-bar-chart-percent.component.scoped.scss'
+import onLangChange, { Language } from '@/src/observables/on-lang-change.observable'
+import { SqTip } from '../sq-tip'
 
 export interface Props {
   value: number
@@ -12,11 +14,21 @@ export interface Props {
   colorBar?: string
   label?: string
   emoji?: string
+  tooltip?: string
 }
 
-const BarChartPercent = ({ value, total, percentage = false, label = '', colorBar = 'var(--primary_color)', emoji = '' }: Props) => {
+const BarChartPercent = ({
+  value,
+  total,
+  percentage = false,
+  label = '',
+  colorBar = 'var(--primary_color)',
+  emoji = '',
+  tooltip = '',
+}: Props) => {
   const totalBar = useMemo(() => total || (percentage ? 1 : 100), [percentage, total])
   const numbersHelper = useMemo(() => new SqNumbersHelper(), [])
+  const [lang, setLang] = useState<Language>('en')
   const { formatPercent } = numbersHelper
 
   const definePercentage = (value: number, maxValue: number): string => {
@@ -26,14 +38,27 @@ const BarChartPercent = ({ value, total, percentage = false, label = '', colorBa
   const maxNumber = totalBar
   const widthUserBar = definePercentage(value, maxNumber)
 
+  useEffect(() => {
+    const onLangChangeSubscription = onLangChange?.subscribe((lang) => {
+      setLang(lang)
+    })
+
+    return () => {
+      onLangChangeSubscription?.unsubscribe()
+    }
+  }, [])
+
   return (
     <div>
       <div className="display-flex justify-content-space-between my-2">
         <div className="display-flex align-items-center">
           {emoji && <span className="category-emoji mr-3">{emoji}</span>}
           <div className="text-bold">{label}</div>
+          {tooltip && <SqTip message={tooltip} icon="fa-regular fa-circle-info ml-3" />}
         </div>
-        <div className="text-bold">{percentage ? formatPercent(value / 100) : value}</div>
+        <div className="text-bold">
+          {percentage ? formatPercent(value / 100) : numbersHelper?.formatStandardNumber({ lang, number: value })}
+        </div>
       </div>
       <div className="bar-chart">
         <div className="value-bar" style={{ width: widthUserBar, backgroundColor: colorBar }}></div>
