@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { SqNumbersHelper } from '@/src/helpers'
 import SqVerticalBarChart from '../sq-vertical-bar-chart/sq-vertical-bar-chart.component'
 
@@ -74,7 +74,7 @@ export default ({
         .map((item: number | string) => Number(item || 0))
       const biggestValue = Math.max(...values)
       const transformedValue = valueVerified === biggestValue ? 100 : (100 * (value * 100)) / (biggestValue * 100)
-      return `${transformedValue}px`
+      return `${transformedValue}%`
     },
     [getDataValues],
   )
@@ -128,9 +128,9 @@ export default ({
           ))}
         </div>
       )}
-      <div className="vertical-chart-container justify-content-center">
+      <div className="vertical-chart-container justify-content-center align-items-stretch">
         {dataInTrio?.map((group, index) => (
-          <div className="chart-group display-flex justify-content-space-around" key={index}>
+          <div className="chart-group display-flex justify-content-space-around align-items-center" key={index}>
             {group?.map((item, i) => (
               <div className="chart position-relative" key={i}>
                 <div

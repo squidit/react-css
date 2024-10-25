@@ -1,7 +1,7 @@
 .vertical-chart {
   display: flex;
   flex-direction: column;
-  max-width: 550px;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
 
@@ -48,12 +48,14 @@
     gap: 3rem;
 
     .chart-group {
+      flex-grow: 1;
       gap: 3rem;
+      height: inherit;
     }
   }
 
   .chart {
-    height: 120px;
+    height: 100%;
 
     .to-show-tooltip {
       width: 100%;
@@ -88,6 +90,11 @@
       display: flex;
       justify-content: center;
       align-items: baseline;
+      height: 100%;
+
+      .vertical-bar-chart {
+        height: 100%;
+      }
     }
 
     p {
