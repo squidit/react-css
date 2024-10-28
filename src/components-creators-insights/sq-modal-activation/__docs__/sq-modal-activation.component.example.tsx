@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import SqModalActivation from '../sq-modal-activation.component'
 import { SqButton } from '../../../components/buttons/sq-button'
 
@@ -61,16 +61,14 @@ const SqModalActivationExample: React.FC = () => {
       }}
     >
       <SqButton onClick={handleOpen}>Open Modal</SqButton>
-      {open && (
-        <SqModalActivation
-          open={isModalOpen}
-          profiles={profiles}
-          onToggle={handleToggle}
-          onConfirm={handleDone}
-          onOpenChange={handleOpenChange}
-          requireActiveProfile={true}
-        />
-      )}
+      <SqModalActivation
+        open={isModalOpen}
+        profiles={profiles}
+        onToggle={handleToggle}
+        onConfirm={handleDone}
+        onOpenChange={handleOpenChange}
+        requireActiveProfile={true}
+      />
     </div>
   )
 }

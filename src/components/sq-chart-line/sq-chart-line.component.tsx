@@ -34,9 +34,10 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       const maxDataValue = Math.max(...(data.datasets[0].data as number[]))
       const minDataValue = Math.min(...(data.datasets[0].data as number[]))
       const addGradient = (ctx) => {
+        const theme = document.getElementsByTagName('html')[0]?.classList?.contains('dark') ? 'dark' : 'light'
         const gradient = ctx.createLinearGradient(0, 0, 0, 220)
         gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
-        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue('--blue-90'))
+        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue(`--blue-${theme === 'light' ? 90 : 10}`))
         return gradient
       }
       const adjustRadiusBasedOnData = (ctx) => {

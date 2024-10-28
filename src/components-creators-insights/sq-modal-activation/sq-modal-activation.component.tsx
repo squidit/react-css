@@ -86,11 +86,12 @@ export default ({
     justifyContent: 'center',
     alignItems: 'center',
     flexShrink: 0,
+    aspectRatio: 1 / 1,
   }
 
   const header = (
     <div className="header">
-      <h4>{titleModal ?? t('activationQuestion')}</h4>
+      <h4>{titleModal || t('activationQuestion')}</h4>
       <SqButton
         color="var(--purple-95)"
         className="button-action rounded"
@@ -119,7 +120,7 @@ export default ({
         onClick={onConfirm}
         disabled={requireActiveProfile && !isAnyProfileActive}
       >
-        {textButton ?? t('buttonDone')}
+        {textButton || t('buttonDone')}
       </SqButton>
     </footer>
   )
@@ -135,7 +136,7 @@ export default ({
       forceMobileNoMargin={true}
     >
       <div className="box-insights">
-        <p dangerouslySetInnerHTML={{ __html: messageModal ?? t('insightsText', { socialNetwork: 'instagram' }) }} />
+        <p dangerouslySetInnerHTML={{ __html: messageModal || t('insightsText', { socialNetwork: 'instagram' }) }} />
       </div>
       <div
         className="profiles-list"
