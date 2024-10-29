@@ -54,7 +54,7 @@ const BarChartPercent = ({
         <div className="display-flex align-items-center">
           {emoji && <span className="category-emoji mr-3">{emoji}</span>}
           <div className="text-bold">{label}</div>
-          {tooltip && <SqTip message={tooltip} icon="fa-regular fa-circle-info ml-3" />}
+          {tooltip && <SqTip message={tooltip} icon="fa-regular fa-circle-info ml-2" />}
         </div>
         <div className="text-bold">
           {percentage ? formatPercent(value / 100) : numbersHelper?.formatStandardNumber({ lang, number: value })}
