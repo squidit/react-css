@@ -1,6 +1,6 @@
 'use client'
 
-import React, { HTMLAttributes, useEffect, useRef, useState } from 'react'
+import React, { HTMLAttributes, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
   CategoryScale,
   Chart,
@@ -19,27 +19,32 @@ import './sq-chart-line.component.scoped.scss'
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   data: ChartData
   options?: ChartOptions
+  theme?: 'light' | 'dark'
 }
 
 Chart.register(LineController, Tooltip, PointElement, CategoryScale, LinearScale, LineElement, Filler)
 
-export default function SqChartLine({ className = '', style = {}, id = '', data, options }: Readonly<Props>) {
+export default function SqChartLine({ className = '', style = {}, id = '', data, options, theme }: Readonly<Props>) {
   const chartRef = useRef<HTMLCanvasElement>(null)
   const [chart, setChart] = useState<Chart | null>(null)
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
 
+  const addGradient = useCallback(
+    (ctx) => {
+      const themeChart = theme || (document.getElementsByTagName('html')[0]?.classList?.contains('dark') ? 'dark' : 'light')
+      const gradient = ctx.createLinearGradient(0, 0, 0, 220)
+      gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
+      gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue(`--blue-${themeChart === 'light' ? 90 : 10}`))
+      return gradient
+    },
+    [theme],
+  )
+
   useEffect(() => {
     if (chartRef.current) {
       const maxDataValue = Math.max(...(data.datasets[0].data as number[]))
       const minDataValue = Math.min(...(data.datasets[0].data as number[]))
-      const addGradient = (ctx) => {
-        const theme = document.getElementsByTagName('html')[0]?.classList?.contains('dark') ? 'dark' : 'light'
-        const gradient = ctx.createLinearGradient(0, 0, 0, 220)
-        gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--blue-50'))
-        gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue(`--blue-${theme === 'light' ? 90 : 10}`))
-        return gradient
-      }
       const adjustRadiusBasedOnData = (ctx) => {
         const v = ctx.parsed.y
         return v === maxDataValue ? 5 : width < 991 ? 0 : 2
@@ -119,7 +124,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, width, height, options])
+  }, [data, width, height, options, addGradient])
 
   useEffect(() => {
     const updateHeight = () => {
@@ -144,7 +149,7 @@ export default function SqChartLine({ className = '', style = {}, id = '', data,
       window.removeEventListener('beforeprint', beforePrintHandler)
       window.removeEventListener('afterprint', afterPrintHandler)
     }
-  }, [])
+  }, [chart])
 
   return (
     <div className={`chart-line ${className}`} style={style} id={id}>
