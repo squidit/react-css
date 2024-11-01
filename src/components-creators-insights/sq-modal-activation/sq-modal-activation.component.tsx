@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect, CSSProperties, useCallback } from 'react'
+import { CSSProperties, useCallback, useEffect, useState } from 'react'
 
-import './sq-modal-activation.component.scoped.scss'
 import { SqButton } from '@/src/components/buttons/sq-button'
 import { SqModal } from '@/src/components/sq-modal'
-import { SqSocialConnect } from '../sq-social-connect'
 import { useTranslation } from 'react-i18next'
 import { Props as ModalProps } from '../../components/sq-modal/sq-modal.component'
+import { SqSocialConnect } from '../sq-social-connect'
+import './sq-modal-activation.component.scoped.scss'
 
 type SocialNetwork = 'instagram' | 'youtube' | 'twitter' | 'tiktok'
 
@@ -24,9 +24,22 @@ export interface Props extends ModalProps {
   onToggle?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
   profiles: Profile[]
   requireActiveProfile?: boolean
+  titleModal?: string
+  messageModal?: string
+  textButton?: string
 }
 
-export default ({ profiles, onToggle, onConfirm, onOpenChange, open, requireActiveProfile = false }: Props) => {
+export default ({
+  profiles,
+  onToggle,
+  onConfirm,
+  onOpenChange,
+  open,
+  requireActiveProfile = false,
+  titleModal = '',
+  messageModal = '',
+  textButton = '',
+}: Props) => {
   const [width, setWidth] = useState<number>(window.innerWidth)
   const [height, setHeight] = useState<number>(window.innerHeight)
   const { t } = useTranslation('sqModalActivation')
@@ -73,11 +86,12 @@ export default ({ profiles, onToggle, onConfirm, onOpenChange, open, requireActi
     justifyContent: 'center',
     alignItems: 'center',
     flexShrink: 0,
+    aspectRatio: 1 / 1,
   }
 
   const header = (
     <div className="header">
-      <h4>{t('activationQuestion')}</h4>
+      <h4>{titleModal || t('activationQuestion')}</h4>
       <SqButton
         color="var(--purple-95)"
         className="button-action rounded"
@@ -106,7 +120,7 @@ export default ({ profiles, onToggle, onConfirm, onOpenChange, open, requireActi
         onClick={onConfirm}
         disabled={requireActiveProfile && !isAnyProfileActive}
       >
-        {t('buttonDone')}
+        {textButton || t('buttonDone')}
       </SqButton>
     </footer>
   )
@@ -122,7 +136,7 @@ export default ({ profiles, onToggle, onConfirm, onOpenChange, open, requireActi
       forceMobileNoMargin={true}
     >
       <div className="box-insights">
-        <p dangerouslySetInnerHTML={{ __html: t('insightsText', { socialNetwork: 'instagram' }) }} />
+        <p dangerouslySetInnerHTML={{ __html: messageModal || t('insightsText', { socialNetwork: 'instagram' }) }} />
       </div>
       <div
         className="profiles-list"
