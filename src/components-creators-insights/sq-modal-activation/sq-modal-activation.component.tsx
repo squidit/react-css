@@ -170,10 +170,7 @@ export default ({
                   name={`toggle-creators-insights-${profile.username}`}
                   id={`toggle-creators-insights-${profile.profileId}`}
                   checked={profile.hasCreatorsInsights}
-                  onChange={() =>
-                    onToggleCreatorsInsights &&
-                    onToggleCreatorsInsights(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)
-                  }
+                  onChange={() => onToggleCreatorsInsights?.(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)}
                   errorSpan={false}
                 />
                 <label
@@ -199,9 +196,7 @@ export default ({
                   name={`toggle-public-profile-${profile.username}`}
                   id={`toggle-public-profile-${profile.profileId}`}
                   checked={profile?.isSharedCreatorsInsights}
-                  onChange={() =>
-                    onTogglePublicProfile && onTogglePublicProfile(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)
-                  }
+                  onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)}
                   disabled={!profile.hasCreatorsInsights}
                   errorSpan={false}
                 />
