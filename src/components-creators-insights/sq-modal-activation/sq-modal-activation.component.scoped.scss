@@ -26,10 +26,17 @@
 
   .profile-item {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: bold;
-    margin: 1.875rem 0 1.875rem 0;
+    flex-direction: column;
+    margin: 3rem 0;
+    gap: 1rem;
+
+    .profile-selector {
+      width: 100%;
+    }
+
+    .profile-and-username {
+      width: 100%;
+    }
   }
 
   .profiles-list {

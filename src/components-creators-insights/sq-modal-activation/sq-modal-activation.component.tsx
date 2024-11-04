@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next'
 import { Props as ModalProps } from '../../components/sq-modal/sq-modal.component'
 import { SqSocialConnect } from '../sq-social-connect'
 import './sq-modal-activation.component.scoped.scss'
+import { SqSelector } from '@/src/components/inputs/sq-selector'
+import SqTipComponent from '@/src/components/sq-tip/sq-tip.component'
 
 type SocialNetwork = 'instagram' | 'youtube' | 'twitter' | 'tiktok'
 
@@ -15,13 +17,17 @@ interface Profile {
   profileId: string
   socialNetwork: SocialNetwork
   username: string
+  followers: number
   hasCreatorsInsights: boolean
   picture: string
+  hasSocialNetworkCache: boolean
+  isSharedCreatorsInsights: boolean
 }
 
 export interface Props extends ModalProps {
   onConfirm?: () => void
-  onToggle?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
+  onToggleCreatorsInsights?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
+  onTogglePublicProfile?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
   profiles: Profile[]
   requireActiveProfile?: boolean
   titleModal?: string
@@ -31,7 +37,8 @@ export interface Props extends ModalProps {
 
 export default ({
   profiles,
-  onToggle,
+  onToggleCreatorsInsights,
+  onTogglePublicProfile,
   onConfirm,
   onOpenChange,
   open,
@@ -148,21 +155,62 @@ export default ({
       >
         {profiles.map((profile) => (
           <div className="profile-item" key={profile.profileId}>
-            <SqSocialConnect profiles={mapProfilesToSocialConnect([profile])} />
-            <span>@{profile.username}</span>
-            <div className="wrapper-selectors toggle">
-              <input
-                type="checkbox"
-                name={`toggle-${profile.username}`}
-                id={`toggle-${profile.profileId}`}
-                checked={profile.hasCreatorsInsights}
-                onChange={() => onToggle && onToggle(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)}
-              />
-              <label
-                className="checkbox"
-                htmlFor={`toggle-${profile.profileId}`}
-                aria-label={`Toggle creator insights for ${profile.username}`}
-              ></label>
+            <div className="profile-and-username display-flex align-items-center">
+              <SqSocialConnect profiles={mapProfilesToSocialConnect([profile])} style={{ width: '40px', height: '40px' }} />
+              <span className="text-bold">@{profile.username}</span>
+            </div>
+            <div className="profile-selector display-flex justify-content-space-between align-items-center">
+              <span>
+                <i className="fa-regular fa-user-chart mr-2" />
+                {t('activateCreatorsInsights')}
+              </span>
+              <div className="wrapper-selectors toggle">
+                <SqSelector
+                  type="checkbox"
+                  name={`toggle-creators-insights-${profile.username}`}
+                  id={`toggle-creators-insights-${profile.profileId}`}
+                  checked={profile.hasCreatorsInsights}
+                  onChange={() =>
+                    onToggleCreatorsInsights &&
+                    onToggleCreatorsInsights(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)
+                  }
+                  errorSpan={false}
+                />
+                <label
+                  className="checkbox"
+                  htmlFor={`toggle-creators-insights-${profile.profileId}`}
+                  aria-label={`Toggle creator insights for ${profile.username}`}
+                ></label>
+              </div>
+            </div>
+            <div className="profile-selector display-flex justify-content-space-between align-items-center">
+              <span>
+                <i className="fa-regular fa-eye mr-2" />
+                {t('makeProfilePublic')}
+                <SqTipComponent
+                  message={profile?.hasCreatorsInsights ? t('tipForInfo') : t('tipForAlert')}
+                  icon={profile?.hasCreatorsInsights ? 'fa-solid fa-info-circle' : 'fa-solid fa-triangle-exclamation'}
+                  color={profile?.hasCreatorsInsights ? 'var(--blue-30)' : 'var(--red-30)'}
+                />
+              </span>
+              <div className="wrapper-selectors toggle">
+                <SqSelector
+                  type="checkbox"
+                  name={`toggle-public-profile-${profile.username}`}
+                  id={`toggle-public-profile-${profile.profileId}`}
+                  checked={profile?.isSharedCreatorsInsights}
+                  onChange={() =>
+                    onTogglePublicProfile && onTogglePublicProfile(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)
+                  }
+                  disabled={!profile.hasCreatorsInsights}
+                  errorSpan={false}
+                />
+                <label
+                  className="checkbox"
+                  htmlFor={`toggle-public-profile-${profile.profileId}`}
+                  aria-label={`Toggle visibility for ${profile.username}`}
+                ></label>
+              </div>
             </div>
           </div>
         ))}

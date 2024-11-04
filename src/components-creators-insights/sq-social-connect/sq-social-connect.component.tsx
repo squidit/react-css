@@ -14,9 +14,9 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 type SocialNetwork = 'instagram' | 'tiktok' | 'twitter' | 'youtube'
 
-const SqSocialConnect: React.FC<Props> = ({ profiles = [] }) => {
+const SqSocialConnect: React.FC<Props> = ({ profiles = [], className = '', ...props }) => {
   return (
-    <div className="social-connect">
+    <div className={`social-connect ${className}`} {...props}>
       {profiles?.map((profile, index) => (
         <div key={profile.id || index} className={`profile-container ${profile.socialNetwork}`}>
           <div className="profile-wrapper">
