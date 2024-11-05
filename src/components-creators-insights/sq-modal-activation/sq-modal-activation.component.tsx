@@ -196,7 +196,7 @@ export default ({
                   name={`toggle-public-profile-${profile.username}`}
                   id={`toggle-public-profile-${profile.profileId}`}
                   checked={profile?.isSharedCreatorsInsights}
-                  onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile.hasCreatorsInsights)}
+                  onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile?.isSharedCreatorsInsights)}
                   disabled={!profile.hasCreatorsInsights}
                   errorSpan={false}
                 />
