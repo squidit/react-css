@@ -6,7 +6,8 @@ const meta: Meta<typeof SqCardProfileExample> = {
   parameters: {
     docs: {
       description: {
-        component: 'A simple BarChart component',
+        component:
+          'The SqCardProfile component displays profile information for a specific social network. It shows the profile picture, username, and social network icon. Additionally, it includes a section for updating values with an icon and description.',
       },
     },
   },

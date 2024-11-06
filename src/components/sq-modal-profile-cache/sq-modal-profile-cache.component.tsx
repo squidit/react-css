@@ -18,7 +18,7 @@ export interface Instagram {
   brandUser: number
   picture: string
   fullName: string
-  email: any
+  email: string
   bio?: string
   website?: string
   language?: string
@@ -169,8 +169,9 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   const handleFieldChange = useCallback(
     (field: CacheField, value: string) => {
       setState((prevState) => {
+        if (prevState[field] === value) return prevState
         const newState = { ...prevState, [field]: value }
-        onStateChange(newState)
+        onStateChange && onStateChange(newState)
         return newState
       })
     },

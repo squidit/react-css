@@ -70,12 +70,16 @@ const SqModalProfileCacheExample: React.FC = () => {
       {
         profileId: '1',
         contentType: 'posts',
-        contentValue: '',
+        contentValue: 0,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
       },
       {
         profileId: '1',
         contentType: 'stories',
-        contentValue: '45',
+        contentValue: 45,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
       },
     ],
   }

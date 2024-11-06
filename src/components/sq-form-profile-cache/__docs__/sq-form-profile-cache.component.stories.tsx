@@ -6,7 +6,8 @@ const meta: Meta<typeof SqFormProfileCacheExample> = {
   parameters: {
     docs: {
       description: {
-        component: 'A simple BarChart component',
+        component:
+          'The SqFormProfileCache component is a form used to update cache values for different social network fields. It displays input fields for each cache field, allowing users to enter values. The component also applies a money mask to the input values.',
       },
     },
   },
