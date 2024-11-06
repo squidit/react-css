@@ -1,6 +1,6 @@
 'use client'
 
-import { CSSProperties, useCallback, useEffect, useState } from 'react'
+import { CSSProperties, useCallback, useEffect, useMemo, useState } from 'react'
 
 import { SqButton } from '@/src/components/buttons/sq-button'
 import { SqModal } from '@/src/components/sq-modal'
@@ -59,6 +59,13 @@ export default ({
     },
     [onOpenChange],
   )
+
+  const getToolTipType = useCallback((profile: Profile) => {
+    if (profile.hasCreatorsInsights && profile.hasSocialNetworkCache) {
+      return 'info'
+    }
+    return 'alert'
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -185,9 +192,9 @@ export default ({
                 <i className="fa-regular fa-eye mr-2" />
                 {t('makeProfilePublic')}
                 <SqTipComponent
-                  message={profile?.hasCreatorsInsights ? t('tipForInfo') : t('tipForAlert')}
-                  icon={profile?.hasCreatorsInsights ? 'fa-solid fa-info-circle' : 'fa-solid fa-triangle-exclamation'}
-                  color={profile?.hasCreatorsInsights ? 'var(--blue-30)' : 'var(--red-30)'}
+                  message={getToolTipType(profile) === 'info' ? t('tipForInfo') : t('tipForAlert')}
+                  icon={getToolTipType(profile) === 'info' ? 'fa-solid fa-info-circle' : 'fa-solid fa-triangle-exclamation'}
+                  color={getToolTipType(profile) === 'info' ? 'var(--blue-30)' : 'var(--red-30)'}
                 />
               </span>
               <div className="wrapper-selectors toggle">
@@ -197,7 +204,7 @@ export default ({
                   id={`toggle-public-profile-${profile.profileId}`}
                   checked={profile?.isSharedCreatorsInsights}
                   onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile?.isSharedCreatorsInsights)}
-                  disabled={!profile.hasCreatorsInsights}
+                  disabled={!profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache}
                   errorSpan={false}
                 />
                 <label
