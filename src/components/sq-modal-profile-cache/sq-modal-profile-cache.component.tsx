@@ -131,9 +131,10 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   fieldsCache: CacheField[]
   type: SocialNetworksAvailables
   onSubmit: () => void
+  onStateChange?: (newState: Record<CacheField, string>) => void
 }
 
-const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fieldsCache, type }: Props) => {
+const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fieldsCache, type, onStateChange }: Props) => {
   const { t } = useTranslation('sqModalProfileCache')
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
@@ -165,9 +166,16 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
     [fieldsCache, socialNetworkObject],
   )
 
-  const handleFieldChange = useCallback((field: CacheField, value: string) => {
-    setState((prevState) => ({ ...prevState, [field]: value }))
-  }, [])
+  const handleFieldChange = useCallback(
+    (field: CacheField, value: string) => {
+      setState((prevState) => {
+        const newState = { ...prevState, [field]: value }
+        onStateChange(newState)
+        return newState
+      })
+    },
+    [onStateChange],
+  )
 
   const hasValueFilled = useMemo(() => {
     return Object.values(state).some((value) => !!value && value !== '0,00')
