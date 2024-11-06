@@ -138,6 +138,7 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   const { t } = useTranslation('sqModalProfileCache')
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
+  const [isOpen, setIsOpen] = useState(open || false)
   const [state, setState] = useState(
     fieldsCache?.reduce(
       (acc, field) => ({
@@ -178,9 +179,9 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
     [onStateChange],
   )
 
-  const hasValueFilled = useMemo(() => {
-    return Object.values(state).some((value) => !!value && value !== '0,00')
-  }, [state])
+  const hasAllFieldsFilled = useMemo(() => {
+    return fieldsCache.every((field) => state[field] && state[field] !== '0,00')
+  }, [state, fieldsCache])
 
   const hasChangedValues = useMemo(() => {
     return Object.keys(state).some((field) => {
@@ -213,6 +214,15 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search)
+    const action = query.get('action')
+    const profileId = query.get('profileId')
+    if (action === 'updateCache' && profileId) {
+      setIsOpen(true)
+    }
+  }, [])
+
   const content = (
     <main className="content-modal p-3" style={width < 991 ? { maxHeight: `calc(${height}px - 55px - 68px)`, height: '100vh' } : {}}>
       <SqCardProfile socialNetworkObject={socialNetworkObject} type={type} />
@@ -230,7 +240,7 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
       footer={
         <SqModalFooter
           hasChangedValues={hasChangedValues}
-          hasValueFilled={hasValueFilled}
+          hasValueFilled={hasAllFieldsFilled}
           onClose={() => handleClose()}
           onSubmit={onSubmit}
         />

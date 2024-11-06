@@ -81,6 +81,13 @@ const SqModalProfileCacheExample: React.FC = () => {
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       },
+      {
+        profileId: '1',
+        contentType: 'reels',
+        contentValue: 0,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
     ],
   }
 
@@ -109,7 +116,7 @@ const SqModalProfileCacheExample: React.FC = () => {
         onSubmit={handleSubmit}
         socialNetworkObject={exampleSocialNetworkObject}
         type={type}
-        fieldsCache={['posts', 'stories']}
+        fieldsCache={['posts', 'stories', 'reels']}
       />
     </div>
   )
