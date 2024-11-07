@@ -22,6 +22,7 @@ interface Profile {
   picture: string
   hasSocialNetworkCache: boolean
   isSharedCreatorsInsights: boolean
+  isTokenValid: boolean
 }
 
 export interface Props extends ModalProps {
@@ -202,9 +203,13 @@ export default ({
                   type="checkbox"
                   name={`toggle-public-profile-${profile.username}`}
                   id={`toggle-public-profile-${profile.profileId}`}
-                  checked={profile?.isSharedCreatorsInsights}
+                  checked={
+                    !profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache || !profile?.isTokenValid
+                      ? false
+                      : profile?.isSharedCreatorsInsights
+                  }
                   onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile?.isSharedCreatorsInsights)}
-                  disabled={!profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache}
+                  disabled={!profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache || !profile?.isTokenValid}
                   errorSpan={false}
                 />
                 <label
