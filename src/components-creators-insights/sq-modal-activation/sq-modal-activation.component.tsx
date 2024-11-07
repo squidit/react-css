@@ -62,7 +62,7 @@ export default ({
   )
 
   const getToolTipType = useCallback((profile: Profile) => {
-    if (profile.hasCreatorsInsights && profile.hasSocialNetworkCache) {
+    if (profile.hasCreatorsInsights && profile.hasSocialNetworkCache && profile?.isTokenValid) {
       return 'info'
     }
     return 'alert'
