@@ -2,10 +2,9 @@
 
 import { useState } from 'react'
 import SqFormProfileCache from '../sq-form-profile-cache.component'
-import { CacheField } from '../../sq-modal-profile-cache/sq-modal-profile-cache.component'
 
 const SqFormProfileCacheExample: React.FC = () => {
-  const fieldsCache: CacheField[] = ['posts', 'reels', 'stories']
+  const fieldsCache = ['posts', 'reels', 'stories']
 
   const [state, setState] = useState<Record<string, string>>({
     field1: '',

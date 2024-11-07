@@ -36,10 +36,16 @@ export default ({ fieldsCache, onSubmit, onChange, state }: Props) => {
   )
 
   return (
-    <form className="form-profile-cache mt-5" onSubmit={() => onSubmit()}>
+    <form
+      className="form-profile-cache mt-5"
+      onSubmit={(e) => {
+        e.preventDefault()
+        onSubmit()
+      }}
+    >
       {fieldsCache?.map((field, i) => (
         <SqInput
-          key={i}
+          key={`${field}-${i}`}
           label={t(`labels.${field}`, { count: 1 })}
           leftLabel={'R$'}
           value={moneyMask(state[field])}
