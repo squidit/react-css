@@ -12,6 +12,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   icon?: string
   fontSize?: string
   id?: string
+  color?: string
 }
 
 export default ({
@@ -22,6 +23,7 @@ export default ({
   icon = 'fa-solid fa-circle-info',
   id,
   fontSize = '16px',
+  color = null,
 }: Props) => {
   const timestamp = `random-id-${(1 + Date.now() + Math.random()).toString().replace('.', '')}`
   const watcher = React.useRef<any>(null)
@@ -57,7 +59,7 @@ export default ({
         data-html={true}
         data-tooltip-id={id || timestamp}
         data-event={trigger === 'click' ? 'click' : null}
-        style={{ fontSize }}
+        style={{ fontSize, color }}
       ></i>
 
       <Tooltip className="tip-class" aria-haspopup="true" id={id || timestamp} place={place} variant={theme} />
