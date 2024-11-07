@@ -7,7 +7,6 @@ export * from './helpers'
 export * from './hooks'
 export * from './interfaces'
 export * from './observables'
-export * from './mocks'
 
 export { setComponentTranslations, setAllComponentsTranslations } from './i18n'
 
