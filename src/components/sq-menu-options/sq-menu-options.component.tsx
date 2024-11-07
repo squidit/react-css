@@ -10,6 +10,7 @@ export interface Props extends React.PropsWithChildren<React.HTMLAttributes<HTML
   menuArray?: { label: string; icon?: string; iconText?: string; action: () => void }[]
   styleButton?: React.CSSProperties
   classButton?: string
+  disabled?: boolean
 }
 
 export default ({
@@ -20,6 +21,7 @@ export default ({
   icon = 'ellipsis-vertical',
   styleButton,
   classButton = '',
+  disabled = false,
 }: Props) => {
   const [open, setOpen] = useState(false)
   const menuButtonRef = useRef<any>(null)
@@ -73,7 +75,7 @@ export default ({
     <div className={`wrapper-menu ${className}`}>
       <button
         onClick={() => setOpen(!open)}
-        className={`button-to-open ${classButton}`}
+        className={`button-to-open ${classButton} ${disabled ? 'disabled' : ''}`}
         type="button"
         ref={menuButtonRef}
         style={styleButton}
