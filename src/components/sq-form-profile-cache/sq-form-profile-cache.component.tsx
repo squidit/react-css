@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CacheField } from '../sq-modal-profile-cache/sq-modal-profile-cache.component'
 import { SqInput } from '../inputs/sq-input'
+import { CacheField } from '@/src/interfaces/sq-profile-cache.interface'
 
 interface Props {
   fieldsCache: CacheField[]
