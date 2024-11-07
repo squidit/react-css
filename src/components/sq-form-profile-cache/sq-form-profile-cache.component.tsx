@@ -14,8 +14,8 @@ export default ({ fieldsCache, onSubmit, onChange, state }: Props) => {
   const { t } = useTranslation('sqModalProfileCache')
 
   const moneyMask = (value: string) => {
-    if (!value) {
-      return ''
+    if (!value || value === '') {
+      return '0,00'
     }
 
     value = value?.replace('.', '')?.replace(',', '')?.replace(/\D/g, '')

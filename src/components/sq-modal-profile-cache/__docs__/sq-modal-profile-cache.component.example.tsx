@@ -94,9 +94,9 @@ const SqModalProfileCacheExample: React.FC = () => {
   const type = 'instagram'
 
   const [cacheState, setCacheState] = useState<Record<string, string>>({
-    posts: '0,00',
-    stories: '0,00',
-    reels: '0,00',
+    posts: '',
+    stories: '',
+    reels: '',
   })
 
   const handleStateChange = (newState: Record<string, string>) => {

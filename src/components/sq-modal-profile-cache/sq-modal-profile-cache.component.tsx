@@ -183,11 +183,10 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   }, [fieldsCache, socialNetworkObject, onStateChange])
 
   const handleClose = useCallback(() => {
-    resetState()
     if (onClose && typeof onClose === 'function') {
       onClose()
     }
-  }, [onClose, resetState])
+  }, [onClose])
 
   useEffect(() => {
     const onResize = () => {
@@ -206,6 +205,12 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
       setIsOpen(true)
     }
   }, [])
+
+  useEffect(() => {
+    if (!hasChangedValues) {
+      resetState()
+    }
+  }, [hasChangedValues, resetState])
 
   const content = (
     <main className="content-modal p-3" style={width < 991 ? { maxHeight: `calc(${height}px - 55px - 68px)`, height: '100vh' } : {}}>
