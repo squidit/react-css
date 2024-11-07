@@ -131,61 +131,32 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   fieldsCache: CacheField[]
   type: SocialNetworksAvailables
   onSubmit: () => void
+  cacheState?: Record<CacheField, string>
   onStateChange?: (newState: Record<CacheField, string>) => void
 }
 
-const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fieldsCache, type, onStateChange }: Props) => {
+const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fieldsCache, type, onStateChange, cacheState }: Props) => {
   const { t } = useTranslation('sqModalProfileCache')
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
   const [isOpen, setIsOpen] = useState(open || false)
-  const [state, setState] = useState(
-    fieldsCache?.reduce(
-      (acc, field) => ({
-        ...acc,
-        [field]: new Intl.NumberFormat('pt-br', { minimumFractionDigits: 2 }).format(
-          socialNetworkObject?.socialNetworkProfilesCache?.find(({ contentType }) => contentType === field)?.contentValue ?? 0,
-        ),
-      }),
-      {},
-    ) as Record<CacheField, string>,
-  )
-
-  const resetState = useCallback(
-    () =>
-      setState(
-        fieldsCache?.reduce(
-          (acc, field) => ({
-            ...acc,
-            [field]: new Intl.NumberFormat('pt-br', { minimumFractionDigits: 2 }).format(
-              socialNetworkObject?.socialNetworkProfilesCache?.find(({ contentType }) => contentType === field)?.contentValue ?? 0,
-            ),
-          }),
-          {},
-        ) as Record<CacheField, string>,
-      ),
-    [fieldsCache, socialNetworkObject],
-  )
 
   const handleFieldChange = useCallback(
-    (field: CacheField, value: string) => {
-      setState((prevState) => {
-        if (prevState[field] === value) return prevState
-        const newState = { ...prevState, [field]: value }
-        onStateChange && onStateChange(newState)
-        return newState
-      })
+    (field: string, value: string) => {
+      const newState = { ...cacheState, [field]: value }
+      onStateChange && onStateChange(newState)
+      return newState
     },
-    [onStateChange],
+    [cacheState, onStateChange],
   )
 
   const hasAllFieldsFilled = useMemo(() => {
-    return fieldsCache.every((field) => state[field] && state[field] !== '0,00')
-  }, [state, fieldsCache])
+    return fieldsCache.every((field) => cacheState[field] && cacheState[field] !== '0,00')
+  }, [cacheState, fieldsCache])
 
   const hasChangedValues = useMemo(() => {
-    return Object.keys(state).some((field) => {
-      const value = state[field as keyof typeof state]
+    return Object.keys(cacheState).some((field) => {
+      const value = cacheState[field as keyof typeof cacheState]
       let socialNetworkValue = new Intl.NumberFormat('pt-br', { minimumFractionDigits: 2 }).format(
         socialNetworkObject[field as keyof typeof socialNetworkObject] || '',
       )
@@ -196,7 +167,20 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
 
       return value !== socialNetworkValue
     })
-  }, [state, socialNetworkObject])
+  }, [cacheState, socialNetworkObject])
+
+  const resetState = useCallback(() => {
+    const newState = fieldsCache?.reduce(
+      (acc, field) => ({
+        ...acc,
+        [field]: new Intl.NumberFormat('pt-br', { minimumFractionDigits: 2 }).format(
+          socialNetworkObject?.socialNetworkProfilesCache?.find(({ contentType }) => contentType === field)?.contentValue ?? 0,
+        ),
+      }),
+      {},
+    ) as Record<CacheField, string>
+    onStateChange && onStateChange(newState)
+  }, [fieldsCache, socialNetworkObject, onStateChange])
 
   const handleClose = useCallback(() => {
     resetState()
@@ -226,7 +210,7 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   const content = (
     <main className="content-modal p-3" style={width < 991 ? { maxHeight: `calc(${height}px - 55px - 68px)`, height: '100vh' } : {}}>
       <SqCardProfile socialNetworkObject={socialNetworkObject} type={type} />
-      <SqFormProfileCache fieldsCache={fieldsCache} onSubmit={onSubmit} onChange={handleFieldChange} state={state} />
+      <SqFormProfileCache fieldsCache={fieldsCache} onSubmit={onSubmit} onChange={handleFieldChange} state={cacheState} />
     </main>
   )
 

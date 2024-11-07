@@ -93,6 +93,16 @@ const SqModalProfileCacheExample: React.FC = () => {
 
   const type = 'instagram'
 
+  const [cacheState, setCacheState] = useState<Record<string, string>>({
+    posts: '0,00',
+    stories: '0,00',
+    reels: '0,00',
+  })
+
+  const handleStateChange = (newState: Record<string, string>) => {
+    setCacheState(newState)
+  }
+
   const handleOpenModal = () => setOpen(true)
   const handleCloseModal = () => setOpen(false)
   const handleSubmit = () => {
@@ -117,6 +127,8 @@ const SqModalProfileCacheExample: React.FC = () => {
         socialNetworkObject={exampleSocialNetworkObject}
         type={type}
         fieldsCache={['posts', 'stories', 'reels']}
+        cacheState={cacheState}
+        onStateChange={handleStateChange}
       />
     </div>
   )
