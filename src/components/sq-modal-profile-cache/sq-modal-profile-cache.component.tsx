@@ -98,7 +98,7 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   }, [hasChangedValues, resetState])
 
   const content = (
-    <main className="content-modal p-3" style={width < 991 ? { maxHeight: `calc(${height}px - 55px - 68px)`, height: '100vh' } : {}}>
+    <main className="content-modal p-3" style={width < 991 ? { maxHeight: `calc(${height}px - 55px - 68px)`, height: `${height}px` } : {}}>
       <SqCardProfile socialNetworkObject={socialNetworkObject} type={type} />
       <SqFormProfileCache fieldsCache={fieldsCache} onSubmit={onSubmit} onChange={handleFieldChange} state={cacheState} />
     </main>
