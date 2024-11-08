@@ -24,7 +24,6 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
   const { t } = useTranslation('sqModalProfileCache')
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
-  const [isOpen, setIsOpen] = useState(open || false)
 
   const handleFieldChange = useCallback(
     (field: string, value: string) => {
@@ -80,15 +79,6 @@ const SqModalProfileCache = ({ open, onClose, onSubmit, socialNetworkObject, fie
     }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
-  }, [])
-
-  useEffect(() => {
-    const query = new URLSearchParams(window.location.search)
-    const action = query.get('action')
-    const profileId = query.get('profileId')
-    if (action === 'updateCache' && profileId) {
-      setIsOpen(true)
-    }
   }, [])
 
   useEffect(() => {

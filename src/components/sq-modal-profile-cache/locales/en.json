@@ -4,8 +4,6 @@
   "description": "Enter here the values that are on average in the market. Prices can be negotiated according to the campaign.",
   "cancel": "Cancel",
   "save": "Save",
-  "success": "Values updated successfully",
-  "error": "Error updating values",
   "labels": {
     "posts_one": "{{count}} Post",
     "posts_other": "{{count}} Posts",

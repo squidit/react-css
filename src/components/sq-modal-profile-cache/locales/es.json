@@ -4,8 +4,6 @@
   "description": "Insira aqui os valores que em média pratica no mercado. Os valores poderão ser negociados de acordo com a campanha.",
   "cancel": "Cancelar",
   "save": "Salvar",
-  "success": "Valores atualizados com sucesso!",
-  "error": "Erro ao atualizar os valores",
   "labels": {
     "posts_one": "{{count}} Post",
     "posts_other": "{{count}} Posts",
