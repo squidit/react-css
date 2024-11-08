@@ -79,6 +79,7 @@ export default ({
         type="button"
         ref={menuButtonRef}
         style={styleButton}
+        disabled={disabled}
       >
         <i className={`fa-regular fa-${icon}`}></i>
       </button>
