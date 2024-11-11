@@ -1,0 +1,17 @@
+{
+  "title": "Valores do seu Conteúdo",
+  "updateValues": "Atualize os valores",
+  "description": "Insira aqui os valores que em média pratica no mercado. Os valores poderão ser negociados de acordo com a campanha.",
+  "cancel": "Cancelar",
+  "save": "Salvar",
+  "labels": {
+    "posts_one": "{{count}} Post",
+    "posts_other": "{{count}} Posts",
+    "stories_one": "{{count}} Story",
+    "stories_other": "{{count}} Stories",
+    "videos_one": "{{count}} Vídeo",
+    "videos_other": "{{count}} Vídeos",
+    "reels_one": "{{count}} Reel",
+    "reels_other": "{{count}} Reels"
+  }
+}

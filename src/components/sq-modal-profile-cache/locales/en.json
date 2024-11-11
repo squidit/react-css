@@ -1,0 +1,17 @@
+{
+  "title": "Values of your Content",
+  "updateValues": "Update the values",
+  "description": "Enter here the values that are on average in the market. Prices can be negotiated according to the campaign.",
+  "cancel": "Cancel",
+  "save": "Save",
+  "labels": {
+    "posts_one": "{{count}} Post",
+    "posts_other": "{{count}} Posts",
+    "stories_one": "{{count}} Story",
+    "stories_other": "{{count}} Stories",
+    "videos_one": "{{count}} Video",
+    "videos_other": "{{count}} Videos",
+    "reels_one": "{{count}} Reel",
+    "reels_other": "{{count}} Reels"
+  }
+}

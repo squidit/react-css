@@ -1,3 +1,5 @@
 export * from './sq-toast.interface'
 export * from './sq-metrics.interface'
 export * from './sq-data-layer.interface'
+export * from './sq-profile-cache.interface'
+export * from './sq-social-networks.interface'
