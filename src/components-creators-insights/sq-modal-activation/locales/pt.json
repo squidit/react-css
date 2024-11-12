@@ -1,8 +1,8 @@
 {
   "activateCreatorsInsights": "Ativar Creators Insights",
   "makeProfilePublic": "Tornar a página visível",
-  "tipForInfo": "Ao tornar sua página visível você pode compartilhá-la, você aumenta sua visibilidade para marcas e empresas, facilitando o acesso às suas informações e ampliando suas oportunidades, compartilhando esse link com possíveis interessados.",
-  "tipForAlert": "Para deixar a sua página visível e compartilhar seu perfil com amigos ou marcas interessadas, você precisa preencher todas as informações de cadastro no Hub, ter um vínculo com a rede social com o custo por conteúdo e ativar um perfil no Creators Insights.",
+  "tipForInfo": "Ao tornar sua página visível, você amplia sua visibilidade para marcas e empresas, facilitando o acesso às suas informações e aumentando suas oportunidades. Compartilhe o link com potenciais interessados para maximizar seu alcance.",
+  "tipForAlert": "Para tornar sua página visível e compartilhar seu perfil com amigos ou marcas interessadas, é necessário preencher todas as informações de cadastro no Hub, vincular uma rede social com definição de custo por conteúdo e ativar seu perfil no Creators Insights..",
   "activationQuestion": "Quais das redes sociais você quer ativar para o Creator Insights?",
   "insightsText": "No momento, nossos insights e métricas estão disponíveis apenas para o <i class='fa-brands fa-{{socialNetwork}}' style='display: inline-block; vertical-align: middle; margin: 0 2px; font-size: 1.2rem;'></i> Instagram",
   "buttonDone": "Feito!"

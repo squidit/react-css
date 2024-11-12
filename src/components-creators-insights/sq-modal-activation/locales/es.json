@@ -1,8 +1,8 @@
 {
   "activateCreatorsInsights": "Activar Ideas de Creadores",
   "makeProfilePublic": "Hacer visible la página",
-  "tipForInfo": "Al hacer visible tu página y poder compartirla, aumentas tu visibilidad para marcas y empresas, facilitando el acceso a tu información y ampliando tus oportunidades, compartiendo este enlace con potenciales interesados.",
-  "tipForAlert": "Para hacer visible tu página y compartir tu perfil con amigos o marcas interesadas, necesitas completar toda la información de registro en el Hub, tener un enlace con la red social con el costo por contenido y activar un perfil en Información de los creadores.",
+  "tipForInfo": "Al hacer visible tu página, aumentas tu visibilidad para marcas y empresas, facilitando el acceso a tu información y aumentando tus oportunidades. Comparte el enlace con potenciales interesados para maximizar tu alcance.",
+  "tipForAlert": "Para hacer visible tu página y compartir tu perfil con amigos o marcas interesadas, es necesario completar toda la información de registro en el Hub, vincular una red social con definición de costo por contenido y activar tu perfil en Creators Insights.",
   "activationQuestion": "¿Qué redes sociales quieres activar para Creator Insights?",
   "insightsText": "En este momento, nuestros insights y métricas están disponibles solo para <i class='fa-brands fa-{{socialNetwork}}' style='display: inline-block; vertical-align: middle; margin: 0 2px; font-size: 1.2rem;'></i> Instagram.",
   "buttonDone": "¡Hecho!"
