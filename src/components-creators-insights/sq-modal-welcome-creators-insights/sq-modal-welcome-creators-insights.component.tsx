@@ -2,15 +2,14 @@
 
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import SqModalComponent, { Props as ModalProps } from '../../components/sq-modal/sq-modal.component'
-import FirstImage from '../../assets/img/svg/welcome-creators-insights-1.svg'
-import SecondImage from '../../assets/img/svg/welcome-creators-insights-2.svg'
-import ThirdImage from '../../assets/img/svg/welcome-creators-insights-3.svg'
+import FirstImage from '../../assets/img/png/creators-insights/welcome-creators-insights-1.png'
+import SecondImage from '../../assets/img/png/creators-insights/welcome-creators-insights-2.png'
+import ThirdImage from '../../assets/img/png/creators-insights/welcome-creators-insights-3.png'
 import { SqButton } from '../../components/buttons/sq-button'
 import SqFlowComponent from '../../components/sq-flow/sq-flow.component'
 import { useTranslation } from 'react-i18next'
-
-import './sq-modal-welcome-creators-insights.component.scoped.scss'
 import { SqLoader } from '@/src/components/sq-loader'
+import './sq-modal-welcome-creators-insights.component.scoped.scss'
 
 const QTD_PAGES = 3
 
