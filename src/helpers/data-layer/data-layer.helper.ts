@@ -3,7 +3,7 @@ import { DataLayer, WindowWithDataLayer } from '@interfaces/sq-data-layer.interf
 export default class DataLayerHelper {
   private readonly window: WindowWithDataLayer = window
 
-  public sendToDataLayer(payload) {
+  public sendToDataLayer(payload: DataLayer): void {
     const fullPayload: DataLayer = {
       ...payload,
     }
