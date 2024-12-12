@@ -1,4 +1,26 @@
+import { SocialNetworksAvailables } from './sq-profile-cache.interface'
+
 export interface WindowWithDataLayer extends Window {
-  // TODO: Criar uma interface para o objeto dataLayer do Google Tag Manager
-  dataLayer?: any[]
+  dataLayer?: DataLayer[]
+}
+
+export interface DataLayer {
+  event: Event
+  profile?: string
+  socialNetwork?: SocialNetworksAvailables
+  context?: string
+  action?: string
+  description?: string
+  location?: string
+  value?: any
+  return?: any
+  user: UserDataLayer
+  [key: string]: any
+}
+
+export type Event = 'hub_user_conversion' | 'hub_user_interaction' | 'hub_user_engagement'
+
+export interface UserDataLayer {
+  squidId: string | null
+  [key: string]: any
 }
