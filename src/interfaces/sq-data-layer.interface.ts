@@ -21,6 +21,6 @@ export interface DataLayer {
 export type Event = 'hub_user_conversion' | 'hub_user_interaction' | 'hub_user_'
 
 export interface UserDataLayer {
-  squidId: string
+  squidId: string | null
   [key: string]: any
 }
