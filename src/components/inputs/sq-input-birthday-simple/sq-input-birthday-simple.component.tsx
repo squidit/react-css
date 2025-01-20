@@ -1,16 +1,15 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { SqLoader } from '../../sq-loader'
-import { Props as InputProps, State } from '../sq-input/sq-input.component'
+import { Props, State } from '../sq-input/sq-input.component'
 import { useTranslation } from 'react-i18next'
+import SqValidatorHelper from '@/src/helpers/sq-validator/sq-validator.helper'
 
 import '../sq-input/sq-input.component.scoped.scss'
 import '../sq-input/sq-input.component.scss'
 
 const DELAY_TIME_FOR_TYPING_PAUSE = 800
-
-export interface Props extends InputProps {}
 
 export default ({
   className = '',
@@ -43,8 +42,11 @@ export default ({
   autoFocus = false,
   value = '',
   type = 'text',
+  lang = 'en',
   ...props
 }: Props) => {
+  const validatorHelper = useMemo(() => new SqValidatorHelper(), [])
+
   const timestamp = `random-id-${(1 + Date.now() + Math.random()).toString().replace('.', '')}`
 
   const [timer, setTimer] = useState(null)
@@ -55,7 +57,7 @@ export default ({
   })
   const [language, setLanguage] = useState('en-us')
 
-  const { t } = useTranslation()
+  const { t } = useTranslation('sqInputBirthdaySimple')
 
   useEffect(() => {
     if (state.value !== value) {
@@ -72,10 +74,12 @@ export default ({
 
   useEffect(() => {
     const browserLanguage = navigator.language.toLowerCase()
-    if (['pt-br', 'es-es', 'en-us'].includes(browserLanguage)) {
+    if (lang) {
+      setLanguage(lang)
+    } else if (['pt-br', 'es-es', 'en-us'].includes(browserLanguage)) {
       setLanguage(browserLanguage)
     }
-  }, [])
+  }, [lang])
 
   const parseToISO = (formattedValue) => {
     if (formattedValue?.length === 10) {
@@ -113,10 +117,17 @@ export default ({
 
     isValidDate = formattedValue?.length === 10
 
+    const isUnderage = validatorHelper.ageLessThan(parseToISO(value), 18)
+    const isGreaterThanAllowed = validatorHelper.ageOverThan(parseToISO(value), 100)
+
     if (externalError) {
       state.error = ''
     } else if (!!required && !formattedValue && state.value !== 0) {
       state.error = t('required')
+    } else if (isUnderage) {
+      state.error = t('ageUnder18')
+    } else if (isGreaterThanAllowed) {
+      state.error = t('overThan100')
     } else {
       state.error = ''
     }

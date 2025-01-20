@@ -56,6 +56,9 @@ import esSqInsufficientData from '@components-creators-insights/sq-insufficient-
 import ptSqModalProfileCache from '@components/sq-modal-profile-cache/locales/pt.json'
 import enSqModalProfileCache from '@components/sq-modal-profile-cache/locales/en.json'
 import esSqModalProfileCache from '@components/sq-modal-profile-cache/locales/es.json'
+import ptSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/pt.json'
+import esSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/es.json'
+import enSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/en.json'
 
 const getResources = () => ({
   en: {
@@ -74,6 +77,7 @@ const getResources = () => ({
     sqGroupVerticalBarChart: enSqGroupVerticalBarChart,
     sqInsufficientData: enSqInsufficientData,
     sqModalProfileCache: enSqModalProfileCache,
+    sqInputBirthdaySimple: enSqInputBirthdaySimple,
   },
   pt: {
     globals: ptGlobals,
@@ -91,6 +95,7 @@ const getResources = () => ({
     sqGroupVerticalBarChart: ptSqGroupVerticalBarChart,
     sqInsufficientData: ptSqInsufficientData,
     sqModalProfileCache: ptSqModalProfileCache,
+    sqInputBirthdaySimple: ptSqInputBirthdaySimple,
   },
   es: {
     globals: esGlobals,
@@ -108,6 +113,7 @@ const getResources = () => ({
     sqGroupVerticalBarChart: esSqGroupVerticalBarChart,
     sqInsufficientData: esSqInsufficientData,
     sqModalProfileCache: esSqModalProfileCache,
+    sqInputBirthdaySimple: esSqInputBirthdaySimple,
   },
 })
 
@@ -172,6 +178,7 @@ i18n
       'sqInputName',
       'sqModalWelcomeCreatorsInsights',
       'sqGroupVerticalBarChart',
+      'sqInputBirthdaySimple',
     ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],
