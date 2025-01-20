@@ -48,6 +48,7 @@ export default ({
   const timestamp = `random-id-${(1 + Date.now() + Math.random()).toString().replace('.', '')}`
 
   const [timer, setTimer] = useState(null)
+  const [formattedValue, setFormattedValue] = useState('')
   const [state, setState] = useState<State>({
     value: value,
     error: '',
@@ -76,9 +77,30 @@ export default ({
     }
   }, [])
 
+  const parseToISO = (formattedValue) => {
+    const cleanedValue = formattedValue.replace(/\D/g, '') // Remove caracteres não numéricos
+    if (language === 'pt-br' || language === 'es-es') {
+      if (cleanedValue.length === 8) {
+        const day = cleanedValue.slice(0, 2)
+        const month = cleanedValue.slice(2, 4)
+        const year = cleanedValue.slice(4, 8)
+        return `${year}-${month}-${day}`
+      }
+    } else if (language === 'en-us') {
+      if (cleanedValue.length === 8) {
+        const month = cleanedValue.slice(0, 2)
+        const day = cleanedValue.slice(2, 4)
+        const year = cleanedValue.slice(4, 8)
+        return `${year}-${month}-${day}`
+      }
+    }
+    return ''
+  }
+
   const handleChange = (event) => {
     const value = event?.target?.value || (event?.length ? event : '')
     const cleanedValue = value?.replace(/\D/g, '')
+    let isValidDate = false
     let formattedValue = cleanedValue
 
     if (language === 'pt-br' || language === 'es-es') {
@@ -89,13 +111,6 @@ export default ({
         formattedValue = cleanedValue?.slice(0, 2) + '/' + cleanedValue?.slice(2, 4) + '/' + cleanedValue?.slice(4, 8)
       }
       state.value = formattedValue
-      if (externalError) {
-        state.error = ''
-      } else if (!!required && (!state.value || state.value.length < 1) && state.value !== 0) {
-        state.error = t('required')
-      } else {
-        state.error = ''
-      }
     } else {
       if (cleanedValue.length > 2) {
         formattedValue = cleanedValue.slice(0, 2) + '/' + cleanedValue.slice(2)
@@ -105,12 +120,23 @@ export default ({
       }
     }
 
-    state.value = formattedValue
+    isValidDate = formattedValue?.length === 10
+
+    if (externalError) {
+      state.error = ''
+    } else if (!!required && !formattedValue && state.value !== 0) {
+      state.error = t('required')
+    } else {
+      state.error = ''
+    }
+
+    setFormattedValue(formattedValue)
+    state.value = parseToISO(value)
 
     setState({ ...state })
 
     if (onValidate && typeof onValidate === 'function') {
-      onValidate(!state.error && !externalError)
+      onValidate(!state.error && !externalError && isValidDate)
     }
     if (onChange && typeof onChange === 'function') {
       onChange(state.value)
@@ -163,7 +189,7 @@ export default ({
           type={'text'}
           name={name || timestamp}
           placeholder={placeholder || ''}
-          value={state.value}
+          value={formattedValue}
           maxLength={maxLength}
           required={required}
           disabled={disabled}
