@@ -78,21 +78,12 @@ export default ({
   }, [])
 
   const parseToISO = (formattedValue) => {
-    const cleanedValue = formattedValue.replace(/\D/g, '') // Remove caracteres não numéricos
-    if (language === 'pt-br' || language === 'es-es') {
-      if (cleanedValue.length === 8) {
-        const day = cleanedValue.slice(0, 2)
-        const month = cleanedValue.slice(2, 4)
-        const year = cleanedValue.slice(4, 8)
-        return `${year}-${month}-${day}`
-      }
-    } else if (language === 'en-us') {
-      if (cleanedValue.length === 8) {
-        const month = cleanedValue.slice(0, 2)
-        const day = cleanedValue.slice(2, 4)
-        const year = cleanedValue.slice(4, 8)
-        return `${year}-${month}-${day}`
-      }
+    if (formattedValue?.length === 10) {
+      const cleanedValue = formattedValue.replace(/\D/g, '')
+      const month = cleanedValue.slice(0, 2)
+      const day = cleanedValue.slice(2, 4)
+      const year = cleanedValue.slice(4, 8)
+      return `${year}-${day}-${month}`
     }
     return ''
   }
