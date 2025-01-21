@@ -189,6 +189,7 @@ export default ({
           }}
           id={id || timestamp}
           type={'text'}
+          inputMode="numeric"
           name={name || timestamp}
           placeholder={placeholder || ''}
           value={formattedValue}
