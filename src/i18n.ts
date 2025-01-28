@@ -59,6 +59,9 @@ import esSqModalProfileCache from '@components/sq-modal-profile-cache/locales/es
 import ptSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/pt.json'
 import esSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/es.json'
 import enSqInputBirthdaySimple from '@components/inputs/sq-input-birthday-simple/locales/en.json'
+import ptAverageEngagementChart from '@components/sq-average-engagement-chart/locales/pt.json'
+import enAverageEngagementChart from '@components/sq-average-engagement-chart/locales/en.json'
+import esAverageEngagementChart from '@components/sq-average-engagement-chart/locales/es.json'
 
 const getResources = () => ({
   en: {
@@ -78,6 +81,7 @@ const getResources = () => ({
     sqInsufficientData: enSqInsufficientData,
     sqModalProfileCache: enSqModalProfileCache,
     sqInputBirthdaySimple: enSqInputBirthdaySimple,
+    averageEngagementChart: enAverageEngagementChart,
   },
   pt: {
     globals: ptGlobals,
@@ -96,6 +100,7 @@ const getResources = () => ({
     sqInsufficientData: ptSqInsufficientData,
     sqModalProfileCache: ptSqModalProfileCache,
     sqInputBirthdaySimple: ptSqInputBirthdaySimple,
+    averageEngagementChart: ptAverageEngagementChart,
   },
   es: {
     globals: esGlobals,
@@ -114,6 +119,7 @@ const getResources = () => ({
     sqInsufficientData: esSqInsufficientData,
     sqModalProfileCache: esSqModalProfileCache,
     sqInputBirthdaySimple: esSqInputBirthdaySimple,
+    averageEngagementChart: esAverageEngagementChart,
   },
 })
 
@@ -179,6 +185,7 @@ i18n
       'sqModalWelcomeCreatorsInsights',
       'sqGroupVerticalBarChart',
       'sqInputBirthdaySimple',
+      'averageEngagementChart',
     ],
     load: 'all',
     supportedLngs: ['en', 'pt', 'es'],

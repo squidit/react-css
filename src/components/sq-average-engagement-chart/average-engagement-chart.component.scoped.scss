@@ -1,0 +1,54 @@
+.engagement-chart {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  tr td {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+  }
+
+  td {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text_color);
+    border-radius: 50%;
+
+    @media (max-width: 576px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  .engagement-chart-values {
+    position: relative;
+    border-spacing: 2px;
+    border-collapse: initial;
+    width: 100%;
+
+    tbody {
+      max-width: 100%;
+      width: 100%;
+
+      td {
+        .element-value {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          padding: 0 0.75rem;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    tfoot,
+    tfoot th,
+    tfoot td {
+      position: sticky;
+      bottom: 0;
+      color: var(--text_color);
+    }
+  }
+}
