@@ -62,7 +62,11 @@ export default ({
   )
 
   const getToolTipType = useCallback((profile: Profile) => {
-    if (profile.hasCreatorsInsights && profile.hasSocialNetworkCache && profile?.isTokenValid) {
+    if (
+      profile.hasCreatorsInsights &&
+      (profile?.socialNetwork !== 'instagram' || (profile?.socialNetwork === 'instagram' && profile.hasSocialNetworkCache)) &&
+      profile?.isTokenValid
+    ) {
       return 'info'
     }
     return 'alert'
@@ -204,12 +208,18 @@ export default ({
                   name={`toggle-public-profile-${profile.username}`}
                   id={`toggle-public-profile-${profile.profileId}`}
                   checked={
-                    !profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache || !profile?.isTokenValid
+                    !profile.hasCreatorsInsights ||
+                    !profile?.isTokenValid ||
+                    (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
                       ? false
                       : profile?.isSharedCreatorsInsights
                   }
                   onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile?.isSharedCreatorsInsights)}
-                  disabled={!profile.hasCreatorsInsights || !profile?.hasSocialNetworkCache || !profile?.isTokenValid}
+                  disabled={
+                    !profile.hasCreatorsInsights ||
+                    !profile?.isTokenValid ||
+                    (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
+                  }
                   errorSpan={false}
                 />
                 <label
