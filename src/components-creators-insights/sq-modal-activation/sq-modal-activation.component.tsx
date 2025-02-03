@@ -1,6 +1,6 @@
 'use client'
 
-import { CSSProperties, useCallback, useEffect, useMemo, useState } from 'react'
+import { CSSProperties, useCallback, useEffect, useState } from 'react'
 
 import { SqButton } from '@/src/components/buttons/sq-button'
 import { SqModal } from '@/src/components/sq-modal'
@@ -22,7 +22,7 @@ interface Profile {
   picture: string
   hasSocialNetworkCache: boolean
   isSharedCreatorsInsights: boolean
-  isTokenValid: boolean
+  hasValidToken: boolean
 }
 
 export interface Props extends ModalProps {
@@ -65,7 +65,7 @@ export default ({
     if (
       profile.hasCreatorsInsights &&
       (profile?.socialNetwork !== 'instagram' || (profile?.socialNetwork === 'instagram' && profile.hasSocialNetworkCache)) &&
-      profile?.isTokenValid
+      profile?.hasValidToken
     ) {
       return 'info'
     }
@@ -209,7 +209,7 @@ export default ({
                   id={`toggle-public-profile-${profile.profileId}`}
                   checked={
                     !profile.hasCreatorsInsights ||
-                    !profile?.isTokenValid ||
+                    !profile?.hasValidToken ||
                     (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
                       ? false
                       : profile?.isSharedCreatorsInsights
@@ -217,7 +217,7 @@ export default ({
                   onChange={() => onTogglePublicProfile?.(profile.profileId, profile.socialNetwork, profile?.isSharedCreatorsInsights)}
                   disabled={
                     !profile.hasCreatorsInsights ||
-                    !profile?.isTokenValid ||
+                    !profile?.hasValidToken ||
                     (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
                   }
                   errorSpan={false}
