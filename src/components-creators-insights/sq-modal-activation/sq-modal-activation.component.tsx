@@ -31,6 +31,7 @@ export interface Props extends ModalProps {
   onTogglePublicProfile?: (profileId: string, socialNetwork: SocialNetwork, currentState: boolean) => void
   profiles: Profile[]
   requireActiveProfile?: boolean
+  registerCompleted?: boolean
   titleModal?: string
   messageModal?: string
   textButton?: string
@@ -44,6 +45,7 @@ export default ({
   onOpenChange,
   open,
   requireActiveProfile = false,
+  registerCompleted = false,
   titleModal = '',
   messageModal = '',
   textButton = '',
@@ -61,16 +63,20 @@ export default ({
     [onOpenChange],
   )
 
-  const getToolTipType = useCallback((profile: Profile) => {
-    if (
-      profile.hasCreatorsInsights &&
-      (profile?.socialNetwork !== 'instagram' || (profile?.socialNetwork === 'instagram' && profile.hasSocialNetworkCache)) &&
-      profile?.hasValidToken
-    ) {
-      return 'info'
-    }
-    return 'alert'
-  }, [])
+  const getToolTipType = useCallback(
+    (profile: Profile) => {
+      if (
+        profile.hasCreatorsInsights &&
+        (profile?.socialNetwork !== 'instagram' || (profile?.socialNetwork === 'instagram' && profile.hasSocialNetworkCache)) &&
+        profile?.hasValidToken &&
+        registerCompleted
+      ) {
+        return 'info'
+      }
+      return 'alert'
+    },
+    [registerCompleted],
+  )
 
   useEffect(() => {
     const handleResize = () => {
@@ -210,6 +216,7 @@ export default ({
                   checked={
                     !profile.hasCreatorsInsights ||
                     !profile?.hasValidToken ||
+                    !registerCompleted ||
                     (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
                       ? false
                       : profile?.isSharedCreatorsInsights
@@ -218,6 +225,7 @@ export default ({
                   disabled={
                     !profile.hasCreatorsInsights ||
                     !profile?.hasValidToken ||
+                    !registerCompleted ||
                     (profile?.socialNetwork === 'instagram' && !profile?.hasSocialNetworkCache)
                   }
                   errorSpan={false}

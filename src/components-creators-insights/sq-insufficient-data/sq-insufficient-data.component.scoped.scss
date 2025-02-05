@@ -1,4 +1,10 @@
-.icon-exclamation {
-  font-size: 8rem;
-  color: var(--neutral-35);
+.insufficient-data {
+  height: 100%;
+  flex-direction: column;
+  
+  .icon-exclamation {
+    font-size: 8rem;
+    color: var(--neutral-35);
+  }
 }
+
