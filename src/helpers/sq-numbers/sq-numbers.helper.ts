@@ -25,7 +25,7 @@ export default class SqNumbersHelper {
   }
 
   formatPercent = (number = 0, lang = 'pt'): string => {
-    const formattedNumber = (number * 100).toFixed(1)
+    const formattedNumber = (number * 100).toFixed(2)
     return `${parseFloat(formattedNumber).toLocaleString(lang)}%`
   }
 
