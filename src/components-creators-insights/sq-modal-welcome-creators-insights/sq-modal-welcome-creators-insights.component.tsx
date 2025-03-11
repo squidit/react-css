@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import SqModalComponent, { Props as ModalProps } from '../../components/sq-modal/sq-modal.component'
 import FirstImage from '../../assets/img/png/creators-insights/welcome-creators-insights-1.png'
 import SecondImage from '../../assets/img/png/creators-insights/welcome-creators-insights-2.png'
