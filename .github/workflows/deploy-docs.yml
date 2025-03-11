@@ -36,14 +36,11 @@ jobs:
           cd storybook-static
           echo "react-css.squidit.com.br" > CNAME
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Storybook artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: storybook-static
           path: storybook-static/
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: storybook-static
+        uses: actions/deploy-pages@v3
