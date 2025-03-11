@@ -52,6 +52,16 @@ export default function AverageEngagementChart({ dataSet, color = 'blue', classN
     [dataSet],
   )
 
+  const setTooltipPosition = useCallback((index: number, week: any[]) => {
+    if ([0, 1].includes(index)) {
+      return 'right center'
+    }
+    if ([week.length - 2, week.length - 1].includes(index)) {
+      return 'left center'
+    }
+    return 'center bottom'
+  }, [])
+
   useEffect(() => {
     const processDataSet = () => {
       const dataMapped = dataSet.map(
@@ -120,6 +130,7 @@ export default function AverageEngagementChart({ dataSet, color = 'blue', classN
                               lang: i18n?.language,
                               number: obj?.value,
                             })}`}
+                            data-tooltip-position={setTooltipPosition(i, week)}
                           ></div>
                         </td>
                       ))}
