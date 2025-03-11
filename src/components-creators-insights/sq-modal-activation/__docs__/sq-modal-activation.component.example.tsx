@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import SqModalActivation from '../sq-modal-activation.component'
 import { SqButton } from '../../../components/buttons/sq-button'
+import SqModalActivation from '../sq-modal-activation.component'
 
 const mockProfiles = [
   {
@@ -11,6 +11,10 @@ const mockProfiles = [
     username: 'user1',
     hasCreatorsInsights: true,
     picture: 'https://via.placeholder.com/150',
+    followers: 1000,
+    hasSocialNetworkCache: true,
+    isSharedCreatorsInsights: false,
+    hasValidToken: true,
   },
   {
     profileId: '2',
@@ -18,6 +22,10 @@ const mockProfiles = [
     username: 'user2',
     hasCreatorsInsights: false,
     picture: 'https://via.placeholder.com/150',
+    followers: 1000,
+    hasSocialNetworkCache: true,
+    isSharedCreatorsInsights: false,
+    hasValidToken: true,
   },
   {
     profileId: '3',
@@ -25,6 +33,10 @@ const mockProfiles = [
     username: 'user3',
     hasCreatorsInsights: true,
     picture: 'https://via.placeholder.com/150',
+    followers: 1000,
+    hasSocialNetworkCache: true,
+    isSharedCreatorsInsights: false,
+    hasValidToken: true,
   },
 ]
 
@@ -50,6 +62,10 @@ const SqModalActivationExample: React.FC = () => {
     setIsModalOpen(false)
   }
 
+  const handleLoadMore = () => {
+    // Load more profiles
+  }
+
   return (
     <div
       style={{
@@ -64,9 +80,11 @@ const SqModalActivationExample: React.FC = () => {
       <SqModalActivation
         open={isModalOpen}
         profiles={profiles}
-        onToggle={handleToggle}
         onConfirm={handleDone}
         onOpenChange={handleOpenChange}
+        onLoadMore={handleLoadMore}
+        hasMore={true}
+        loading={false}
         requireActiveProfile={true}
       />
     </div>
