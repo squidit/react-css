@@ -1,6 +1,6 @@
 {
   "name": "@squidit/react-css",
-  "version": "1.2.33",
+  "version": "1.2.34",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
