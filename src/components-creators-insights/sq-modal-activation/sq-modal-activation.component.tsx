@@ -183,8 +183,8 @@ export default ({
         // -80px para compensar o alerta de disponibilidade apenas para Instagram. Remover quando o alerta for removido.
         style={
           width < 991
-            ? { height: `calc(${height}px - 30px - 240px - 80px)`, overflow: 'scroll' }
-            : { maxHeight: `calc(${height}px - 58px - 61px - 80px)` }
+            ? { height: `calc(${height}px - 36px - 240px)`, overflow: 'scroll' }
+            : { maxHeight: `calc(${height}px - 58px - 61px - 80px -19px)` }
         }
       >
         <SqInfinityScroll
