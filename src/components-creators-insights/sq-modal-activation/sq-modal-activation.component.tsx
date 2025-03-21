@@ -184,7 +184,7 @@ export default ({
         style={
           width < 991
             ? { height: `calc(${height}px - 36px - 240px)`, overflow: 'scroll' }
-            : { maxHeight: `calc(${height}px - 58px - 61px - 80px -19px)` }
+            : { maxHeight: `calc(${height}px - 58px - 61px - 80px - 19px)` }
         }
       >
         <SqInfinityScroll
