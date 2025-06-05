@@ -50,6 +50,19 @@ export default class SqValidatorHelper {
     return age > referenceNumber
   }
 
+  isValidBasicDate(dateStr: string): boolean {
+    if (!dateStr.length) return true
+
+    const [yearStr, monthStr, dayStr] = dateStr.split('-')
+    const year = parseInt(yearStr, 10)
+    const day = parseInt(dayStr, 10)
+    const month = parseInt(monthStr, 10)
+
+    const result = !(isNaN(year) || year < 1 || isNaN(month) || month < 1 || month > 12 || isNaN(day) || day < 1 || day > 31)
+
+    return result
+  }
+
   url(url: string): boolean {
     const pattern = new RegExp(
       '^(https?:\\/\\/)?' + // protocol
