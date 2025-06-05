@@ -82,12 +82,12 @@ export default ({
   }, [lang])
 
   const parseToISO = (formattedValue) => {
-    if (formattedValue?.length === 10) {
-      const cleanedValue = formattedValue.replace(/\D/g, '')
-      const month = cleanedValue.slice(0, 2)
-      const day = cleanedValue.slice(2, 4)
+    if (formattedValue?.length >= 10) {
+      const cleanedValue = formattedValue.slice(0, 10).replace(/\D/g, '')
+      const day = cleanedValue.slice(0, 2)
+      const month = cleanedValue.slice(2, 4)
       const year = cleanedValue.slice(4, 8)
-      return `${year}-${day}-${month}`
+      return `${year}-${month}-${day}`
     }
     return ''
   }
@@ -117,6 +117,7 @@ export default ({
 
     isValidDate = formattedValue?.length === 10
 
+    const isValidBasicDate = validatorHelper.isValidBasicDate(parseToISO(value))
     const isUnderage = validatorHelper.ageLessThan(parseToISO(value), 18)
     const isGreaterThanAllowed = validatorHelper.ageOverThan(parseToISO(value), 100)
 
@@ -124,6 +125,8 @@ export default ({
       state.error = ''
     } else if (!!required && !formattedValue && state.value !== 0) {
       state.error = t('required')
+    } else if (!isValidBasicDate) {
+      state.error = t('invalidDate')
     } else if (isUnderage) {
       state.error = t('ageUnder18')
     } else if (isGreaterThanAllowed) {

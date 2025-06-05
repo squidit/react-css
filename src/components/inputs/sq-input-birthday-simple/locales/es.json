@@ -2,5 +2,6 @@
   "label": "Fecha de Nacimiento",
   "ageUnder18": "Debe tener 18 años o más",
   "overThan100": "La edad máxima permitida es de 100 años",
-  "required": "Campo obligatorio"
+  "required": "Campo obligatorio",
+  "invalidDate": "Por favor, ingrese una fecha válida"
 }
