@@ -1,6 +1,6 @@
 {
   "name": "@squidit/react-css",
-  "version": "1.2.36",
+  "version": "1.2.37",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
@@ -77,6 +77,7 @@
     "@storybook/react-vite": "^8.0.10",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.2.31",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
@@ -115,6 +116,7 @@
   "dependencies": {
     "@storybook/test": "^8.0.10",
     "chart.js": "^4.4.4",
+    "eventemitter3": "^5.0.1",
     "i18next": "^23.11.1",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-http-backend": "^2.5.0",
