@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 export const SqComponentWithExternalScopedCss = ({ children, hash }: { children: React.ReactNode; hash?: string }) => {
-  if (!hash) return children
+  if (!hash) return <>{children}</>
 
   const cloneWithHash = (child: ReactNode) => {
     if (!React.isValidElement(child)) return child
@@ -18,5 +18,5 @@ export const SqComponentWithExternalScopedCss = ({ children, hash }: { children:
     return React.cloneElement(child, newProps)
   }
 
-  return React.Children.map(children, cloneWithHash)
+  return <>{React.Children.map(children, cloneWithHash)}</>
 }
