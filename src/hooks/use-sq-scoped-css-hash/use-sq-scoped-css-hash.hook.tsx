@@ -13,7 +13,7 @@ export const useSqScopedCssHash = (ref: React.RefObject<HTMLElement>): string | 
         setScopedHash(fullAttribute.name)
       }
     }
-  }, [ref])
+  }, [ref.current])
 
   return scopedHash
 }
