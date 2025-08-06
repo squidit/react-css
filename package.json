@@ -59,6 +59,9 @@
   ],
   "author": "Squid <developers@squidit.com.br>",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.4",
     "@squidit/css": "latest",
