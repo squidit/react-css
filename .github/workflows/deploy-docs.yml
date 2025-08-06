@@ -27,11 +27,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - uses: actions/configure-pages@v4
       - name: Build
         run: |
-          npm install
-          npm run deploy-storybook
+          pnpm install
+          pnpm run deploy-storybook
           echo "react-css.squidit.com.br" > CNAME
           cd storybook-static
           echo "react-css.squidit.com.br" > CNAME

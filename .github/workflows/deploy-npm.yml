@@ -14,8 +14,12 @@ jobs:
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - name: Install dependencies and build 🔧
-        run: npm install && npm run build
+        run: pnpm install && pnpm run build
       - name: Organize Files 📁
         run: cp -r dist/src/* dist/
       - name: Publish package on NPM 📦
