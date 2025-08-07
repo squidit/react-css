@@ -4,3 +4,7 @@ coverage
 
 #storybook build directory
 storybook-static
+
+# pnpm
+.pnpm-store/
+pnpm-debug.log*
