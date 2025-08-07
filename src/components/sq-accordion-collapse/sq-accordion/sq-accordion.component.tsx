@@ -36,11 +36,11 @@ const Accordion = ({ children, onlyOne = false, containerCollapseClass = '', ope
 
   const handleFindByType = (children: any, component: any) => {
     const result: any = []
-    const type = [component.displayName || component.name] || []
+    const type = component.displayName || component.name
 
     React.Children.forEach(children, (child) => {
       const childType = child?.type?.displayName || child?.type?.name
-      if (type.includes(childType)) {
+      if (childType === type) {
         result.push(child)
       }
     })

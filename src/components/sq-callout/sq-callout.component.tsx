@@ -77,8 +77,8 @@ export default ({
     <section
       className={`callout-container ${className}`}
       style={{
-        backgroundColor: type ? templates?.[type]?.backgroundColor : null || backgroundColor,
-        color: type ? templates[type]?.textColor : null || textColor,
+        backgroundColor: type ? templates?.[type]?.backgroundColor || backgroundColor : backgroundColor,
+        color: type ? templates[type]?.textColor || textColor : textColor,
         ...style,
       }}
     >
@@ -88,8 +88,8 @@ export default ({
             <h6 className="title text-bold mb-1" style={{ fontSize: titleFontSize }}>
               {smallIconStyle ? (
                 <i
-                  className={`mr-2 ${type ? templates[type]?.icon : null || icon}`}
-                  style={{ color: type ? templates[type]?.colorIcon : null || colorIcon, fontSize: titleFontSize }}
+                  className={`mr-2 ${(type && templates[type]?.icon) || icon}`}
+                  style={{ color: (type && templates[type]?.colorIcon) || colorIcon, fontSize: titleFontSize }}
                 ></i>
               ) : null}
               {title}
@@ -97,8 +97,8 @@ export default ({
             <div className="description display-flex">
               {icon && !smallIconStyle ? (
                 <i
-                  className={`m-1 mr-3 ${type ? templates[type]?.icon : null || icon} icon-description display-flex align-items-center`}
-                  style={{ color: type ? templates[type]?.colorIcon : null || colorIcon, fontSize: iconFontSize }}
+                  className={`m-1 mr-3 ${(type && templates[type]?.icon) || icon} icon-description display-flex align-items-center`}
+                  style={{ color: (type && templates[type]?.colorIcon) || colorIcon, fontSize: iconFontSize }}
                 ></i>
               ) : null}
               {children}
