@@ -1,52 +1,51 @@
-.modal-creators-insights {
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .header h4 {
-    margin: 0;
-    font-size: 1rem;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .box-insights {
-    display: flex;
-    padding: 1.25rem;
-    background-color: var(--blue-90);
-    color: var(--blue-25);
-    font-weight: bold;
-    border-radius: 0.25rem;
-    margin-top: 2.25rem;
-  }
+.header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
 
-  .box-insights p {
-    font-weight: bold;
-    font-size: 0.75rem;
-  }
+.box-insights {
+  display: flex;
+  padding: 1.25rem;
+  background-color: var(--blue-90);
+  color: var(--blue-25);
+  font-weight: bold;
+  border-radius: 0.25rem;
+  margin-top: 2.25rem;
+}
 
-  .profile-item {
-    display: flex;
-    flex-direction: column;
-    margin: 3rem 0;
-    gap: 1rem;
+.box-insights p {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
 
-    .profile-selector {
-      width: 100%;
-    }
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+  gap: 1rem;
 
-    .profile-and-username {
-      width: 100%;
-    }
+  .profile-selector {
+    width: 100%;
   }
 
-  .profiles-list {
-    flex-grow: 1;
-    overflow-y: auto;
+  .profile-and-username {
+    width: 100%;
   }
+}
 
-  .profile-item span {
-    margin-left: 0.625rem;
-  }
+.profiles-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.profile-item span {
+  margin-left: 0.625rem;
 }
 
 .wrapper-selectors.toggle {
