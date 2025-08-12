@@ -174,17 +174,13 @@ export default ({
       forceMobileNoMargin={true}
       id="modal-creators-insights"
     >
-      <div className="box-insights">
-        <p dangerouslySetInnerHTML={{ __html: messageModal || t('insightsText', { socialNetwork: 'instagram' }) }} />
-      </div>
       <div
         className="profiles-list"
         id="modal-creators-insights-profiles-list"
-        // -80px para compensar o alerta de disponibilidade apenas para Instagram. Remover quando o alerta for removido.
         style={
           width < 991
             ? { height: `calc(${height}px - 36px - 240px)`, overflow: 'scroll' }
-            : { maxHeight: `calc(${height}px - 58px - 61px - 80px - 19px)` }
+            : { maxHeight: `calc(${height}px - 58px - 61px - 19px)` }
         }
       >
         <SqInfinityScroll
