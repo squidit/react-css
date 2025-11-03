@@ -131,7 +131,7 @@ export default ({
     <div className="header">
       <h4>{titleModal || t('activationQuestion')}</h4>
       <SqButton
-        color="var(--purple-95)"
+        color="var(--pink-95)"
         className="button-action rounded"
         size="sm"
         borderStyle="none"
@@ -140,7 +140,7 @@ export default ({
         style={actionButtonModalStyle}
         onClick={() => handleOpenChange(!open)}
       >
-        <i className="fa-regular fa-xmark" style={{ color: 'var(--purple-20)' }} />
+        <i className="fa-regular fa-xmark" style={{ color: 'var(--pink-20)' }} />
       </SqButton>
     </div>
   )
@@ -150,7 +150,7 @@ export default ({
   const footer = (
     <footer className="footer" style={{ width: '100%' }}>
       <SqButton
-        color="var(--purple-30)"
+        color="var(--pink-30)"
         size="lg"
         borderStyle="none"
         type="button"

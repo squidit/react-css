@@ -5,7 +5,7 @@
   <p align="center">This repository contains a React component library developed to facilitate the creation of consistent and elegant interfaces, following a custom style guide. The included components are highly customizable and designed to be reusable across a variety of React projects.</p>
 </p>
 
-## Welcome to Wake Design System
+## Welcome to Squid Design System
 
 ⚡ Get the experience by browsing one of [our platforms](https://app.squidit.com.br)!
 
