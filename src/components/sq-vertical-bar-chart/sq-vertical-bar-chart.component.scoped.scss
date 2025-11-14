@@ -1,5 +1,7 @@
 .vertical-bar-chart {
+  height: 100%;
   flex-direction: column;
+
   .chart-bar-line {
     width: 8px;
     border-radius: 4px;
