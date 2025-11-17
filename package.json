@@ -1,6 +1,6 @@
 {
   "name": "@squidit/react-css",
-  "version": "1.2.44",
+  "version": "1.2.47",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "eslint src --ext js,ts,tsx",
@@ -65,7 +65,7 @@
   "packageManager": "pnpm@9.0.0",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.4",
-    "@squidit/css": "latest",
+    "@squidit/css": "^2.1.45",
     "@storybook/addon-actions": "^8.0.10",
     "@storybook/addon-docs": "^8.0.10",
     "@storybook/addon-essentials": "^8.0.10",

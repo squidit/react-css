@@ -138,9 +138,9 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
     >
       <div
         className="content position-relative display-flex pb-0 pt-3 px-3"
-        style={{ backgroundColor: 'var(--purple-90)', height: width < 991 ? `${height}px` : '500px' }}
+        style={{ backgroundColor: 'var(--pink-90)', height: width < 991 ? `${height}px` : '500px' }}
       >
-        <SqButton className="button-close position-absolute" color="var(--purple-95)" onClick={() => handleOpenChange(false)}>
+        <SqButton className="button-close position-absolute" color="var(--pink-95)" onClick={() => handleOpenChange(false)}>
           <span className="display-flex justify-content-center align-items-center">
             <i className="fa-solid fa-x small" />
           </span>
@@ -154,7 +154,7 @@ export default ({ className = '', onCloseChange, onConfirm, open, onOpenChange, 
           <div className="actions display-flex justify-content-space-between mt-3">
             <SqFlowComponent steps={Array(QTD_PAGES)} active={activePage} color="var(--primary_color)" style={{ width: '100px' }} />
             <SqButton size="sm" onClick={() => handleNext()}>
-              {loading && activePage === QTD_PAGES - 1 ? <SqLoader size="small" color="var(--purple-40)" /> : t('next')}
+              {loading && activePage === QTD_PAGES - 1 ? <SqLoader size="small" color="var(--pink-40)" /> : t('next')}
             </SqButton>
           </div>
         </div>
